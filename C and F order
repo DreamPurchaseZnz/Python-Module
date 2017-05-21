@@ -7,6 +7,11 @@ Fortran Order（即Column-major order）下每列在内存中是连续的，这�
 Fortran大概是因为主要用于科学计算，Column-major order对于一些矩阵运算有性能优势
 
 Numpy默认是C order, Matlab是 Fortran order.
+Most important point:  对于多维数组的Reshape，合并的计算方式是从最后一个维度开始，将最后一个维度与前一维度组成二维数组
+然后采用row major order 方式将每行填入所需要结构中，从而形成一个新的维度，将这个新的维度与再之前的维度组成二维数组...以此类推，完成整个Reshape过程
+
+
+
 
 numpy.reshape(a, newshape, order='C')[source]
 Gives a new shape to an array without changing its data.
