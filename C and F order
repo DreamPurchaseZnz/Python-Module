@@ -6,6 +6,8 @@ Fortran Order（即Column-major order）下每列在内存中是连续的，这�
 这并不是编程语言自身的特性，在C语言中完全可以使用Column-major order，只不过访问起来计算index不太习惯而已。
 Fortran大概是因为主要用于科学计算，Column-major order对于一些矩阵运算有性能优势
 
+Numpy默认是C order, Matlab是 Fortran order.
+
 numpy.reshape(a, newshape, order='C')[source]
 Gives a new shape to an array without changing its data.
 
