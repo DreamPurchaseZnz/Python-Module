@@ -2,7 +2,7 @@ numpy C order与 Fortran order 的区别
 ===================================
 C order即Column-major order 
 Fortran order即Row major order
-Fortran Order（即Column-major order）下每列在内存中是连续的，这种结构相对更加Cache-friendly。
+Fortran Order（即Row-major order）下每列在内存中是连续的，这种结构相对更加Cache-friendly。
 这并不是编程语言自身的特性，在C语言中完全可以使用Column-major order，只不过访问起来计算index不太习惯而已。
 Fortran大概是因为主要用于科学计算，Column-major order对于一些矩阵运算有性能优势
 
