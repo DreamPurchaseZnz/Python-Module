@@ -13,3 +13,9 @@ array = [1, 2, 5, 3, 6, 8, 4]
 >>array[:2] # 从第一个到第二位[0,2)                  >>array[::2]  # 从第一位每隔两步取一次
 >>[1, 2]                                            >>[1, 5, 6, 4]
 ```
+## '/','./','../'
+```
+/   -Root directory
+./  -current working directory 
+../ -parent directory, respectively
+```
