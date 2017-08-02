@@ -114,7 +114,7 @@ print(f.read())
 ```
 
 ### format- present formatted value
-( Using % and .format() for great good!)[https://pyformat.info/#named_placeholders]
+Using % and .format() for great good! (reference)[https://pyformat.info/#named_placeholders]
 ```
 Basic formatting
 Value conversion
@@ -137,7 +137,7 @@ e.g.
 
 * Signed numbers
 ```
-
+'{:=5d}'.format((- 23))
 
 ```
 
