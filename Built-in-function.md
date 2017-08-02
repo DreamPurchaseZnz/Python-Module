@@ -75,3 +75,20 @@ hash()
 memoryview()	
 set()
 ```
+## Open()- write string to txt file
+open create a file object:
+e.g.
+```
+text_file = open("path/name.txt", "w")
+text_file.write("discription : %s" % variable)
+text_file.close()
+```
+if you use a context manager ,the file is closed automatically for you
+```
+with open('path/name.text','w') as text_file:
+   text_file.write('discription:{}'.format{variables})
+```
+## format()- present formatted value
+
+
+
