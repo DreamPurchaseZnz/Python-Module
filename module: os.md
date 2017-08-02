@@ -32,15 +32,13 @@ os.listdir                                          --->  Return a list containi
 
 os.mkdir                                            --->  Create a directory 
 os.makedirs
-
+os.chdir                                            --->  Change the working directory to the dirname
 os.remove                                           --->  Remove (delete) the file
 os.rmdir                                            --->  Remove a directory
 os.removedirs
-
 os.rename
 os.renames
 os.symlink                                          --->  Create a symbolic link pointing to source named link_name
-# check status
 os.stat
 
 ```
