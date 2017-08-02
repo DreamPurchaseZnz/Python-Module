@@ -1,4 +1,7 @@
-# OS module
+The Python Standard Library: File and Directory Access and Generic Operating System Services
+------------------------------------------------------------------------------------------------------------------------
+# module: OS
+---------------------------------------------------------------------------------------------------------
 Miscellaneous operating system interfaces
 
 ## Process Parameters             
@@ -26,13 +29,19 @@ os.write
 ## Files and Directories
 ```
 os.listdir                                          --->  Return a list containing the names of the entries in the directory 
+
 os.mkdir                                            --->  Create a directory 
 os.makedirs
+
 os.remove                                           --->  Remove (delete) the file
 os.rmdir                                            --->  Remove a directory
 os.removedirs
+
 os.rename
+os.renames
 os.symlink                                          --->  Create a symbolic link pointing to source named link_name
+# check status
+os.stat
 
 ```
 
@@ -55,17 +64,23 @@ os.sysconf                                        --->  Return integer-valued sy
 os.urandom
 ```
 
-## OS.path
+# Module: OS.path
+---------------------------------------------------------------------------------------------------------
 the most frequently method used in os.path module
 ```
 os.path.dirname(path)                                 --->  Return the directory name
 os.path.exists(path)                                  --->  Return True if path refers to an existing path
+
+os.path.abspath
+
+
 os.path.join(path, *paths)                            --->  Join one or more path components intelligently
 os.path.split(path)                                   --->  Split the pathname path into a pair, (head, tail) 
 os.path.splitdrive(path)                              --->  Split the pathname path into a pair (drive, tail) 
 os.path.splitext(path)                                
 ```
-## shutil — High-level file operations
+# Module : shutil — High-level file operations
+---------------------------------------------------------------------------------------------------------
 functions provided in shutil support file copying and removal as following:
 ```
 shutil.copyfile         
@@ -80,4 +95,4 @@ shutil.get_archive_formats
 shutil.register_archive_format
 shutil.unregister_archive_format
 ```
-## Some other method
+
