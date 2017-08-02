@@ -75,7 +75,7 @@ hash()
 memoryview()	
 set()
 ```
-## Open()- write string to txt file
+### Open()- write string to txt file
 open() returns a file object, and is most commonly used with two arguments: open(filename, mode)
 
 Methods
@@ -113,7 +113,7 @@ file_text = open('name.txt','r')
 print(file_text.read())      
 ```
 
-## format()- present formatted value
+### format()- present formatted value
 
 
 
