@@ -114,6 +114,86 @@ print(f.read())
 ```
 
 ### format- present formatted value
+( Using % and .format() for great good!)[https://pyformat.info/#named_placeholders]
+```
+Basic formatting
+Value conversion
+Padding and aligning strings
+Truncating long strings
+Combining truncating and padding
+Numbers
+Padding numbers
+
+# specail arribute
+Signed numbers
+Named placeholders   
+Getitem and Getattr
+Datetime
+Parametrized formats
+Custom objects
+
+```
+e.g.
+
+* Signed numbers
+```
 
 
+```
+
+* Named placeholders
+```
+data = {'first': 'Hodor', 'last': 'Hodor!'}
+'%(first)s %(last)s' % data
+'{first} {last}'.format(**data)
+
+'{first} {last}'.format(first='Hodor', last='Hodor!')
+```
+
+* Getitem and Getattr:
+New style formatting allows even greater flexibility in accessing nested data structures.
+
+```
+person = {'first': 'Jean-Luc', 'last': 'Picard'}
+'{p[first]} {p[last]}'.format(p=person)
+
+data = [4, 8, 15, 16, 23, 42]
+'{d[4]} {d[5]}'.format(d=data)
+
+```
+As well as accessing attributes on objects via getattr():
+```
+class Plant(object):
+    type = 'tree'
+
+'{p.type}'.format(p=Plant())
+```
+
+* Datetime
+```
+from datetime import datetime
+
+'{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))
+```
+
+* Parametrized formats
+Parametrized formats are nested expressions in braces that can appear anywhere in the parent format after the colon
+```
+'{:{align}{width}}'.format('test', align='^', width='10')
+
+# compare with %
+'%*.*f' % (5, 2, 2.7182)
+'{:{width}.{prec}f}'.format(2.7182, width=5, prec=2)
+```
+* Custom objects
+```
+class HAL9000(object):
+
+    def __format__(self, format):
+        if (format == 'open-the-pod-bay-doors'):
+            return "I'm afraid I can't do that."
+        return 'HAL 9000'
+        
+'{:open-the-pod-bay-doors}'.format(HAL9000())
+```
 
