@@ -91,26 +91,26 @@ f.close
 
 e.g.
 ```
-text_file = open("path/name.txt", "w")
-text_file.write("discription : %s" % variable)
-text_file.close()
+f = open("path/name.txt", "w")
+f.write("discription : %s" % variable)
+f.close()
 ```
 if you use a context manager ,the file is closed automatically for you
 ```
-with open('path/name.text','w') as text_file:
-   text_file.write('discription:{}'.format{variables})
+with open('path/name.text','w') as f:
+   f.write('discription:{}'.format{variables})
 ```
 Also we can write many lines at once.
 ```
-with open('name.txt','w') as writer:
+with open('name.txt','w') as f:
     lines = ['line 1\n',
             'this is line 2\n'
             'this is line 3\n'
             'this is end']
-    writer.writelines(lines)
+    f.writelines(lines)
 
-file_text = open('name.txt','r')
-print(file_text.read())      
+f = open('name.txt','r')
+print(f.read())      
 ```
 
 ### format- present formatted value
