@@ -17,6 +17,7 @@ zip                                                  ---> Return an iterator tha
 
 isinstance                                           ---> Judge if the argument object is an instance of classinfo argument
 type                                                 ---> The type of object
+str
 
 ## other method
 dict()	
@@ -40,7 +41,6 @@ staticmethod()
 bin()	
 eval()	
 int()	
-str()
 bool()	
 exec()	
 ord()	
@@ -76,7 +76,19 @@ memoryview()
 set()
 ```
 ## Open()- write string to txt file
-open create a file object:
+open() returns a file object, and is most commonly used with two arguments: open(filename, mode)
+
+Methods
+```
+f.read
+f.readline                    ---> Read a single line split by a newline character(\n)
+f.write
+f.writelines
+f.tell            
+f.seek(offset,fromwhat)       ---> Adding offset to a reference point
+f.close
+```
+
 e.g.
 ```
 text_file = open("path/name.txt", "w")
@@ -88,6 +100,19 @@ if you use a context manager ,the file is closed automatically for you
 with open('path/name.text','w') as text_file:
    text_file.write('discription:{}'.format{variables})
 ```
+Also we can write many lines at once.
+```
+with open('name.txt','w') as writer:
+    lines = ['line 1\n',
+            'this is line 2\n'
+            'this is line 3\n'
+            'this is end']
+    writer.writelines(lines)
+
+file_text = open('name.txt','r')
+print(file_text.read())      
+```
+
 ## format()- present formatted value
 
 
