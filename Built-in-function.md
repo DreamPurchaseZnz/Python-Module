@@ -1,10 +1,26 @@
 Build-in-Functions(67)
 --------------------------------------------------------------------------------------------------------		
 ```
+# commenly used
 abs()                                                  ---> the absolute value
+max()	                                                 ---> Return the largest item in an iterable
+round()	                                               ---> Return the nearest integer to its input
+min()	                                                 ---> Return the largest item in an iterable
+len()	                                                 ---> The length of an object
+
+open()                                                 ---> Open a file and return a file object(file orient API)	
+print()                                                ---> Print object to text stream file  
+format()                                               ---> Convert  a value to a 'formatted' representation
+list()	                                               ---> Mutable squence type
+range()	                                               ---> Specific number of times in for loops
+zip()                                                  ---> Return an iterator that aggregate elements from each of iteratles
+
+isinstance()                                           ---> Judge if the argument object is an instance of classinfo argument
+type()                                                 ---> The type of object
+
+## other method
 dict()	
 help()	
-min()	                                                 ---> Return the largest item in an iterable
 setattr()
 all()	
 dir()	
@@ -24,11 +40,9 @@ staticmethod()
 bin()	
 eval()	
 int()	
-open()                                               ---> Open a file and return a file object(file orient API)	
 str()
 bool()	
 exec()	
-isinstance()                                         ---> Judge if the argument object is an instance of classinfo argument
 ord()	
 sum() 
 bytearray()	
@@ -38,24 +52,17 @@ pow()
 super()
 bytes()	
 float()	
-iter()	
-print()                                             ---> Print object to text stream file   	
+iter()		
 tuple()
 callable()	
-format()                                            ---> Convert  a value to a 'formatted' representation
-len()	                                              ---> The length of an object
 property()	
-type()                                              ---> The type of object
 chr()	
 frozenset()	
-list()	                                            ---> Mutable squence type
-range()	                                            ---> Specific number of times in for loops
 vars()
 classmethod()	
 getattr()	
 locals()	
 repr()	
-zip()                                              ---> Return an iterator that aggregate elements from each of iteratles
 compile()	  
 globals()	
 map()	
@@ -63,8 +70,6 @@ reversed()
 __import__()
 complex()	
 hasattr()	
-max()	                                            ---> Return the largest item in an iterable
-round()	                                          ---> Return the nearest integer to its input
 delattr()	
 hash()	
 memoryview()	
