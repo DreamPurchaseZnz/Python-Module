@@ -1,4 +1,4 @@
-[Random sampling (numpy.random)](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
+[Random number generator](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
 -----------------------------------------------------------------------------------------------------------
 
 ## Simple random data
