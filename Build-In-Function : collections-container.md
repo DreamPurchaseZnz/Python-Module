@@ -45,7 +45,7 @@ update                                              ---> Update the dictionary w
 items                                               ---> View objects 
 values                                              ---> Dynamic view on dictionary'entries
 keys                                                ---> Iteration
-``
+```
 e.g.
 ```
 from collections import defaultdict
