@@ -114,86 +114,28 @@ print(f.read())
 ```
 
 ### format- present formatted value
-Using % and .format() for great good! (reference)[https://pyformat.info/#named_placeholders]
+Perform a string formatting operation.
+
+The string on which this method is called can contain literal text or replacement fields delimited by braces {}.
+
+Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument.
+
+Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
+
+(Using % and str.format for great good!)[https://pyformat.info/#named_placeholders]
+
+The general form of a standard format specifier is
 ```
-Basic formatting
-Value conversion
-Padding and aligning strings
-Truncating long strings
-Combining truncating and padding
-Numbers
-Padding numbers
-
-# specail arribute
-Signed numbers
-Named placeholders   
-Getitem and Getattr
-Datetime
-Parametrized formats
-Custom objects
-
-```
-e.g.
-
-* Signed numbers
-```
-'{:=5d}'.format((- 23))
-
+format_spec ::=  [[fill]align][sign][#][0][width][,][.precision][type]
+fill        ::=  <any character>
+align       ::=  “<” | “>” | “=” | “^”
+sign        ::=  “+” | “-” | ” “
+width       ::=  integer
+precision   ::=  integer
+type        ::=  “b” | “c” | “d” | “e” | “E” | “f” | “F” | “g” | “G” | “n” | “o” | “s” | “x” | “X” | “%”
 ```
 
-* Named placeholders
-```
-data = {'first': 'Hodor', 'last': 'Hodor!'}
-'%(first)s %(last)s' % data
-'{first} {last}'.format(**data)
 
-'{first} {last}'.format(first='Hodor', last='Hodor!')
-```
 
-* Getitem and Getattr:
-New style formatting allows even greater flexibility in accessing nested data structures.
 
-```
-person = {'first': 'Jean-Luc', 'last': 'Picard'}
-'{p[first]} {p[last]}'.format(p=person)
-
-data = [4, 8, 15, 16, 23, 42]
-'{d[4]} {d[5]}'.format(d=data)
-
-```
-As well as accessing attributes on objects via getattr():
-```
-class Plant(object):
-    type = 'tree'
-
-'{p.type}'.format(p=Plant())
-```
-
-* Datetime
-```
-from datetime import datetime
-
-'{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))
-```
-
-* Parametrized formats
-Parametrized formats are nested expressions in braces that can appear anywhere in the parent format after the colon
-```
-'{:{align}{width}}'.format('test', align='^', width='10')
-
-# compare with %
-'%*.*f' % (5, 2, 2.7182)
-'{:{width}.{prec}f}'.format(2.7182, width=5, prec=2)
-```
-* Custom objects
-```
-class HAL9000(object):
-
-    def __format__(self, format):
-        if (format == 'open-the-pod-bay-doors'):
-            return "I'm afraid I can't do that."
-        return 'HAL 9000'
-        
-'{:open-the-pod-bay-doors}'.format(HAL9000())
-```
 
