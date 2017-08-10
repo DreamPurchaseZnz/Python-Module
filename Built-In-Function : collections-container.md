@@ -1,5 +1,6 @@
 # Container
 --------------------------------------------------------------------------
+[This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers, dict, list, set, and tuple.](https://docs.python.org/3.5/library/collections.html?highlight=defaultdict#collections.defaultdict)
 ```
 namedtuple                        
 deque          
