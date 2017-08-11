@@ -36,3 +36,8 @@ Exports two callables
 pickle.Pickler                                   ---> Pickler(file, protocol).dump(obj)
 pickle.Unpickler                                 ---> Unpickler(file).load()
 ```
+e.g.
+```
+open(rgan_dir+'/rgan_pickle.pkl','wb')           ---> Write
+open(rgan_dir+'/rgan_pickle.pkl','rb')           ---> Read
+```
