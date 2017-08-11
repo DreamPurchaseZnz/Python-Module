@@ -115,13 +115,9 @@ print(f.read())
 
 ### format- present formatted value
 Perform a string formatting operation.
-
 The string on which this method is called can contain literal text or replacement fields delimited by braces {}.
-
 Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument.
-
 Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
-
 (Using % and str.format for great good!)[https://pyformat.info/#named_placeholders]
 
 The general form of a standard format specifier is
@@ -158,10 +154,9 @@ For a locale aware separator, use the 'n' integer presentation type instead.
 
 ###  Comparison with the old %-formatting
 In most of the cases the syntax is similar to the old %-formatting, 
-
 with the addition of the {} and with : used instead of %. For example, '%03.2f' can be translated to '{:03.2f}'
-
 The new format syntax also supports new and different options
+
 1. Accessing arguments by 
 ```
 position
