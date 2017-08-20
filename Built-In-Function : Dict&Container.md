@@ -57,3 +57,17 @@ for k, v in s:
   
 sorted(d.items())
 ```
+List
+-----------------------------------------------------------------------------------------------------------------------------------
+All of the methods of list objects
+```
+append                                   ---> Add an item to the end of the list
+extend                                   ---> Extend the list by appending all the items in the given list
+insert                                   ---> Insert an item at a given position 
+remove                                   ---> Remove the first item from the list whose value is x
+pop                                      ---> Remove the item at the given position in the list, and return it
+index                                    ---> Return the index in the list of the first item whose value is x
+count                                    ---> Return the number of times x appears in the list
+sort                                     ---> Sort the items of the list in place
+reverse                                  ---> Reverse the elements of the list, in place
+```
