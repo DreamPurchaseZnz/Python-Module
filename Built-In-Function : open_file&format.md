@@ -188,3 +188,15 @@ items
 ```
 8. Using type-specific formatting
 
+# Print
+```
+print(value, ..., sep=' ', end='\n', file=sys.stdout)
+```
+```
+Prints the values to a stream, or to sys.stdout by default.
+Optional keyword arguments:
+file: a file-like object (stream); defaults to the current sys.stdout.
+sep:  string inserted between values, default a space.
+end:  string appended after the last value, default a newline.
+
+```
