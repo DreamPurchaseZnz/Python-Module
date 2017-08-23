@@ -1,10 +1,25 @@
-numpy C order与 Fortran order 的区别
+Along an axis
 ===================================
-# reduction_indices
+Axes are defined for arrays with more than one dimension. 
+A 2-dimensional array has two corresponding axes: the first running vertically downwards across rows (axis 0), 
+and the second running horizontally across columns (axis 1).
+
+Many operation can take place along one of these axes.
+For example, we can sum each row of an array, in which case we operate along columns, or axis 1:
 ```
-0  ---> get row vector by operate along column 
-1  ---> get column vector
+>>> x = np.arange(12).reshape((3,4))
+
+>>> x
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11]])
+
+>>> x.sum(axis=1)
+array([ 6, 22, 38])
 ```
+
+
+
 Fortran Order（即Row-major order）下每列在内存中是连续的，这种结构相对更加Cache-friendly。
 这并不是编程语言自身的特性，在C语言中完全可以使用Column-major order，只不过访问起来计算index不太习惯而已。
 Fortran大概是因为主要用于科学计算，Column-major order对于一些矩阵运算有性能优势
