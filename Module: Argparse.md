@@ -53,4 +53,124 @@ metavar                      --->  generates help messages, it needs some way to
 dest                         --->  optional argument actions, the value of dest is normally inferred from the option strings,dest allows 
                                    a custom attribute name to be provided
 ```
+## The parse_args() method
+```
+ArgumentParser.parse_args(args=None, namespace=None)
+```
+```
+args                        ---> List of strings to parse. The default is taken from sys.argv
+namespace                   ---> An object to take the attributes. The default is a new empty Namespace object.
+```
+### Option value syntax
+```
+1. the option and its value are passed as two separate arguments
+2. long options a single command-line argument, using = to separate them like (['--foo=FOO'])
+3. For short options (options only one character long), the option and its value can be concatenated like (['-xX'])
+4. Several short options can be joined together, using only a single - prefix, as long as only the last option (or none of them) requires a value
+```
+### Invalid arguments
 
+it exits and prints the error along with a usage message
+
+### Arguments containing -
+ -1 could either be an attempt to specify an option or an attempt to provide a positional argument
+ 
+### Argument abbreviations (prefix matching)
+allows long options to be abbreviated to a prefix
+
+### Beyond sys.argv
+
+### The Namespace object
+Simple class used by default by parse_args() to create an object holding attributes and return it.
+
+This class is deliberately simple, just an object subclass with a readable string representation. If you prefer to have dict-like view of the attributes, you can use the standard Python idiom, vars():
+```
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('--foo')
+>>> args = parser.parse_args(['--foo', 'BAR'])
+>>> vars(args)
+{'foo': 'BAR'}
+```
+assign attributes to an already existing object, rather than a new Namespace object. This can be achieved by specifying the namespace= keyword argument:
+```
+>>> class C:
+...     pass
+...
+>>> c = C()
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('--foo')
+>>> parser.parse_args(args=['--foo', 'BAR'], namespace=c)
+>>> c.foo
+'BAR'
+
+```
+
+## Other utilities
+### Sub-commands
+Many programs split up their functionality into a number of sub-commands
+```
+ArgumentParser.add_subparsers([title][, description][, prog][, parser_class][, action][, option_string][, dest][, help][, metavar])
+```
+This object has a single method, 
+```
+add_parser()
+```
+which takes a command name and any ArgumentParser constructor arguments, and returns an ArgumentParser object that can be modified as usual
+
+### FileType objects
+The FileType factory creates objects that can be passed to the type argument 
+```
+class argparse.FileType(mode=’r’, bufsize=-1, encoding=None, errors=None)
+```
+###  Argument groups
+```
+ArgumentParser.add_argument_group(title=None, description=None)¶
+```
+When an argument is added to the group, the parser treats it just like a normal argument, but displays the argument in a separate group for help messages
+
+###  Mutual exclusion
+Create a mutually exclusive group
+```
+ArgumentParser.add_mutually_exclusive_group(required=False)
+```
+### Parser defaults
+```
+ArgumentParser.set_defaults(**kwargs)
+```
+```
+1. allows some additional attributes that are determined without any inspection of the command line to be added
+2. parser-level defaults always override argument-level defaults
+```
+```
+ArgumentParser.get_default(dest)
+```
+###  Printing help
+will take care of formatting and printing any usage or error messages
+```
+ArgumentParser.print_usage
+ArgumentParser.print_help
+ArgumentParser.format_usage
+ArgumentParser.format_help()
+```
+### Partial parsing
+Sometimes a script may only parse a few of the command-line arguments, passing the remaining arguments on to another script or program
+```
+ArgumentParser.parse_known_args(args=None, namespace=None)
+```
+
+### Customizing file parsing
+```
+ArgumentParser.convert_arg_line_to_args(arg_line)
+```
+Arguments that are read from a file (see the fromfile_prefix_chars keyword argument to the ArgumentParser constructor) are read one argument per line. convert_arg_line_to_args() can be overridden for fancier reading
+```
+class MyArgumentParser(argparse.ArgumentParser):
+    def convert_arg_line_to_args(self, arg_line):
+        return arg_line.split()
+
+```
+### Exiting methods
+```
+ArgumentParser.exit(status=0, message=None)
+ArgumentParser.error(message)
+```
