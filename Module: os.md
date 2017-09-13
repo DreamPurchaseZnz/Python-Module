@@ -1,6 +1,6 @@
 # module: OS
-The Python Standard Library: File and Directory Access and Generic Operating System Services
-------------------------------------------------------------------------------------------------------------------------
+>The Python Standard Library: File and Directory Access and Generic Operating System Services
+
 
 ---------------------------------------------------------------------------------------------------------
 Miscellaneous operating system interfaces
