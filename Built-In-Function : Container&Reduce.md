@@ -57,8 +57,8 @@ for k, v in s:
   
 sorted(d.items())
 ```
-List
------------------------------------------------------------------------------------------------------------------------------------
+###List
+
 All of the methods of list objects
 ```
 append                                   ---> Add an item to the end of the list
@@ -71,3 +71,9 @@ count                                    ---> Return the number of times x appea
 sort                                     ---> Sort the items of the list in place
 reverse                                  ---> Reverse the elements of the list, in place
 ```
+## Reduce
+Apply function of two arguments cumulatively to the items of sequence
+```
+reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5)
+```
+
