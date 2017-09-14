@@ -70,8 +70,11 @@ the most frequently method used in os.path module
 os.path.dirname(path)                                 --->  Return the directory name
 os.path.exists(path)                                  --->  Return True if path refers to an existing path
 
-os.path.abspath
-
+os.path.abspath                                       --->  Return a normalized absolutized version of the pathname path,this is 
+                                                            equivalent to normpath(join(os.getcwd(), path)).
+os.path.normpath                                      --->  Normalize a pathname by collapsing redundant separators and up-level 
+                                                            references so that A//B, A/B/, A/./B and A/foo/../B all become A/B
+x`
 
 os.path.join(path, *paths)                            --->  Join one or more path components intelligently
 os.path.split(path)                                   --->  Split the pathname path into a pair, (head, tail) 
