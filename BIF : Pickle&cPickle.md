@@ -41,3 +41,24 @@ e.g.
 open(rgan_dir+'/rgan_pickle.pkl','wb')           ---> Write
 open(rgan_dir+'/rgan_pickle.pkl','rb')           ---> Read
 ```
+# Json
+lightweight data interchange liberary
+
+## Basic usage
+```
+json.dump(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=”utf-8”, default=None, sort_keys=False, **kw)
+```
+```
+obj                              ---> object
+fp                               ---> File_name
+skipkeys                         ---> Not of a basic type Don't raise error
+ensure_ascii                     ---> all non-ASCII characters in the output are escaped
+check_circular
+allow_nan                        ---> out of range float values (nan, inf, -inf) Raise Value error
+indent                           ---> non-negative integer, pretty-printed with that indent level
+separators                       ---> separators should be an (item_separator, key_separator) tuple. By default, (', ', ': ')
+encoding                         ---> UTF-8
+default                          ---> should be a function that gets called for objects that can’t otherwise be serialized
+sort_keys                        ---> the output of dictionaries will be sorted by key
+```
+
