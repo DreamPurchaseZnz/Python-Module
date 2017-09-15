@@ -95,7 +95,7 @@ __init__()                                             ---> initialized instance
 
 ```
 
-* Instance Objects
+### Instance Objects
 
 The only operations understood by instance objects are attribute references: **data attributes** and **methods**.
 ```
