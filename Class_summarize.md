@@ -267,8 +267,31 @@ class DerivedClassName(Base1, Base2, Base3):
 
 ```
 
+For old-style classes, the only rule is depth-first, left-to-right<br>
 
+With new-style classes, dynamic ordering is necessary because all cases of multiple inheritance exhibit one or more diamond relationships (where at least one of the parent classes can be accessed through multiple paths from the bottommost class)
 
+## Private Variables and Class-local References
+
+Private” instance variables that cannot be accessed except from inside an object don’t exist in Python.It should be considered an implementation detail and subject to change without notice
+
+Any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped
+
+Remain Question！！
+
+Like Structure
+```
+class Employee:
+    pass
+
+john = Employee()  # Create an empty employee record
+
+# Fill the fields of the record
+john.name = 'John Doe'
+john.dept = 'computer lab'
+john.salary = 1000
+
+```
 
 
 
