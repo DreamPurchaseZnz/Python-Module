@@ -218,6 +218,7 @@ the base class is defined in another module
 class DerivedClassName(modname.BaseClassName):
 ```
 2. Execution
+
 Execution of a derived class definition proceeds the same as for a base class. <br>
 When the class object is constructed, the base class is remembered.This is used for resolving **attribute references**:<br>
 if a requested attribute is not found in the class, the search proceeds to look in the base class.<br>
