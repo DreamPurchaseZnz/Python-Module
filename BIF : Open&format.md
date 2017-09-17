@@ -114,7 +114,7 @@ print(f.read())
 ```
 
 ### format- present formatted value
-Perform a string formatting operation.
+Perform a string [formatting operation](https://docs.python.org/3.5/library/functions.html?highlight=format#format)
 The string on which this method is called can contain literal text or replacement fields delimited by braces {}.
 Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument.
 Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
