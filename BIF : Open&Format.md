@@ -132,6 +132,10 @@ width       ::=  integer
 precision   ::=  integer
 type        ::=  “b” | “c” | “d” | “e” | “E” | “f” | “F” | “g” | “G” | “n” | “o” | “s” | “x” | “X” | “%”
 ```
+
+In most of the cases the syntax is similar to the old %-formatting, with the addition of the {} <br>
+and with : used instead of %. For example, '%03.2f' can be translated to '{:03.2f}'
+
 The meaning of the various alignment options is as follows:
 ```
 <           ::= Left-aligned
