@@ -76,4 +76,7 @@ Apply function of two arguments cumulatively to the items of sequence
 ```
 reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5)
 ```
-
+## Reload a module
+```
+from importlib import reload
+```
