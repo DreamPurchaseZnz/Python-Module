@@ -1,4 +1,33 @@
 # Python
+## super
+(super)[https://docs.python.org/2/library/functions.html#super] let you avoid referring to the base class explicitly, which can be nice. (post)[https://rhettinger.wordpress.com/2011/05/26/super-considered-super/]
+```
+class Base(object):
+    def __init__(self):
+        print "Base created"
+
+class ChildA(Base):
+    def __init__(self):
+        Base.__init__(self)
+
+class ChildB(Base):
+    def __init__(self):
+        super().__init__()
+
+ChildA() 
+ChildB()
+
+```
+Note that the syntax changed in Python 3.0: you can just say super().__init__() instead of super(ChildB, self).__init__() 
+
+It's been noted that in Python 3.0+ you can use
+```
+super().__init__()
+```
+to make your call, which is concise and does not require you to reference the parent OR class names explicitly, which can be handy
+
+
+
 ## Python syntax- if & for
 That's more specifically a ternary operator expression than an if-then, here's the python syntax
 ```
