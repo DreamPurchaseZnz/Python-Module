@@ -1,6 +1,6 @@
 # Python
 ## super
-(super)[https://docs.python.org/2/library/functions.html#super] let you avoid referring to the base class explicitly, which can be nice. (post)[https://rhettinger.wordpress.com/2011/05/26/super-considered-super/]
+[super](https://docs.python.org/2/library/functions.html#super) let you avoid referring to the base class explicitly, which can be nice. [post](https://rhettinger.wordpress.com/2011/05/26/super-considered-super/)
 ```
 class Base(object):
     def __init__(self):
