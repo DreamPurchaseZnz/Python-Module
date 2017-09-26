@@ -165,25 +165,129 @@ Axes.set_yscale
 ```
 ### Autoscaling and margins
 ```
+Axes.use_sticky_edges
+Axes.margins
+Axes.set_xmargin
+Axes.set_ymargin
+Axes.relim.
+Axes.autoscale
+Axes.autoscale_view
+Axes.get_autoscale_on                   ---> Set whether autoscaling for the x-axis is applied on plot commands
+Axes.set_autoscale_on 
+Axes.get_autoscalex_on
+Axes.set_autoscalex_on
+Axes.get_autoscaley_on
+Axes.set_autoscaley_on
 
-Axes.use_sticky_edges	When autoscaling, whether to obey all Artist.sticky_edges.
-Axes.margins	Set or retrieve autoscaling margins.
-Axes.set_xmargin	Set padding of X data limits prior to autoscaling.
-Axes.set_ymargin	Set padding of Y data limits prior to autoscaling.
-Axes.relim	Recompute the data limits based on current artists.
-Axes.autoscale	Autoscale the axis view to the data (toggle).
-Axes.autoscale_view	Autoscale the view limits using the data limits.
-Axes.get_autoscale_on	Get whether autoscaling is applied for both axes on plot commands
-Axes.set_autoscale_on	Set whether autoscaling is applied on plot commands
-Axes.get_autoscalex_on	Get whether autoscaling for the x-axis is applied on plot commands
-Axes.set_autoscalex_on	Set whether autoscaling for the x-axis is applied on plot commands
-Axes.get_autoscaley_on	Get whether autoscaling for the y-axis is applied on plot commands
-Axes.set_autoscaley_on	Set whether autoscaling for the y-axis is applied on plot commands
+```
+### Ticks and tick labels
+```
+
+Axes.xaxis_date
+Axes.yaxis_date
+Axes.get_xmajorticklabels
+Axes.get_xminorticklabels
+Axes.get_xticklabels
+Axes.get_xticklines
+Axes.get_xticks
+Axes.get_ymajorticklabels
+Axes.get_yminorticklabels
+Axes.get_yticklabels
+Axes.get_yticklines
+Axes.get_yticks
+Axes.minorticks_off
+Axes.minorticks_on
+Axes.set_xticklabels                 ---> Set the xtick labels with list of strings labels
+Axes.set_xticks                      ---> Set the x ticks with list of ticks
+Axes.set_yticklabels
+Axes.set_yticks
+Axes.get_xgridlines
+Axes.get_ygridlines
+Axes.ticklabel_format
+Axes.tick_params                     ---> Change the appearance of ticks and tick labels
+Axes.locator_params
+```
+### Adding Artists
+```
+Axes.add_artist
+Axes.add_collection
+Axes.add_container
+Axes.add_image                       ---> Add a AxesImage to the axes.
+Axes.add_line
+Axes.add_patch
+Axes.add_table
+```
+### Twinning
+```
+Axes.twinx                          ---> Create a twin Axes sharing the xaxis
+Axes.twiny                          ---> Create a twin Axes sharing the yaxis
+Axes.get_shared_x_axes
+Axes.get_shared_y_axes
+
+```
+### Axes Position
+```
+
+Axes.get_anchor	
+Axes.set_anchor                     ---> Set anchor. 'C' :center
+Axes.get_axes_locator
+Axes.set_axes_locator
+Axes.reset_position
+Axes.get_position
+Axes.set_position                   ---> Set the axes position: pos = [left, bottom, width, height]
 
 ```
 
+-------------------------------------------------------------------------------------------------------------------
+                                                  USUAL METHOD ABOUT ARTIST
+-------------------------------------------------------------------------------------------------------------------
+## Interactive
+```
 
+Axes.can_pan
+Axes.can_zoom
+Axes.get_navigate
+Axes.set_navigate
+Axes.get_navigate_mode
+Axes.set_navigate_mode
+Axes.start_pan
+Axes.drag_pan
+Axes.end_pan
+Axes.format_coord
+Axes.format_cursor_data
+Axes.format_xdata
+Axes.format_ydata
+Axes.hitlist
+Axes.mouseover	
+Axes.in_axes
+Axes.pick
+Axes.pickable
+Axes.get_picker
+Axes.set_picker
+Axes.set_contains
+Axes.get_contains
+Axes.contains
+Axes.contains_point
+Axes.get_cursor_data
+Axes.get_cursor_props
+Axes.set_cursor_props
+```
+## Children
+> Pass
 
+## Drawing
+> Pass
+
+## Bulk property manipulation
+> Pass
+
+## General Artist Properties
+> Pass
+
+## Artist Methods
+> Pass
+
+## Other
 
 
 
