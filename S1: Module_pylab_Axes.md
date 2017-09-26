@@ -3,6 +3,11 @@ the axes contains the most of the figure elements:Axis, Tick, Line2D, Text, Poly
 ```
 class matplotlib.axes.Axes(fig, rect, facecolor=None, frameon=True, sharex=None, sharey=None, label='', xscale=None, yscale=None, axisbg=None, **kwargs)
 ```
+
+----------------------------------------------------------------------------------------------------------------------------
+                                                   BASIC PLOT
+----------------------------------------------------------------------------------------------------------------------------
+
 ### Plotting
 ```
 Axes.plot                              ---> plot lines and/or markers 
@@ -88,6 +93,10 @@ Axes.quiver
 Axes.quiverkey
 Axes.streamplot
 ```
+
+-----------------------------------------------------------------------------------------------------------------------------
+                                                  SET DETAILS
+-----------------------------------------------------------------------------------------------------------------------------
 ## Clearing
 ```
 Axes.cla                        ---> clear the current axes.
