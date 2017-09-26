@@ -1,4 +1,4 @@
-Along an axis
+across axis
 ===================================
 Axes are defined for arrays with more than one dimension. 
 A 2-dimensional array has two corresponding axes: the first running vertically downwards across rows (axis 0), 
