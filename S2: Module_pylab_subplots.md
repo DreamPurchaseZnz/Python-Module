@@ -1,4 +1,23 @@
-# subplots
+# Subplot
+Return a subplot axes positioned by the given grid definition.
+Typical call signature:
+```
+subplot(nrows, ncols, plot_number)
+```
+# subplot2grid
+```
+subplot2grid(shape, loc, rowspan=1, colspan=1, **kwargs)
+```
+Create a subplot in a grid. The grid is specified by shape, at location of loc, spanning rowspan, colspan cells in each direction. The index for loc is 0-based.
+
+identical to:
+```
+gridspec=GridSpec(shape[0], shape[1])
+subplotspec=gridspec.new_subplotspec(loc, rowspan, colspan)
+subplot(subplotspec)
+```
+
+# Subplots
 Create a figure and a set of subplots
 This utility wrapper makes it convenient to create common layouts of subplots
 ```
