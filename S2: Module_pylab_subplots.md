@@ -5,7 +5,7 @@ This utility wrapper makes it convenient to create common layouts of subplots
 matplotlib.pyplot.subplots(nrows=1, ncols=1, sharex=False, sharey=False, 
 squeeze=True, subplot_kw=None, gridspec_kw=None, **fig_kw)
 ```
-### Parameters:
+**Parameters**:
 ```
 nrows, ncols                                                                   --->  int, optional, default: 1
 sharex, sharey                                                                 --->  bool or {‘none’, ‘all’, ‘row’, ‘col’}
@@ -15,12 +15,12 @@ gridspec_kw
 **fig_kw                                                                       ---> figure() call below
 
 ```
-### Return:
+**Return**:
 ```
 fig
 ax
 ```
-### Usage
+**Usage**
 Creates just a figure and only one subplot
 ```
 fig,ax = plt.subplots()
@@ -44,7 +44,7 @@ figure()
 matplotlib.pyplot.figure(num=None, figsize=None, dpi=None, facecolor=None, 
 edgecolor=None, frameon=True, FigureClass=<class 'matplotlib.figure.Figure'>, **kwargs)
 ```
-### Parameters
+**Parameters**
 ```
 num                                  ---> integer or string, optional, default: none :number attribute
 figsize                              ---> tuple of integer,(weight,heigt) units:inches
@@ -53,13 +53,21 @@ facecolor                            ---> the background color
 edgecolor                            ---> border color
 ```
 
-### return 
+**return**
 ```
 figure                               ---> The Figure instance returned will also be passed to new_figure_manager in the backends
 ```
 
+gridspec
+-----------------------------------------------------------------------------------------------------------------------
+gridspec is a module which specifies the location of the subplot in the figure
 
+```
+class matplotlib.gridspec.GridSpec(nrows, ncols, left=None, bottom=None, right=None, top=None, wspace=None, hspace=None, width_ratios=None, height_ratios=None)
 
+```
+[a good explanation here](https://matplotlib.org/users/gridspec.html?highlight=gridspec)
+I just post it. Maybe after some days or months ,i will review it 
 
 
 
