@@ -79,7 +79,7 @@ Axes.tricontourf
 
 ### Text and Annotations
 ```
-Axes.annotate                                                  ---> annotate the point x,y with text s
+Axes.annotate                                                    ---> annotate the point x,y with text s
 Axes.text                       
 Axes.table	
 Axes.arrow	
@@ -99,20 +99,20 @@ Axes.streamplot
 -----------------------------------------------------------------------------------------------------------------------------
 ## Clearing
 ```
-Axes.cla                                                     ---> clear the current axes.
-Axes.clear	                                                 ---> clear the axes
+Axes.cla                                                       ---> clear the current axes.
+Axes.clear	                                                   ---> clear the axes
 ```
 ## Appearance
 ```
 
 Axes.axis
-Axes.set_axis_off                                            ---> Turn axis off
-Axes.set_axis_on                                             ---> Turn axis on
+Axes.set_axis_off                                              ---> Turn axis off
+Axes.set_axis_on                                               ---> Turn axis on
 Axes.set_frame_on
 Axes.get_frame_on 
-Axes.set_axisbelow                                           ---> Set whether the axis ticks and gridlines 
+Axes.set_axisbelow                                             ---> Set whether the axis ticks and gridlines 
 Axes.get_axisbelow
-Axes.grid                                                    ---> Turn the axes grids on or off
+Axes.grid                                                      ---> Turn the axes grids on or off
 Axes.get_axis_bgcolor	
 Axes.get_facecolor	
 Axes.get_fc	
@@ -127,19 +127,19 @@ Axes.get_xaxis
 ```
 ### Axis Limits and direction
 ```
-Axes.invert_xaxis                                            ---> Invert the x-axis
-Axes.invert_yaxis                                            ---> Invert the y-axis
+Axes.invert_xaxis                                             ---> Invert the x-axis
+Axes.invert_yaxis                                             ---> Invert the y-axis
 Axes.xaxis_inverted
 Axes.yaxis_inverted
-Axes.set_xlim                                                ---> Set the data limits for the x-axis
-Axes.set_ylim                                                ---> Set the data limits for the y-axis
+Axes.set_xlim                                                 ---> Set the data limits for the x-axis
+Axes.set_ylim                                                 ---> Set the data limits for the y-axis
 Axes.get_ylim
 Axes.get_xlim
 Axes.update_datalim
 Axes.update_datalim_bounds
 Axes.update_datalim_numerix	
-Axes.set_ybound                                             ---> Set the lower and upper numerical bounds of the y-axis.
-Axes.set_xbound                                             ---> Set the lower and upper numerical bounds of the x-axis.
+Axes.set_ybound                                               ---> Set the lower and upper numerical bounds of the y-axis.
+Axes.set_xbound                                               ---> Set the lower and upper numerical bounds of the x-axis.
 Axes.get_ybound
 Axes.get_xbound
 
@@ -148,18 +148,18 @@ Axes.get_xbound
 ```
 Axes.get_xlabel
 Axes.get_ylabel
-Axes.set_xlabel                                             ---> Set the label for the xaxis.
-Axes.set_ylabel                                             ---> Set the label for the yaxis
-Axes.set_title                                              ---> Set a title for the axes.
+Axes.set_xlabel                                               ---> Set the label for the xaxis.
+Axes.set_ylabel                                               ---> Set the label for the yaxis
+Axes.set_title                                                ---> Set a title for the axes.
 Axes.get_title
-Axes.legend                                                 ---> Places a legend on the axes.
+Axes.legend                                                   ---> Places a legend on the axes.
 Axes.get_legend
 Axes.get_legend_handles_labels
 ```
 ### Axis scales
 ```
-Axes.set_xscale                                             ---> Set the x-axis scale e.g log etc
-Axes.get_xscale                                             ---> Return the xaxis scale string: linear, log, logit, symlog
+Axes.set_xscale                                               ---> Set the x-axis scale e.g log etc
+Axes.get_xscale                                               ---> Return the xaxis scale string: linear, log, logit, symlog
 Axes.get_yscale
 Axes.set_yscale
 ```
@@ -172,7 +172,7 @@ Axes.set_ymargin
 Axes.relim.
 Axes.autoscale
 Axes.autoscale_view
-Axes.get_autoscale_on                                      ---> Set whether autoscaling for the x-axis is applied on plot commands
+Axes.get_autoscale_on                                        ---> Set whether autoscaling for the x-axis is applied on plot commands
 Axes.set_autoscale_on 
 Axes.get_autoscalex_on
 Axes.set_autoscalex_on
@@ -197,14 +197,14 @@ Axes.get_yticklines
 Axes.get_yticks
 Axes.minorticks_off
 Axes.minorticks_on
-Axes.set_xticklabels                                    ---> Set the xtick labels with list of strings labels
-Axes.set_xticks                                         ---> Set the x ticks with list of ticks
+Axes.set_xticklabels                                      ---> Set the xtick labels with list of strings labels
+Axes.set_xticks                                           ---> Set the x ticks with list of ticks
 Axes.set_yticklabels
 Axes.set_yticks
 Axes.get_xgridlines
 Axes.get_ygridlines
 Axes.ticklabel_format
-Axes.tick_params                                        ---> Change the appearance of ticks and tick labels
+Axes.tick_params                                          ---> Change the appearance of ticks and tick labels
 Axes.locator_params
 ```
 ### Adding Artists
@@ -212,15 +212,15 @@ Axes.locator_params
 Axes.add_artist
 Axes.add_collection
 Axes.add_container
-Axes.add_image                                          ---> Add a AxesImage to the axes.
+Axes.add_image                                            ---> Add a AxesImage to the axes.
 Axes.add_line
 Axes.add_patch
 Axes.add_table
 ```
 ### Twinning
-```
-Axes.twinx                                              ---> Create a twin Axes sharing the xaxis
-Axes.twiny                                              ---> Create a twin Axes sharing the yaxis
+```  
+Axes.twinx                                                ---> Create a twin Axes sharing the xaxis
+Axes.twiny                                                ---> Create a twin Axes sharing the yaxis
 Axes.get_shared_x_axes
 Axes.get_shared_y_axes
 
@@ -229,12 +229,12 @@ Axes.get_shared_y_axes
 ```
 
 Axes.get_anchor	
-Axes.set_anchor                                         ---> Set anchor. 'C' :center
+Axes.set_anchor                                           ---> Set anchor. 'C' :center
 Axes.get_axes_locator
 Axes.set_axes_locator
 Axes.reset_position
 Axes.get_position
-Axes.set_position                                       ---> Set the axes position: pos = [left, bottom, width, height]
+Axes.set_position                                         ---> Set the axes position: pos = [left, bottom, width, height]
 
 ```
 
