@@ -41,6 +41,42 @@ e.g.
 open(rgan_dir+'/rgan_pickle.pkl','wb')           ---> Write
 open(rgan_dir+'/rgan_pickle.pkl','rb')           ---> Read
 ```
+
+## what if it's two object 
+there are two method
+**First method**
+pickle.dump will append to the end of the file, so you can call it multiple times to write multiple values.
+
+pickle.load will read only enough from the file to get the first value, leaving the filehandle open and pointed at the start of the next object in the file. The second call will then read the second object, and leave the file pointer at the end of the file. A third call will fail with an EOFError as you'd expect.
+
+```
+import pickle
+
+# write a file
+f = open("example", "w")
+pickle.dump(["hello", "world"], f)
+pickle.dump([2, 3], f)
+f.close()
+
+f = open("example", "r")
+value1 = pickle.load(f)
+value2 = pickle.load(f)
+f.close()
+
+```
+** second method**
+ pack your data into a single object before you store it
+```
+a = [1,2]
+b = [3,4]
+
+with open("tmp.pickle", "wb") as f:
+    pickle.dump((a,b), f)
+
+with open("tmp.pickle", "rb") as f:
+    a,b = pickle.load(f) 
+```
+
 # Json
 lightweight data interchange liberary
 
