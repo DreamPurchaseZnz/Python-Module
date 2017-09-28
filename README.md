@@ -18,7 +18,7 @@ ChildA()
 ChildB()
 
 ```
-Note that the syntax changed in Python 3.0: you can just say super().__init__() instead of super(ChildB, self).__init__() 
+Note that the syntax changed in Python 3.0: you can just say super().\__init\__() instead of super(ChildB, self).\__init\__() 
 
 It's been noted that in Python 3.0+ you can use
 ```
@@ -26,8 +26,43 @@ super().__init__()
 ```
 to make your call, which is concise and does not require you to reference the parent OR class names explicitly, which can be handy
 
+super work with [mutiple inheritance](https://stackoverflow.com/questions/3277367/how-does-pythons-super-work-with-multiple-inheritance)
+```
+class First(object):
+  def __init__(self):
+    super(First, self).__init__()
+    print "first"
 
+class Second(object):
+  def __init__(self):
+    super(Second, self).__init__()
+    print "second"
 
+class Third(First, Second):
+  def __init__(self):
+    super(Third, self).__init__()
+    print "that's it"
+
+```
+
+the order to resolve \__init\__ is calculated (before Python 2.3) using a "depth-first left-to-right traversal" :
+```
+1. According to MRO __init__ of Third is called first.
+2. Next, according to the MRO, inside the __init__ method super(Third,self).__init__() 
+resolves to the __init__ method of First, which gets called.
+3. Inside __init__ of First super(First, self).__init__() calls the __init__ of Second, because that is what the MRO dictates!
+4. Inside __init__ of Second super(Second, self).__init__() calls the __init__ of object,
+which amounts to nothing. After that "second" is printed.
+5. After super(First, self).__init__() completed, "first" is printed.
+6. After super(Third, self).__init__() completed, "that's it" is printed.
+```
+the result:
+```
+>>> x = Third()
+second
+first
+that's it
+```
 ## Python syntax- if & for
 That's more specifically a ternary operator expression than an if-then, here's the python syntax
 ```
