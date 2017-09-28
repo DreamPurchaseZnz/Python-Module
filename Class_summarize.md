@@ -102,12 +102,6 @@ The only operations understood by instance objects are attribute references: **d
 data attributes correspond to “instance variables”
 A method is a function that “belongs to” an object
 ```
-for variable(class variable and instance variable), the situation is different
-
-1. class variable can be inherited directly
-2. instance varialbe need to use **super menthod**
-
-
 
 ### Method Objects
 
@@ -300,6 +294,11 @@ Execution of a derived class definition proceeds the same as for a base class. <
 When the class object is constructed, the base class is remembered.This is used for resolving **attribute references**:<br>
 if a requested attribute is not found in the class, the search proceeds to look in the base class.<br>
 This rule is applied **recursively** if the base class itself is derived from some other class
+
+for **variable**(class variable and instance variable), the situation is different
+
+1. class variable can be inherited directly
+2. instance varialbe need to use **super menthod**
 
 **Method references** are resolved as follows:<br>
 the corresponding class attribute is searched, <br>
