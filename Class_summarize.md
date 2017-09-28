@@ -116,6 +116,59 @@ Generally speaking,
 instance variables        are for data unique to each instance 
 class variables           are for attributes and methods shared by all instances of the class
 ```
+Variables inside and outside of a class \__init\__() function
+
+1. class variables:  Elements outside the \__init\__ method are static elements, it means, they belong to the class.
+
+2. instance variables: Elements inside the \__init\__ method are elements of the object (self), they don't belong to the class.
+
+e.g
+```
+class MyClass:
+    static_elem = 123
+
+    def __init__(self):
+        self.object_elem = 456
+
+c1 = MyClass()
+c2 = MyClass()
+```
+
+Initial values of both elements
+```
+>>> print c1.static_elem, c1.object_elem 
+123 456
+>>> print c2.static_elem, c2.object_elem
+123 456
+```
+Same results
+
+Nothing new so far ...
+Let's try changing the static element or class variable
+```
+MyClass.static_elem = 999
+```
+we can see all the instance all change to 999, it means the class variable shared by all the instance.
+```
+>>> print c1.static_elem, c1.object_elem
+999 456
+>>> print c2.static_elem, c2.object_elem
+999 456
+```
+
+Now, let's try changing the object element- instance variable
+```
+c1.object_elem = 888
+```
+the instance variable don't change, it mean instance variable are unique. 
+```
+>>> print c1.static_elem, c1.object_elem
+999 888
+>>> print c2.static_elem, c2.object_elem
+999 456
+```
+second example:
+
 class shared data can have possibly surprising effects with involving mutable objects such as lists and dictionaries
 ```
 class Dog:
