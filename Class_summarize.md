@@ -187,7 +187,7 @@ class C:
  
 ### Cross reference
 
-Methods may call other methods by using method attributes of the self argument:
+Methods may call other methods by using method attributes of **the self argument**:
  
  ```
  class Bag:
@@ -203,6 +203,15 @@ Methods may call other methods by using method attributes of the self argument:
  
  ```
 Methods may reference global names in the same way as ordinary functions, The global scope associated with a method is the module containing its definition.
+
+Access static class variables within class methods
+```
+class Foo(object):
+    bar = 1
+    def bah(self):
+        print(slef.bar)
+        print(Foo.bar)
+```
 
 ### Import modules
 there are many legitimate uses of the global scope:
