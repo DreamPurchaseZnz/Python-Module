@@ -65,19 +65,40 @@ class ClassB(ClassA):
 ```
 class Base(object):
     def __init__(self):
-        print "Base created"
+        print ("Base created")
+        self.var = 10
 
 class ChildA(Base):
     def __init__(self):
         Base.__init__(self)
+        print('this is the child A')
+        self.var = 12
 
 class ChildB(Base):
     def __init__(self):
         super().__init__()
+        print('this is the child B')
+        self.var = 14
 
-ChildA() 
-ChildB()
+```
+the child modify the value of var
+```
+a = ChildA()
+Out[22]:
+Base created
+this is the child A
 
+a.var
+Out[23]: 
+12
+```
+```
+b = ChildB()
+Base created
+this is the child B
+b.var
+Out[26]: 
+14
 ```
 Note that the syntax changed in Python 3.0: you can just say super().\__init\__() instead of super(ChildB, self).\__init\__() 
 
@@ -92,30 +113,18 @@ super work with [mutiple inheritance](https://stackoverflow.com/questions/327736
 class First(object):
   def __init__(self):
     super(First, self).__init__()
-    print "first"
+    print ("first")
 
 class Second(object):
   def __init__(self):
     super(Second, self).__init__()
-    print "second"
+    print ("second")
 
 class Third(First, Second):
   def __init__(self):
     super(Third, self).__init__()
-    print "that's it"
+    print ("that's it")
 
-```
-
-the order to resolve \__init\__ is calculated (before Python 2.3) using a "depth-first left-to-right traversal" :
-```
-1. According to MRO __init__ of Third is called first.
-2. Next, according to the MRO, inside the __init__ method super(Third,self).__init__() 
-resolves to the __init__ method of First, which gets called.
-3. Inside __init__ of First super(First, self).__init__() calls the __init__ of Second, because that is what the MRO dictates!
-4. Inside __init__ of Second super(Second, self).__init__() calls the __init__ of object,
-which amounts to nothing. After that "second" is printed.
-5. After super(First, self).__init__() completed, "first" is printed.
-6. After super(Third, self).__init__() completed, "that's it" is printed.
 ```
 the result:
 ```
@@ -124,4 +133,25 @@ second
 first
 that's it
 ```
+
+the order to resolve \__init\__ is calculated (before Python 2.3) using a "depth-first left-to-right traversal" :
+
+a simple depth-first left-to-right scheme(http://python-history.blogspot.com/2010/06/method-resolution-order.html)
+```
+class A:
+  def save(self): pass
+
+class B(A): pass
+
+class C(A):
+  def save(self): pass
+
+class D(B, C): pass
+
+```
+Here, class D inherits from B and C, both of which inherit from class A.
+
+Using the classic MRO, methods would be found by searching the classes in the order D, B, A, C, A
+
+However, this is unlikely what you want in this case! Since both B and C inherit from A, one can argue that the redefined method C.save() is actually the method that you want to call,**since it can be viewed as being "more specialized" than the method in A**
 
