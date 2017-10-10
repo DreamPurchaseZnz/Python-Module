@@ -1,9 +1,54 @@
-# Module: Argparse
+# Module: [Argparse](https://docs.python.org/3/library/argparse.html)
 >The argparse module makes it easy to write user-friendly command line interfaces.
 The program defines what arguments it requires.
  The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments
+# Example
+the following code like:
+```
+import argparse
 
-## Creating a parser
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                    help='an integer for the accumulator')
+parser.add_argument('--sum', dest='accumulate', action='store_const',
+                    const=sum, default=max,
+                    help='sum the integers (default: find the max)')
+
+args = parser.parse_args()
+print(args.accumulate(args.integers))
+
+```
+Assuming the Python code above is saved into a file called prog.py,
+
+it can be run at the command line and provides useful help messages:
+```
+$ python prog.py -h
+usage: prog.py [-h] [--sum] N [N ...]
+
+Process some integers.
+
+positional arguments:
+ N           an integer for the accumulator
+
+optional arguments:
+ -h, --help  show this help message and exit
+ --sum       sum the integers (default: find the max)
+
+```
+
+When run with the appropriate arguments, it prints either the sum or the max of the command-line integers:
+
+```
+$ python prog.py 1 2 3 4
+4
+
+$ python prog.py 1 2 3 4 --sum
+10
+
+```
+
+## 1. Creating a parser
+
 ArgumentParser
 ```
 ArgumentParser(prog=None, usage=None, description=None, epilog=None, parents=[], formatter_class=argparse.HelpFormatter, prefix_chars=’-‘, fromfile_prefix_chars=None, argument_default=None, conflict_handler=’error’, add_help=True, allow_abbrev=True)
@@ -26,7 +71,7 @@ conflict_handler      ---> it may be useful to simply override any older argumen
                            value 'resolve' can be supplied to the conflict_handler= argument
 add_help              ---> whether -h or --help is supplied at the command line
 ```
-##  Adding arguments
+##  2. Adding arguments
 add_argument
 ```
 ArgumentParser.add_argument(name or flags…[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])
@@ -53,7 +98,7 @@ metavar                      --->  generates help messages, it needs some way to
 dest                         --->  optional argument actions, the value of dest is normally inferred from the option strings,dest allows 
                                    a custom attribute name to be provided
 ```
-## The parse_args() method
+## 3. The parse_args() method
 ```
 ArgumentParser.parse_args(args=None, namespace=None)
 ```
@@ -68,15 +113,90 @@ namespace                   ---> An object to take the attributes. The default i
 3. For short options (options only one character long), the option and its value can be concatenated like (['-xX'])
 4. Several short options can be joined together, using only a single - prefix, as long as only the last option (or none of them) requires a value
 ```
+```
+>>> parser = argparse.ArgumentParser(prog='PROG')
+>>> parser.add_argument('-x', action='store_true')
+>>> parser.add_argument('-y', action='store_true')
+>>> parser.add_argument('-z')
+>>> parser.parse_args(['-xyzZ'])
+Namespace(x=True, y=True, z='Z')
+
+```
 ### Invalid arguments
 
 it exits and prints the error along with a usage message
+```
+>>> parser = argparse.ArgumentParser(prog='PROG')
+>>> parser.add_argument('--foo', type=int)
+>>> parser.add_argument('bar', nargs='?')
+
+>>> # invalid type
+>>> parser.parse_args(['--foo', 'spam'])
+usage: PROG [-h] [--foo FOO] [bar]
+PROG: error: argument --foo: invalid int value: 'spam'
+
+>>> # invalid option
+>>> parser.parse_args(['--bar'])
+usage: PROG [-h] [--foo FOO] [bar]
+PROG: error: no such option: --bar
+
+>>> # wrong number of arguments
+>>> parser.parse_args(['spam', 'badger'])
+usage: PROG [-h] [--foo FOO] [bar]
+PROG: error: extra arguments found: badger
+
+```
 
 ### Arguments containing -
  -1 could either be an attempt to specify an option or an attempt to provide a positional argument
+ ```
+ >>> parser = argparse.ArgumentParser(prog='PROG')
+>>> parser.add_argument('-x')
+>>> parser.add_argument('foo', nargs='?')
+
+>>> # no negative number options, so -1 is a positional argument
+>>> parser.parse_args(['-x', '-1'])
+Namespace(foo=None, x='-1')
+
+>>> # no negative number options, so -1 and -5 are positional arguments
+>>> parser.parse_args(['-x', '-1', '-5'])
+Namespace(foo='-5', x='-1')
+
+>>> parser = argparse.ArgumentParser(prog='PROG')
+>>> parser.add_argument('-1', dest='one')
+>>> parser.add_argument('foo', nargs='?')
+
+>>> # negative number options present, so -1 is an option
+>>> parser.parse_args(['-1', 'X'])
+Namespace(foo=None, one='X')
+
+>>> # negative number options present, so -2 is an option
+>>> parser.parse_args(['-2'])
+usage: PROG [-h] [-1 ONE] [foo]
+PROG: error: no such option: -2
+
+>>> # negative number options present, so both -1s are options
+>>> parser.parse_args(['-1', '-1'])
+usage: PROG [-h] [-1 ONE] [foo]
+PROG: error: argument -1: expected one argument
+ 
+ ```
  
 ### Argument abbreviations (prefix matching)
 allows long options to be abbreviated to a prefix
+```
+>>> parser = argparse.ArgumentParser(prog='PROG')
+>>> parser.add_argument('-bacon')
+>>> parser.add_argument('-badger')
+>>> parser.parse_args('-bac MMM'.split())
+Namespace(bacon='MMM', badger=None)
+>>> parser.parse_args('-bad WOOD'.split())
+Namespace(bacon=None, badger='WOOD')
+>>> parser.parse_args('-ba BA'.split())
+usage: PROG [-h] [-bacon BACON] [-badger BADGER]
+PROG: error: ambiguous option: -ba could match -badger, -bacon
+
+```
 
 ### Beyond sys.argv
 
