@@ -103,6 +103,34 @@ broadcast_arrays
 expand_dims                                    ---> Insert a new axis that will appear at the axis pos 
 squeeze                                        ---> Remove single dimensional axis
 ```
+[slicing](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html)
+```
+The newaxis object can be used in all slicing operations to create an axis of length one.
+newaxis is an alias for ‘None’, and ‘None’ can be used in place of this with the same result.
+```
+```
+In [154]: labels=np.array([1,3,5])
+
+In [155]: labels[:,None]
+Out[155]: 
+array([[1],
+       [3],
+       [5]])
+
+In [157]: np.arange(8)==labels[:,None]
+Out[157]: 
+array([[False,  True, False, False, False, False, False, False],
+       [False, False, False,  True, False, False, False, False],
+       [False, False, False, False, False,  True, False, False]], dtype=bool)
+
+In [158]: (np.arange(8)==labels[:,None]).astype(int)
+Out[158]: 
+array([[0, 1, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 1, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 1, 0, 0]])
+
+
+```
 ### Changing kind of array
 ```
 asarray                                        ---> Convert the input to an array. 
