@@ -95,9 +95,28 @@ help                         --->  The help value is a string containing a brief
                                    various format specifiers to avoid repetition of things like the program name or the argument default.
                                    
 metavar                      --->  generates help messages, it needs some way to refer to each expected argument
-dest                         --->  optional argument actions, the value of dest is normally inferred from the option strings,dest allows 
-                                   a custom attribute name to be provided
+dest                         --->  optional argument actions
 ```
+### dest
+For optional argument actions, the value of dest is normally inferred from name or flags(option strings),taking the first long option string and stripping away the initial -- string
+```
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('-f', '--foo-bar', '--foo')
+>>> parser.add_argument('-x', '-y')
+>>> parser.parse_args('-f 1 -x 2'.split())
+Namespace(foo_bar='1', x='2')
+>>> parser.parse_args('--foo 1 -y 2'.split())
+Namespace(foo_bar='1', x='2')
+```
+dest allows a custom attribute name to be provided:
+```
+>>>
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('--foo', dest='bar')
+>>> parser.parse_args('--foo XXX'.split())
+Namespace(bar='XXX')
+```
+
 ## 3. The parse_args() method
 ```
 ArgumentParser.parse_args(args=None, namespace=None)
