@@ -6,17 +6,21 @@ fset                 ---> a function for setting an attribute value
 fdel                 ---> a function for deleting an attribute value
 doc                  ---> create a docstring for the attribute
 ```
-A typical use is define a managed atr
+A typical use is define a **managed** attribute x:
 ```
 class C:
     def __init__(self):
         self._x = None
-
+        
+    # ----------------------------------------------------------
+    # print more beautiful style , not just a value
     def getx(self):
         return self._x
-
+        
+    # ----------------------------------------------------------
+    # you can set a limit for a value
     def setx(self, value):
-        self._x = value
+        self._x = function(x)
 
     def delx(self):
         del self._x
@@ -24,6 +28,15 @@ class C:
     x = property(getx, setx, delx, "I'm the 'x' property.")
 
 ```
+if c is an instance of C  
+```
+c.x                              ---> it will invoke the getter method;
+c.x = value                      ---> it will invoke the setter
+del c.x                          ---> it will invoke the deleter
+doc x                            
+```
+
+The  @ property  decorater turns method into a **'getter'** for only a read-only attribute with the same name.
 
 ```
 class Person(object):
@@ -58,40 +71,37 @@ Traceback (most recent call last):
 AttributeError: can't set attribute
 
 ```
+A property object has getter,setter and deleter methods usable as decorators
 
+that create a copy of the property with the corresponding accessor function set to decorated function
+
+This is best explained with an example
 ```
-from decimal import Decimal
-########################################################################
-class Fees(object):
-    """"""
-    # ----------------------------------------------------------------------
+class C:
     def __init__(self):
-        """Constructor"""
-        self._fee = None
-    # ----------------------------------------------------------------------
+        self._x = None
+
     @property
-    def fee(self):
-        """
-        The fee property - the getter
-        """
-        return self._fee
-    # ----------------------------------------------------------------------
-    @fee.setter
-    def fee(self, value):
-        """
-        The setter of the fee property
-        """
-        if isinstance(value, str):
-            self._fee = Decimal(value)
-        elif isinstance(value, Decimal):
-            self._fee = value
-            
-f = Fees()
-f.fee= '1'
-f.fee
-Out[29]: 
-Decimal('1')
+    def x(self):
+        """I'm the 'x' property."""
+        return self._x
 
+    @x.setter
+    def x(self, value):
+        self._x = value
 
+    @x.deleter
+    def x(self):
+        del self._x
 
 ```
+This code is exactly equivalent to the first example.
+
+Be sure to give the additonal functions  the same name as the original property(x in case)
+
+
+
+
+
+
+
