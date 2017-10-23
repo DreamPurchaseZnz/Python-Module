@@ -1,5 +1,18 @@
 # try except
 ```
+Exception                       
+AttributeError             
+IOError                  
+IndexError    
+KeyError    
+NameError     
+SyntaxError     
+TypeError           
+ValueError   
+ZeroDivisionError         
+```
+```
+
 try:
     A["blah"] = B["blah"]
 except KeyError:
