@@ -114,8 +114,7 @@ aList
 Out[20]: 
 [123, 'xyz', 'zara', 'abc', 123, 2009, 'manni']
 
-``
-
+```
 
 ## Reduce
 Apply function of two arguments cumulatively to the items of sequence
