@@ -57,7 +57,7 @@ for k, v in s:
   
 sorted(d.items())
 ```
-###List
+### List
 
 All of the methods of list objects
 ```
@@ -71,6 +71,52 @@ count                                    ---> Return the number of times x appea
 sort                                     ---> Sort the items of the list in place
 reverse                                  ---> Reverse the elements of the list, in place
 ```
+append:
+add an item to the end of the list; equivalent to a[len(a):]=[x]
+```
+x = [1,2,3]
+x.append([4,5])
+print(x)
+Out[14]: 
+[1, 2, 3, [4, 5]]
+```
+```
+x = [1,2,3]
+x[len(x):]=[4]
+x
+Out[25]: 
+[1, 2, 3, 4]
+
+```
+
+list.extend(seq)- This method does not return any value but add the content to existing list
+
+Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L
+```
+x.extend([4,5])
+x
+Out[18]: 
+[1, 2, 3, [4, 5], 4, 5]
+```
+```
+x[len(x):]=[4,5]
+x
+Out[28]: 
+[1, 2, 3, 4, 4, 5]
+
+```
+
+```
+aList = [123, 'xyz', 'zara', 'abc', 123];
+bList = [2009, 'manni'];
+aList.extend(bList)
+aList
+Out[20]: 
+[123, 'xyz', 'zara', 'abc', 123, 2009, 'manni']
+
+``
+
+
 ## Reduce
 Apply function of two arguments cumulatively to the items of sequence
 ```
