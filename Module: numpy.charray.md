@@ -22,6 +22,20 @@ itemsize
 nbytes
 stride
 ``` 
+Assign the exact position a value, we can do like this:
+```
+c[[0,1,2,3],[2,1,1,0]] = [1,1,1,1]
+c
+Out[10]: 
+array([[ 0.,  0.,  1.],
+       [ 0.,  1.,  0.],
+       [ 0.,  1.,  0.],
+       [ 1.,  0.,  0.]])
+
+
+```
+
+
 
 Methods
 ```
@@ -87,3 +101,9 @@ upper()
 view([dtype, type])          
 zfill(width)                         ---> Return the numeric string left-filled with zeros in a string of length width.
 ```
+
+
+
+
+
+
