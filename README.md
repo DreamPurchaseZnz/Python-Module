@@ -19,9 +19,10 @@ f = [e for e in range(10) for _ in range(10)]),[sample_size,1]
 ```
 ## unpacks an dictionary into keyword arguments
 
+```
 list or tupe  --- * unpack ---> call function --- positional argument  --- function --- * collects ---> a tupe
 a dictionary --- ** unpack  ---> call function --- keyword argument --- function --- ** collects ---> a dictionary 
-
+```
 ### Inside a function header
 ```
 *    ---> collects all the positional arguments in a tuple
