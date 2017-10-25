@@ -54,7 +54,8 @@ a dictionary --- ** unpack  ---> call function --- keyword argument --- function
 ## Pack attributes to a dictionary
 The syntax of vars() is:
 ```
-vars(object)                                 ---> object can be module, class, instance or any object having __dict__ attribute
+vars(object)                                 ---> object can be module, class, 
+                                                  instance or any object having __dict__ attribute
 ```
 Return the \__dict__ attribute of the given object
 ```
@@ -84,7 +85,8 @@ Out[37]:
 -=                                                 ---> subtracts a value from variable, setting the variable to the result
 *=                                                 ---> multiplies the variable and a value, making the outcome the variable
 /=                                                 ---> divides the variable by the value, making the outcome the variable
-%=                                                 ---> performs modulus on the variable, with the variable then being set to the result
+%=                                                 ---> performs modulus on the variable,
+                                                        with the variable then being set to the result
 ```
 
 ## Colon':'
