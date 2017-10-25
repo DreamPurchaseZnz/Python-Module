@@ -1,4 +1,4 @@
-# module: OS
+# module: os
 >The Python Standard Library: File and Directory Access and Generic Operating System Services
 
 
