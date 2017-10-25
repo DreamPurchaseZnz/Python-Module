@@ -128,3 +128,29 @@ Python is kind to the programmer if there are fewer items than you ask for. For 
 /   -Root directory
 ./  -current working directory 
 ../ -parent directory, respectively
+```
+## Unnamed function
+```
+c = np.arange(10)
+c
+Out[19]: 
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
+```
+c[8:10]
+Out[21]: 
+array([8, 9])
+```
+When the index out of the range, python can also return the value in the range
+```
+c[8:11]
+Out[22]: 
+array([8, 9])
+
+```
+
+
+
+
+
+
