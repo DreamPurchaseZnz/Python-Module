@@ -129,7 +129,7 @@ Python is kind to the programmer if there are fewer items than you ask for. For 
 ./  -current working directory 
 ../ -parent directory, respectively
 ```
-## Unnamed function
+## Unnamed characteristic
 ```
 c = np.arange(10)
 c
