@@ -63,8 +63,7 @@ os.sysconf                                        --->  Return integer-valued sy
 os.urandom
 ```
 
-# Module: OS.path
----------------------------------------------------------------------------------------------------------
+## Class: OS.path
 the most frequently method used in os.path module
 ```
 os.path.dirname(path)                                 --->  Return the directory name
@@ -81,8 +80,9 @@ os.path.split(path)                                   --->  Split the pathname p
 os.path.splitdrive(path)                              --->  Split the pathname path into a pair (drive, tail) 
 os.path.splitext(path)                                
 ```
-# Module : shutil — High-level file operations
----------------------------------------------------------------------------------------------------------
+# Module : shutil 
+—High-level file operations
+
 functions provided in shutil support file copying and removal as following:
 ```
 shutil.copyfile         
@@ -97,4 +97,7 @@ shutil.get_archive_formats
 shutil.register_archive_format
 shutil.unregister_archive_format
 ```
+
+# Module : sys 
+—System-specific parameters and functions
 
