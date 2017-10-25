@@ -24,6 +24,7 @@ stride
 ``` 
 Assign the exact position a value, we can do like this:
 ```
+c = np.zeros((4,3))
 c[[0,1,2,3],[2,1,1,0]] = [1,1,1,1]
 c
 Out[10]: 
