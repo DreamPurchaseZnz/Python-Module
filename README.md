@@ -46,3 +46,10 @@ f = [e for e in range(10) for _ in range(10)]),[sample_size,1]
 (1, 2, 3, 4)
 {'a': 10, 'b': 20}
 ```
+## +=,/=
+```
+-=                                                 ---> subtracts a value from variable, setting the variable to the result
+*=                                                 ---> multiplies the variable and a value, making the outcome the variable
+/=                                                 ---> divides the variable by the value, making the outcome the variable
+%=                                                 ---> performs modulus on the variable, with the variable then being set to the result
+```
