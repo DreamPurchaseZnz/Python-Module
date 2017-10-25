@@ -75,7 +75,12 @@ hash()
 memoryview()	
 set()
 ```
-### open- write string to txt file
+### exit()
+Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, 
+
+and when called, raise SystemExit with the specified exit code.
+
+## open- write string to txt file
 open() returns a file object, and is most commonly used with two arguments: open(filename, mode)
 
 Methods
