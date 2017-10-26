@@ -69,6 +69,21 @@ core.records.fromfile
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Array manipulation routines
 ----------------------------------------------------------------------------------------------
 ### Basic operations
@@ -89,6 +104,13 @@ rollaxis
 swapaxes                                       ---> Interchange two axes of an array. 
 ndarray.T                                      ---> Transpose  
 transpose                                      ---> Permute the dimensions of an array. 
+```
+```
+>>> x = np.array([[1,2,3]])
+>>> np.swapaxes(x,0,1)
+array([[1],
+       [2],
+       [3]])
 ```
 
 ### Changing number of dimension
