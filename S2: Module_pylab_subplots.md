@@ -94,7 +94,8 @@ FigureClass=<class 'matplotlib.figure.Figure'>,
 ```
 return
 ```
-figure                          ---> The Figure instance returned will also be passed to new_figure_manager in the backends
+figure                          ---> The Figure instance returned will
+                                     also be passed to new_figure_manager in the backends
 ```
 
 
