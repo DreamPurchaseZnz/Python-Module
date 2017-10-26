@@ -1,7 +1,18 @@
 # Axes class
 the axes contains the most of the figure elements:Axis, Tick, Line2D, Text, Polygon, etc and sets the coordinate system
 ```
-class matplotlib.axes.Axes(fig, rect, facecolor=None, frameon=True, sharex=None, sharey=None, label='', xscale=None, yscale=None, axisbg=None, **kwargs)
+class matplotlib.axes.Axes(
+fig, 
+rect, 
+facecolor=None,
+frameon=True, 
+sharex=None, 
+sharey=None, 
+label='', 
+xscale=None, 
+yscale=None, 
+axisbg=None, 
+**kwargs)
 ```
 
 ----------------------------------------------------------------------------------------------------------------------------
