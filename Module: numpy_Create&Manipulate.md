@@ -97,6 +97,25 @@ ravel                                          ---> Flatten array according to o
 ndarray.flat                                   ---> Flatten array according to order C
 ndarray.flatten                                ---> Flatten array according to order C/F                     
 ```
+x.reshape((-1)): this operation means flat the data, in other word, the input become an array
+```
+import numpy as np
+labels = np.ones((3,1))
+labels.reshape((-1))
+Out[13]: 
+array([ 1.,  1.,  1.])
+labels.reshape((-1)).shape
+Out[14]: 
+(3,)
+labels = np.ones((3,2))
+labels.reshape((-1)).shape
+Out[16]: 
+(6,)
+
+
+```
+
+
 ### Transpose-like operations
 ```
 moveaxis                                       ---> Permute
@@ -153,6 +172,9 @@ array([[0, 1, 0, 0, 0, 0, 0, 0],
 
 
 ```
+
+
+
 ### Changing kind of array
 ```
 asarray                                        ---> Convert the input to an array. 
