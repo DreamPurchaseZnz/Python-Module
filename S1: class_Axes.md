@@ -15,10 +15,8 @@ axisbg=None,
 **kwargs)
 ```
 
-----------------------------------------------------------------------------------------------------------------------------
-                                                   BASIC PLOT
-----------------------------------------------------------------------------------------------------------------------------
 
+## BASIC PLOT
 ### Plotting
 ```
 Axes.plot                                                           ---> plot lines and/or markers 
@@ -79,6 +77,20 @@ Axes.pcolorfast
 Axes.pcolormesh
 Axes.spy
 ```
+```
+Axes.imshow(
+X,                             ---> array_like, shape(n, m) or (n, m, 3) or (n, m, 4)              
+cmap=None,                     ---> colormap
+norm=None, 
+aspect=None, 
+interpolation=None, 
+alpha=None, 
+vmin=None, vmax=None, origin=None, extent=None, shape=None,
+filternorm=1, filterrad=4.0, imlim=None, resample=None,
+url=None, *, data=None, **kwargs)
+
+```
+
 ### Unstructured Triangles
 ```
 
@@ -114,15 +126,14 @@ Axes.quiverkey
 Axes.streamplot
 ```
 
------------------------------------------------------------------------------------------------------------------------------
-                                                  SET DETAILS
------------------------------------------------------------------------------------------------------------------------------
-## Clearing
+
+## SET DETAILS
+### Clearing
 ```
 Axes.cla                                                       ---> clear the current axes.
 Axes.clear	                                                   ---> clear the axes
 ```
-## Appearance
+### Appearance
 ```
 
 Axes.axis
@@ -140,7 +151,12 @@ Axes.set_facecolor
 Axes.set_fc	
 Axes.set_axis_bgcolor	
 ```
-## Axis / limits
+```
+Axes.set_axis_off()                ---> turn off the axis
+
+```
+
+### Axis / limits
 ```
 Axes.get_yaxis
 Axes.get_xaxis
@@ -176,6 +192,15 @@ Axes.legend                                                   ---> Places a lege
 Axes.get_legend
 Axes.get_legend_handles_labels
 ```
+Set a title for the axes
+```
+Axes.set_title(
+label,                            ---> str Text to use for title
+fontdict=None,                    ---> A dictionary controlling the appearance of the title text
+loc='center',                     ---> {'center', 'left','right'}
+**kwargs)
+```
+
 ### Axis scales
 ```
 Axes.set_xscale                                               ---> Set the x-axis scale e.g log etc
@@ -198,8 +223,10 @@ Axes.get_autoscalex_on
 Axes.set_autoscalex_on
 Axes.get_autoscaley_on
 Axes.set_autoscaley_on
-
 ```
+
+
+
 ### Ticks and tick labels
 ```
 
