@@ -94,7 +94,16 @@ Axes.annotate                                                    ---> annotate t
 Axes.text                       
 Axes.table	
 Axes.arrow	
-
+```
+Add text to the axes
+```
+matplotlib.pyplot.text(
+x, y,                   ---> scalars; data coordinates
+s,                      ---> string; text
+fontdict=None, 
+withdash=False, 
+**kwargs                ---> horizontalalignment; verticalalignment; etc 
+)
 ```
 ### Fields
 ```
