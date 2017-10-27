@@ -1,4 +1,6 @@
 
+# Packages
+
 Packages are a way of structuring Python’s module namespace by using “dotted module names”.
 ```
  __init__.py files
