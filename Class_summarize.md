@@ -16,10 +16,10 @@ Most namespaces are currently implemented as Python dictionaries
 Examples of namespaces are:
 ```
 Different NameSpaces                                           Different lifetime
-the set of built-in names                                      ---> When Python interpreter starts up,Never delete
-the global names in a module                                   ---> when the module definition is read in,Until the python quits
-the local names in a function invocation                       ---> when the function is called
-                                                                    Deleted when the function returns or raises an exception
+the set of built-in names                          ---> When Python interpreter starts up,Never delete
+the global names in a module                       ---> when the module definition is read in,Until the python quits
+the local names in a function invocation           ---> when the function is called
+                                                        Deleted when the function returns or raises an exception
 ```
 The important thing to know about namespaces is that there is absolutely no relation between names in different namespaces
 
@@ -36,8 +36,8 @@ A scope is a textual region of a Python program where a namespace is directly ac
 At any time during execution, there are at least three nested scopes whose namespaces are directly accessible:
 ```
 the innermost scope                         ---> which is searched first, contains the local names
-the scopes of any enclosing functions       ---> which are searched starting with the nearest enclosing scope, contains non-local, but 
-                                                 also non-global names
+the scopes of any enclosing functions       ---> which are searched starting with the nearest enclosing scope,
+                                                 contains non-local, but also non-global names
 the next-to-last scope                      ---> the current module’s global names
 the outermost scope                         ---> (searched last) is the namespace containing built-in names
 ```
@@ -79,19 +79,19 @@ Class objects support two kinds of operations:**attribute references** and **ins
 
 1. Attribute references use the standard syntax used for all attribute references in Python:
 ```
-obj.name                                               ---> Standard syntax
+obj.name             ---> Standard syntax
 ```
 Valid attribute names are **all the names** that were in the class’s namespace when the class object was created,<br>
 Class attributes can also be assigned to
 ```
-. __doc__ is also a valid attribute                    ---> docstring belonging to the class
+. __doc__ is also a valid attribute            ---> docstring belonging to the class
 
 ```
 2. Class instantiation can be seen as parameterless function that returns a new instance of the class
 
 create objects with instances customized to a specific initial state
 ```
-__init__()                                             ---> initialized instance; have arguments for greater flexibility
+__init__()          ---> initialized instance; have arguments for greater flexibility
 
 ```
 for a subclass, if the \__init\__ is not difined , this method will be pass to the subclass as the initial state.
