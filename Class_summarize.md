@@ -94,6 +94,32 @@ create objects with instances customized to a specific initial state
 __init__()                                             ---> initialized instance; have arguments for greater flexibility
 
 ```
+for a subclass, if the \__init\__ is not difined , this method will be pass to the subclass as the initial state.
+if  \__init\__ is find in the subclass, the baseclass method will be abandoned, there is a method can resolve the 
+problem: super() method
+```
+class A:
+    def __init__(self,a=1):
+        self.a = a
+        
+class B(A):
+    print('b')
+
+c = B(2)
+>>c.a
+>>2
+```
+```
+class C(A):
+    def __init__(self, c=1):
+        self.c = c
+        
+d = C()
+>>d.c 
+>>1
+>>d.a
+>>AttributeError: 'C' object has no attribute 'a'
+```
 
 ### Instance Objects
 
