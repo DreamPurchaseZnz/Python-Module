@@ -125,12 +125,27 @@ Python is kind to the programmer if there are fewer items than you ask for. For 
 >>> seq[low:high:stride]  # [seq[low], seq[low+stride], ..., seq[high-1]]                                   
 ```
 
-## '/','./','../'
+## what's the meaning of '/','./' and '../'
 ```
 /   -Root directory
 ./  -current working directory 
 ../ -parent directory, respectively
 ```
+
+## what the difference of '/' , '\' and '\\'
+unix and its variants have always used the forward slash(/) to donate filesystem hierachy
+
+however windows owes its filesystem delimiter, the backslash(\) to its MS-Dos prodecessor And MS-DOS wasnt the originator of that. It was brought over from the QDOS operating system (which borrowed from CP/M), which MS bought and reworked into MS-DOS.
+
+Since most, if not all , of web based protocols orginated on UNIX, Miscrosoft compiles with those delimiter to keep 
+compatibility.
+```
+junkfile = open('c:/tmp/junkpythonfile','w')               
+junkfile = open(r'c:\tmp\junkpythonfile','w')
+junkfile = open('c:\\tmp\\junkpythonfile','w')
+```
+
+
 ## Unnamed characteristic
 ```
 c = np.arange(10)
@@ -143,13 +158,14 @@ c[8:10]
 Out[21]: 
 array([8, 9])
 ```
-When the index out of the range, python can also return the value in the range
+When the index out of the range, python can also return the value in the range and won't raise a error
 ```
 c[8:11]
 Out[22]: 
 array([8, 9])
 
 ```
+
 
 
 
