@@ -167,10 +167,6 @@ array([8, 9])
 ```
 ## Maximum Recursion depth 
 If there is a circular structure, where your dicts refer to itself through a chain of something,
-the function intend to build a close subspace, to return value of a when call a,
-however it'll raise a recursion error, because when you call a, 
-will call the function a, the judgement of a in function will call the function again
-so there is a circular loop. Finally raise the 'Maximum Recursion depth' Exception error 
 ```
 class recursion:
    @property
@@ -179,7 +175,10 @@ class recursion:
           _a = 1
    return _a
 ```
-
+the function above intend to build a close subspace, to return value of a when call a,
+however it'll raise a recursion error, because when you call a, 
+will call the function a, the judgement of a in function will call the function again
+so there is a circular loop. Finally raise the 'Maximum Recursion depth' Exception error 
 ```
 >>> a = {}
 >>> b = {}
