@@ -51,7 +51,19 @@ $ python prog.py 1 2 3 4 --sum
 
 ArgumentParser
 ```
-ArgumentParser(prog=None, usage=None, description=None, epilog=None, parents=[], formatter_class=argparse.HelpFormatter, prefix_chars=’-‘, fromfile_prefix_chars=None, argument_default=None, conflict_handler=’error’, add_help=True, allow_abbrev=True)
+ArgumentParser(
+prog=None,                                            
+usage=None,                                             
+description=None, 
+epilog=None, 
+parents=[],
+formatter_class=argparse.HelpFormatter, 
+prefix_chars=’-‘,
+fromfile_prefix_chars=None, 
+argument_default=None, 
+conflict_handler=’error’, 
+add_help=True,
+allow_abbrev=True)
 ```
 ```
 prog                  ---> determine how to display the name of the program in help messages  
