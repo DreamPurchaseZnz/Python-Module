@@ -86,7 +86,17 @@ add_help              ---> whether -h or --help is supplied at the command line
 ##  2. Adding arguments
 add_argument
 ```
-ArgumentParser.add_argument(name or flags…[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])
+ArgumentParser.add_argument(name or flags…[, 
+action][, 
+nargs][, 
+const][, 
+default][, 
+type][, 
+choices][, 
+required][, 
+help][, 
+metavar][, 
+dest])
 ```
 ```
 name or flags                ---> Either a name or a list of option strings:
