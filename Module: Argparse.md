@@ -77,12 +77,104 @@ prefix_chars          ---> Most command-line options will use - as the prefix, e
                             Parsers that need to support different or additional prefix characters  +f or /foo
 fromfile_prefix_chars ---> when dealing with a particularly long argument lists, it may make sense to keep the list of arguments in a 
                            file rather than typing it out at the command line
-argument_default      ---> argument defaults are specified either by passing a defaul
+argument_default      ---> argument defaults are specified either by passing a default
 allow_abbrev          ---> it recognizes abbreviations of long options.
 conflict_handler      ---> it may be useful to simply override any older arguments with the same option string. To get this behavior, the 
                            value 'resolve' can be supplied to the conflict_handler= argument
 add_help              ---> whether -h or --help is supplied at the command line
 ```
+### parameter analysis
+```
+import argparse
+parser = argparse.ArgumentParser(
+    prog='DenseNet',
+    usage='%(prog)s Look at the help',
+    description='The program is used for building a DenseNet',
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    epilog='''\
+...         Please do not mess up this text!
+...         --------------------------------
+...             I have indented it
+...             exactly the way
+...             I want it''',
+    prefix_chars='--',
+    allow_abbrev=True,
+    conflict_handler='resolve',)
+parser.add_argument(
+    '--train', action='store_true',
+    help='Train the model')
+parser.add_argument(
+    '--growth_rate', '-k', type=int, choices=[12, 24, 40],
+    default=12,
+    help='Growth rate for every layer'
+         'choices were restricted to used in paper')
+parser.add_argument(
+    '--keep_prob','-kp', type=float, metavar='',
+    help='keep probability for dropout')
+
+
+args = parser.parse_args()
+print(args.train)
+```
+
+```
+C:\Users\CYD\Desktop\DenseNet>python args.py  --train 
+True
+
+C:\Users\CYD\Desktop\DenseNet>python args.py  --tr(-allow_abbre)
+True
+
+C:\Users\CYD\Desktop\DenseNet>python args.py  -h
+usage: DenseNet (-prog) Look at the help  (-usage)
+
+The program is used for building a DenseNet (-discription)
+
+optional arguments:
+  -h, --help            show this help message and exit (-add_help)
+  --train               Train the model
+  --growth_rate {12,24,40}, -k {12,24,40}
+                        Growth rate for every layerchoices were restricted to
+                        used in paper
+  --keep_prob , -kp     keep probability for dropout
+
+...         Please do not mess up this text!(-epilog)
+...         --------------------------------(-formatter_class)
+...             I have indented it
+...             exactly the way
+...             I want it
+
+
+```
+
+### fromfile_prefix_chars
+```
+with open('args.txt', 'w') as fp:
+...     fp.write('-f\nbar')
+parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+parser.add_argument('-f')
+Out[22]: 
+_StoreAction(option_strings=['-f'], dest='f', nargs=None, const=None, default=None, type=None, choices=None, help=None, metavar=None)
+parser.parse_args(['-f', 'foo', '@args.txt'])
+Out[23]: 
+Namespace(f='bar')
+```
+### conflict_handler
+it may be useful to simply override any older arguments with the same option string
+```
+>>> parser = argparse.ArgumentParser(prog='PROG', conflict_handler='resolve')
+>>> parser.add_argument('-f', '--foo', help='old foo help')
+>>> parser.add_argument('--foo', help='new foo help')
+>>> parser.print_help()
+usage: PROG [-h] [-f FOO] [--foo FOO]
+
+optional arguments:
+ -h, --help  show this help message and exit
+ -f FOO      old foo help
+ --foo FOO   new foo help
+```
+
+
+
 ##  2. Adding arguments
 add_argument
 ```
@@ -303,7 +395,23 @@ ArgumentParser.set_defaults(**kwargs)
 2. parser-level defaults always override argument-level defaults
 ```
 ```
+parser = argparse.ArgumentParser()
+parser.add_argument('foo', type=int)
+Out[25]: 
+_StoreAction(option_strings=[], dest='foo', nargs=None, const=None, default=None, type=<class 'int'>, choices=None, help=None, metavar=None)
+parser.set_defaults(bar=42, baz='badger')
+parser.parse_args(['736'])
+Out[27]: 
+Namespace(bar=42, baz='badger', foo=736)
+```
+```
 ArgumentParser.get_default(dest)
+```
+```
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('--foo', default='badger')
+>>> parser.get_default('foo')
+'badger'
 ```
 ###  Printing help
 will take care of formatting and printing any usage or error messages
