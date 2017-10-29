@@ -91,39 +91,26 @@ parser = argparse.ArgumentParser(
     usage='%(prog)s Look at the help',
     description='The program is used for building a DenseNet',
     formatter_class=argparse.RawDescriptionHelpFormatter,
-    epilog='''\
-...         Please do not mess up this text!
-...         --------------------------------
-...             I have indented it
-...             exactly the way
-...             I want it''',
     prefix_chars='--',
     allow_abbrev=True,
-    conflict_handler='resolve',)
+    conflict_handler='resolve',
+    epilog='''\
+          Please do not mess up this text!
+          --------------------------------
+          I have indented it
+          exactly the way
+          I want it''',)
+          
+# add argument    
 parser.add_argument(
     '--train', action='store_true',
     help='Train the model')
-parser.add_argument(
-    '--growth_rate', '-k', type=int, choices=[12, 24, 40],
-    default=12,
-    help='Growth rate for every layer'
-         'choices were restricted to used in paper')
-parser.add_argument(
-    '--keep_prob','-kp', type=float, metavar='',
-    help='keep probability for dropout')
-
 
 args = parser.parse_args()
 print(args.train)
 ```
 
 ```
-C:\Users\CYD\Desktop\DenseNet>python args.py  --train 
-True
-
-C:\Users\CYD\Desktop\DenseNet>python args.py  --tr(-allow_abbre)
-True
-
 C:\Users\CYD\Desktop\DenseNet>python args.py  -h
 usage: DenseNet (-prog) Look at the help  (-usage)
 
@@ -137,13 +124,14 @@ optional arguments:
                         used in paper
   --keep_prob , -kp     keep probability for dropout
 
-...         Please do not mess up this text!(-epilog)
-...         --------------------------------(-formatter_class)
-...             I have indented it
-...             exactly the way
-...             I want it
+         Please do not mess up this text!(-epilog)
+         --------------------------------(-formatter_class)
+             I have indented it
+             exactly the way
+             I want it
 
-
+C:\Users\CYD\Desktop\DenseNet>python args.py  --tr(-allow_abbre)
+True
 ```
 
 ### fromfile_prefix_chars
@@ -211,6 +199,60 @@ help                         --->  The help value is a string containing a brief
 metavar                      --->  generates help messages, it needs some way to refer to each expected argument
 dest                         --->  optional argument actions
 ```
+### name or flags
+[positional argument] like foo or [optional arguments] -f, --foo shrot or long 
+```
+parser = argparse.ArgumentParser(prog='PROG')
+>>> parser.add_argument('-f', '--foo')
+>>> parser.add_argument('bar')
+>>> parser.parse_args(['BAR'])
+Namespace(bar='BAR', foo=None)
+```
+### action
+```
+import argparse
+parser = argparse.ArgumentParser(
+    prog='DenseNet',)
+
+parser.add_argument('--a', action='store_const', const=25)
+parser.add_argument('--b', action='store_true')
+parser.add_argument('--c', action='append')
+parser.add_argument('--d', action='append_const', const=5)
+parser.add_argument('--f', action='append_const', const=4)
+parser.add_argument('--g', '-g', action='count')
+parser.parse_args(['--a', '--b'])
+parser.parse_args('--c 1 --c 2'.split())
+parser.parse_args('--d --f'.split())
+parser.parse_args(['-gggg'])
+```
+```
+parser.parse_args(['--a', '--b'])
+Out[4]: 
+Namespace(a=25, b=True, c=None, d=None, f=None, g=None)
+parser.parse_args('--c 1 --c 2'.split())
+Out[5]: 
+Namespace(a=None, b=False, c=['1', '2'], d=None, f=None, g=None)
+parser.parse_args('--d --f'.split())
+Out[6]: 
+Namespace(a=None, b=False, c=None, d=[5], f=[4], g=None)
+parser.parse_args(['-gggg'])
+Out[7]: 
+Namespace(a=None, b=False, c=None, d=None, f=None, g=4)
+```
+### nargs
+```
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('--foo', nargs='?', const='c', default='d')
+>>> parser.add_argument('bar', nargs='?', default='d')
+>>> parser.parse_args(['XX', '--foo', 'YY'])
+Namespace(bar='XX', foo='YY')
+>>> parser.parse_args(['XX', '--foo'])
+Namespace(bar='XX', foo='c')
+>>> parser.parse_args([])
+Namespace(bar='d', foo='d')
+```
+
+
 ### dest
 For optional argument actions, the value of dest is normally inferred from name or flags(option strings),taking the first long option string and stripping away the initial -- string
 ```
@@ -229,6 +271,20 @@ dest allows a custom attribute name to be provided:
 >>> parser.add_argument('--foo', dest='bar')
 >>> parser.parse_args('--foo XXX'.split())
 Namespace(bar='XXX')
+```
+
+### metavar
+```
+>>> parser = argparse.ArgumentParser(prog='PROG')
+>>> parser.add_argument('-x', nargs=2)
+>>> parser.add_argument('--foo', nargs=2, metavar=('bar', 'baz'))
+>>> parser.print_help()
+usage: PROG [-h] [-x X X] [--foo bar baz]
+
+optional arguments:
+ -h, --help     show this help message and exit
+ -x X X
+ --foo bar baz
 ```
 
 ## 3. The parse_args() method
