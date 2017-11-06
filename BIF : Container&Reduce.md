@@ -115,6 +115,38 @@ Out[20]:
 [123, 'xyz', 'zara', 'abc', 123, 2009, 'manni']
 
 ```
+when it comes to the numpy array, the append/extend method can't be used to append/extend
+it by attribute.
+```
+import numpy as np
+c['e'].append(np.array([1,2]))
+c['e']
+Out[16]: 
+[array([1, 2])]
+c['e'].append(np.array([1,2]))
+c['e']
+Out[18]: 
+[array([1, 2]), array([1, 2])]
+c['e'][1]
+Out[19]: 
+array([1, 2])
+c['e'][1].append([4,5])
+AttributeError: 'numpy.ndarray' object has no attribute 'append'
+```
+np.append method can be used for this situation
+```
+c['e'][1]=np.append(4, c['e'][1])
+c['e'][1]
+Out[23]: 
+array([4, 1, 2])
+c['e'][1]=np.append(c['e'][1],[4,5])
+c['e'][1]
+Out[25]: 
+array([4, 1, 2, 4, 5])
+
+
+```
+
 
 ## Reduce
 Apply function of two arguments cumulatively to the items of sequence
