@@ -26,6 +26,40 @@ meshgrid                                       ---> Return coordinate matrices f
 mgrid                                          
 ogrid                                          
 ```
+### linspace
+```
+numpy.linspace(
+start,                                        ---> scalar
+stop, 
+num=50,                          
+endpoint=True,                                ---> bool,If True, stop is the last sample
+retstep=False,                                ---> bool,If True, return(samples, step)
+dtype=None
+)
+```
+return
+```
+sampels
+step
+```
+### logspace
+```
+numpy.logspace(
+start,                                        ---> base**start
+stop,                                         ---> base**stop
+num=50, 
+endpoint=True, 
+base=10.0,                                    ---> the base of log space, The step size between the elements 
+                                                   in ln(samples)/ln(base) is uniform.
+dtype=None
+)
+```
+return
+```
+samples
+```
+
+
 ### Building matrices
 ```
 diag                                           ---> Extract a diagonal or construct a diagonal array.
