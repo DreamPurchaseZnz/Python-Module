@@ -27,9 +27,20 @@ pickle.HIGHEST_PROTOCOL
 ```
 ```
 pickle.dump                                      ---> Write a pickled representation of obj to the open file object file
-pickle.load                                      ---> Read a string from the open file object file and interpret it as a pickle data stream
+pickle.load                                      ---> Read a string from the open file object file 
+                                                      and interpret it as a pickle data stream
 pickle.dumps                                     ---> Representation of the object is a string, instead of writing it to a file
 pickle.loads                                     
+```
+```
+pickle.dump(
+obj, 
+file[, 
+protocol]
+)
+
+
+
 ```
 Exports two callables
 ```
