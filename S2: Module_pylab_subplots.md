@@ -102,7 +102,6 @@ figure                          ---> The Figure instance returned will
 # Set The Color Of A Matplotlib Plot
 ## show matplotlib colormaps
 ```
-Toggle line numbers
 from pylab import *
 from numpy import outer
 rc('text', usetex=False)
@@ -113,10 +112,11 @@ maps=[m for m in cm.datad if not m.endswith("_r")]
 maps.sort()
 l=len(maps)+1
 for i, m in enumerate(maps):
-     subplot(1,l,i+1)
-     axis("off")
-     imshow(a,aspect='auto',cmap=get_cmap(m),origin="lower")
-     title(m,rotation=90,fontsize=10)
+    
+    subplot(1,l,i+1)
+    axis("off")
+    imshow(a,aspect='auto',cmap=get_cmap(m),origin="lower")
+    title(m,rotation=90,fontsize=10)
 savefig("colormaps.png",dpi=100,facecolor='gray')
 ```
 [Full list of colormaps:](http://wiki.scipy.org/Cookbook/Matplotlib/Show_colormaps)
