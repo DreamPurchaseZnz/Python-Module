@@ -40,6 +40,13 @@ Axes.vlines                                                         ---> Plot ve
 Axes.hlines                                                         ---> plot horizontal lines
 Axes.fill                                                           ---> plot polygons
 ```
+```
+Axes.plot(*args, data=None, **kwargs)
+If x and/or y is 2-dimensional, 
+then the corresponding columns will be plotted.
+
+
+```
 ### Spans
 ```
 Axes.axhline                                                        ---> like hlines
