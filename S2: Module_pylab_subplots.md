@@ -4,28 +4,21 @@ This utility wrapper makes it convenient to create common layouts of subplots
 ```
 matplotlib.pyplot.subplots(
 nrows=1, 
-ncols=1,              --->  int, optional, default: 1
-sharex=False,         --->  bool or {‘none’, ‘all’, ‘row’, ‘col’}
+ncols=1,                                   --->  int, optional, default: 1
+sharex=False,                              --->  bool or {‘none’, ‘all’, ‘row’, ‘col’}
 sharey=False, 
 squeeze=True, 
 subplot_kw=None, 
-gridspec_kw=None,     --->  figure() call below
-**fig_kw)
+gridspec_kw=None,                          --->  figure() call below
 ```
-Return
-```
-fig
-ax
-```
+Return ---> fig, ax
 Creates just a figure and only one subplot
 ```
 fig,ax = plt.subplots()
-
 ```
 Creates two subplots and unpacks the output array immediately
 ```
 fig, (ax1,ax2) = plt.subplots(1,2, sharey=True)
-
 ```
 Creates four subplots and acesses them through the returned way
 ```
@@ -33,21 +26,15 @@ fig, axes = plt.subplots(2,2, sbuplot_kw=dict(polar=True))
 axe[0,0].plot(x,y)
 ```
 ## matplotlib.pyplot.subplot
+
 Return a subplot axes positioned by the given grid definition.
 Typical call signature:
 ```
-subplot(nrows,
-ncols,
-plot_number)
+subplot(nrows,ncols,plot_number)
 ```
 ## matplotlib.pyplot.subplot2grid
 ```
-subplot2grid(
-shape,
-loc,
-rowspan=1, 
-colspan=1, 
-**kwargs)
+subplot2grid(shape,loc,rowspan=1, colspan=1, **kwargs)
 ```
 Create a subplot in a grid. The grid is specified by shape, at location of loc, spanning rowspan, colspan cells in each direction. The index for loc is 0-based.
 
@@ -121,6 +108,7 @@ savefig("colormaps.png",dpi=100,facecolor='gray')
 ```
 [Full list of colormaps:](http://wiki.scipy.org/Cookbook/Matplotlib/Show_colormaps)
 
+## A good example
 ```
 %matplotlib inline
 import numpy as np
