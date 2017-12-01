@@ -29,8 +29,8 @@ os.write
 ```
 ## Files and Directories
 ```
-os.listdir                                          --->  Return a list containing the names of the entries in the directory 
-
+os.listdir                                          --->  Return a list containing the names of 
+                                                          the entries in the directory 
 os.mkdir                                            --->  Create a directory 
 os.makedirs
 os.chdir                                            --->  Change the working directory to the dirname
