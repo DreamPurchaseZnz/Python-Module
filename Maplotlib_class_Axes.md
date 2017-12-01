@@ -40,13 +40,41 @@ Axes.vlines                                                         ---> Plot ve
 Axes.hlines                                                         ---> plot horizontal lines
 Axes.fill                                                           ---> plot polygons
 ```
+#### Plot
 ```
-Axes.plot(*args, data=None, **kwargs)
+Axes.plot(
+*args,
+data=None, 
+**kwargs
+)
+```
 If x and/or y is 2-dimensional, 
 then the corresponding columns will be plotted.
 
+#### Scatter
+```
+Axes.scatter(
+x,y,                               ---> array_like, shape(n,) 
+s=None,                            ---> scalar or array_like, shape(n,),optional
+                                        size in points^2
+c=None,                            ---> color, sequence, or sequence of color, optional,default:'b'
+                                        c can be a sigle color format string or a sequence of color specificaiton of length N
+                                        or a sequence of N numbers to be mapped to colors using the cmap and norm. c can be a
+                                        2-D array in which the rows are RGB or RGBA
+marker=None,                       ---> 'Markerstyle'
+cmap=None,                         ---> 'Colormap'
+norm=None,                         ---> 'Normalize', can normalize data into the [0,1] interval; norm only used if c in an array of
+                                         floats
+vmin=None, vmax=None,              ---> vmin and vmax are used in conjunction with norm to normalize luminance data 
+alpha=None,                        ---> scalar,optional, 0(transparent) and 1 (opaque)
+linewidths=None,                   ---> scalar, or array_like
+verts=None,           
+edgecolors=None,                   ---> color or sequence of color, if 'face', the edge color will be the same as the face color. 
+**kwargs)
+
 
 ```
+
 ### Spans
 ```
 Axes.axhline                                                        ---> like hlines
