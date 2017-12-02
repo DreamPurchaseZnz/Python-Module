@@ -97,6 +97,64 @@ Axes.hexbin
 Axes.hist
 Axes.hist2d                                                        ---> 2D demensional data
 ```
+#### hist
+the return value is a tupe(n, bins, patches)
+```
+matplotlib.pyplot.hist(
+x,                                           ---> array(n,) or sequence of (n,) arrays
+bins=None,                                   ---> integer(bin number) or sequence(bin edges) or ‘auto’, optional
+range=None,                                  ---> the range of bins, lower or higher outliers are ignored
+density=None,                                ---> boolean, optional; the area under the histogram will sum to 1
+weights=None,                                ---> (n, ) array_like or None, optional
+cumulative=False,                            ---> boolean, optional;  computed where each bin gives the counts 
+                                                  in that bin plus all bins for smaller values 
+bottom=None,                                
+histtype='bar',                              ---> {‘bar’, ‘barstacked’, ‘step’, ‘stepfilled’}, optional
+align='mid',                                 ---> {‘left’, ‘mid’, ‘right’}, optional
+orientation='vertical',                      ---> {‘horizontal’, ‘vertical’}, optional
+rwidth=None, log=False,                      ---> scalar or None, optional; The relative width of the bars 
+                                                  as a fraction of the bin width
+color=None,                                  ---> color or array_like of colors or None, optional
+label=None,                                  ---> string or None, optional
+stacked=False,                               ---> boolean, optional;
+                                                  If True, multiple data are stacked on top of each other 
+                                                  If False multiple data are aranged side by side 
+                                                  if histtype is ‘bar’ or on top of each other if histtype is ‘step’
+normed=None,             
+hold=None, 
+data=None, 
+```
+return
+```
+n                                           ---> array or list of arrays
+bins                                        ---> array
+patches                                     ---> list or list of lists
+```
+A good example
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+mu, sigma = 100, 15
+x = mu + sigma * np.random.randn(10000)
+
+# the histogram of the data
+n, bins, patches = plt.hist(x, 50, normed=1, facecolor='g', alpha=0.75)
+
+
+plt.xlabel('Smarts')
+plt.ylabel('Probability')
+plt.title('Histogram of IQ')
+plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
+plt.axis([40, 160, 0, 0.03])
+plt.grid(True)
+plt.show()
+```
+
+
 ### Contours
 ```
 Axes.clabel 
