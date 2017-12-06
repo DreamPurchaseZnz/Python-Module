@@ -1,4 +1,29 @@
 # Python
+## python- how to get the list of detailed function of a particular module
+use the command
+```
+__dict__
+```
+**for example**
+```
+import math
+math.__dict__
+```
+```
+'__doc__': 'This module is always available.  It provides access to the\nmathematical functions defined by the C standard.',
+ '__loader__': _frozen_importlib.BuiltinImporter,
+ '__name__': 'math',
+ '__package__': '',
+ '__spec__': ModuleSpec(name='math', loader=<class '_frozen_importlib.BuiltinImporter'>, origin='built-in'),
+ 'acos': <function math.acos>,
+ 'acosh': <function math.acosh>,
+ 'asin': <function math.asin>,
+
+...
+
+```
+
+
 ## Python syntax- if & for
 That's more specifically a ternary operator expression than an if-then, here's the python syntax
 ```
