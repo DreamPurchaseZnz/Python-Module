@@ -87,7 +87,10 @@ figure                          ---> The Figure instance returned will
 
 
 # Set The Color Of A Matplotlib Plot
-## show matplotlib colormaps
+## [Colormapas in Matplotlib](https://matplotlib.org/tutorials/colors/colormaps.html)
+
+
+## Show matplotlib colormaps
 ```
 from pylab import *
 from numpy import outer
@@ -108,7 +111,7 @@ savefig("colormaps.png",dpi=100,facecolor='gray')
 ```
 [Full list of colormaps:](http://wiki.scipy.org/Cookbook/Matplotlib/Show_colormaps)
 
-## A good example
+## According to a single value to decide the colors
 ```
 %matplotlib inline
 import numpy as np
