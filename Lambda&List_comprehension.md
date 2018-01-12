@@ -93,7 +93,7 @@ If we want to use the reduce function, we have to import functools to be capable
 113
 >>> 
 ```
-# (List Comprehension)[https://www.python-course.eu/python3_list_comprehension.php]
+# [List Comprehension](https://www.python-course.eu/python3_list_comprehension.php)
 The father of python Guido van Rossum prefers list comprehensions to constructs using map, filter,reduce and lambda. 
 This chapter we will cover the essentials about list comprehensions.
 
