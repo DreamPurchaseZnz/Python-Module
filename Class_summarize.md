@@ -129,10 +129,42 @@ data attributes correspond to “instance variables”
 A method is a function that “belongs to” an object
 ```
 
-### Method Objects
+### Method Objects- class method and instance method
 
-the special thing about methods is that **the object** is passed as the **first argument** of the function,<br>
-the first argument of a method is called self. This is nothing more than a convention
+the special thing about methods is that the object is passed as the first argument of the function,<br>
+the first argument of a instance method is called *self*. This is nothing more than a convention. And
+class method called *cls*. 
+
+> The class method can be called on both an instance and the class itself. 
+
+> The instance method is only called on the instance of a class. we should emphasize that the instance of a class.
+```
+class method:
+    @classmethod
+    def tell(cls, message):
+        print(cls.__name__,':',message)
+    def show(self, information):
+        print('This is instance method:' + information)
+        
+method.tell('class method')
+method : class method
+method.show('class method')
+Traceback (most recent call last):
+  File "C:\Program Files\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-37-b94f5af70d6b>", line 1, in <module>
+    method.show('class method')
+TypeError: show() missing 1 required positional argument: 'information'
+
+mt = method()
+mt.show('instance method')
+This is instance method:instance method
+mt.tell('class method')
+method : class method
+
+
+
+```
 
 
 ### Class and Instance Variables
@@ -386,8 +418,41 @@ john.salary = 1000
 
 ```
 
+# How to override a class method in python
+## class method Vs instance method
+I guess the class method may provide some neccessary information for the user.
+a class method in python differs from an instance method in a couple importance ways:
+```
+1. It binds to a class rather than an instance. Thus, its first argument is a class, 
+   often called cls rather than the usual self.
 
+2. It can be called on both an instance of a class and the class itself.
+```
+```
+class Spam(object):
+    @classmethod
+    def parrot(cls, message):
+        print(cls.__name__, "says:", message)
 
+class Eggs(Spam):
+    @classmethod
+    def parrot(cls, message):
+        super(Eggs, cls).parrot(message)
+        
+Eggs.parrot("Hello, world!")
+Eggs says: Hello, world!
+
+s = Spam()                                        ---> instance the class, the class method also work
+s.parrot('Hello')
+Spam says: Hello
+
+```
+```
+class Eggs(Spam):
+    pass
+Eggs.parrot("Hello, world!")
+Eggs says: Hello, world!
+```
 
 
 
