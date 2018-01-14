@@ -124,7 +124,7 @@ os.sysconf                                        --->  Return integer-valued sy
 os.urandom
 ```
 
-## (Class: OS.path)[https://docs.python.org/3/library/os.path.html]
+## [Class: OS.path](https://docs.python.org/3/library/os.path.html)
 Common pathname manipulations
 ```
 os.path.dirname(path)                                 --->  Return the directory name
@@ -214,4 +214,24 @@ shutil.unregister_archive_format
 
 # Module : sys 
 —System-specific parameters and functions
+```
+sys.path
+sys.platform
+sys.stdin
+sys.stdout
+```
+```
+sys.path
+Out[91]: 
+['C:\\Program Files (x86)\\JetBrains\\PyCharm 2016.3.3\\helpers\\pydev',
+ 'C:\\Program Files (x86)\\JetBrains\\PyCharm 2016.3.3\\helpers\\pydev',
+ 'C:\\Program Files\\Anaconda3\\python35.zip']
+
+sys.platform
+Out[92]: 
+'win32'
+
+```
+
+
 
