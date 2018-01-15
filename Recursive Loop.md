@@ -74,7 +74,25 @@ def fibi(n):
     return a
 ```
 The recursive verison seems much slow as the number n grow up.
-We can think 
+We can cousider the recursive version as a calculation tree, and the subtrees f(n-1).. will be called many times. This means recursive version doesn't remember previouly values.
+
+so we can implement a 'memory' for our recursive version by using a dictionary to save the previously calculated values.
+```
+memo = {0:0, 1:1}
+def fibm(n):
+    if not n in memo:
+        memo[n] = fibm(n-1) + fibm(n-2)
+    return memo[n]
+```
+## advantage of recursion  
+* recursive functions make the code look clean and elegant
+* A complex task can be broken down into simpler sub-problem using recursion
+* sequence generation is easier with recursion that using some nested iteration
+
+## disadvantages of recursion
+* Sometimes the logic behind recursion is hard to follow through.
+* Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
+* Recursive functions are hard to debug.
 
 
 
