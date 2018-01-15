@@ -95,6 +95,38 @@ def fibm(n):
 * Recursive functions are hard to debug.
 
 
+## Recursion in with a list
+adding all numbers in a list.  Without recursion, this could be:
+```
+def sum(list):
+    sum = 0
+ 
+    # Add every number in the list.
+    for i in range(0, len(list)):
+        sum = sum + list[i]
+ 
+    # Return the sum.
+    return sum
+ 
+print(sum([5,7,3,8,10]))
+```
+
+the function adds every element to the variable sum and returns.  To do this recursively
+```
+def sum(list):
+   if len(list) == 1:
+        return list[0]
+   else:
+        return list[0] + sum(list[1:])
+ 
+print(sum([5,7,3,8,10]))
+
+```
+
+
+
+
+
 
 
 
