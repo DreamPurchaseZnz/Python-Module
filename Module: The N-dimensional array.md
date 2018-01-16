@@ -1,7 +1,7 @@
 [The N-dimensional array](https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.ndarray.html)
 ---------------------------------------------------------------------------------------------
 ## Array attributes
-(Attributes)[https://docs.scipy.org/doc/numpy/reference/generated/numpy.chararray.html]
+[Attributes](https://docs.scipy.org/doc/numpy/reference/generated/numpy.chararray.html)
 ```
 ndarray.T
 ```
