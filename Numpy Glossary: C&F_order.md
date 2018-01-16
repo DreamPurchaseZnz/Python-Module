@@ -18,8 +18,6 @@ array([[ 0,  1,  2,  3],
 >>> x.sum(axis=1)
 array([ 6, 22, 38])
 ```
-## array_like
-
 ## attribute
 a property of an object that can be accessed using obj.attribute
 
