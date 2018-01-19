@@ -95,23 +95,13 @@ def use_function(a, b=1, sentence="Hi, there"):
     return a + b
 ```
 ```
-use_function.__doc__
-Out[125]: 
-'Just for explanation'
-use_function.__name__
-Out[126]: 
-'use_function'
-use_function.__defaults__
-Out[127]: 
-(1, 'Hi, there')
+use_function.__doc__         # 'Just for explanation'
+use_function.__name__        # 'use_function'
+use_function.__defaults__    # (1, 'Hi, there')
 use_function.__kwdefaults__
-use_function.__qualname__
-Out[129]: 
-'use_function'
-use_function.__module__
-Out[130]: 
-'__main__'
-use_function.__globals__ # all the variable in the namescope
+use_function.__qualname__    # 'use_function'
+use_function.__module__      # '__main__'
+use_function.__globals__     # all the variable in the namescope
 ```
 
 ### instance method
