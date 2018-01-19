@@ -2,7 +2,7 @@
 ## Objects, values and types
 **Objects**: are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann’s model of a “stored program computer,” code is also represented by objects.)
 
-**type and value**: Every object has an identity. An object’s identity never changes once it has been created; you may think of it as the object’s address in memory. 
+**Type and Value**: Every object has an identity. An object’s identity never changes once it has been created; you may think of it as the object’s address in memory. 
 > is operator: compares the identity of two objects; 
 > id() function: returns an integer representing its identity.
 > type() function: returns an object’s type (which is an object itself). Like its identity, an object’s type is also unchangeable
@@ -15,7 +15,7 @@ id(b)  # 78441968
 ```
 **CPython implementation detail**: For CPython, id(x) is the memory address where x is stored.
 
-**garbage-collected**:Objects are never explicitly destroyed; however, when they become unreachable they may be garbage-collected. An implementation is allowed to postpone garbage collection or omit it altogether — it is a matter of implementation quality how garbage collection is implemented, as long as no objects are collected that are still reachable.
+**Garbage-collected**:Objects are never explicitly destroyed; however, when they become unreachable they may be garbage-collected. An implementation is allowed to postpone garbage collection or omit it altogether — it is a matter of implementation quality how garbage collection is implemented, as long as no objects are collected that are still reachable.
 ```
 close(): provide an explicit way to release the external resource
 Programs are strongly recommended to explicitly close such objects
