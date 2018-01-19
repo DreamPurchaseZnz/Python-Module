@@ -1,9 +1,9 @@
 ## Variables inside and outside of a class \__init\__() function
 
 
-> Elements outside the __init__ method are static elements, it means, they belong to the class.
+> Elements outside the \__init\__ method are static elements, it means, they belong to the class.
 
-> Elements inside the __init__ method are elements of the object (self), they don't belong to the class.
+> Elements inside the \__init\__ method are elements of the object (self), they don't belong to the class.
 
 ```
 class MyClass:
