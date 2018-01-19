@@ -1,4 +1,4 @@
-# Magic Method --Special method names
+# Magic Method -Special method names
 ## Necessary
 **For Python** A class can implement certain operations that are invoked by special syntax (such as arithmetic operations or subscripting and slicing) by defining methods with special names. This is Python’s approach to operator *overloading*
 
