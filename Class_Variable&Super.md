@@ -137,7 +137,7 @@ that's it
 
 the order to resolve \__init\__ is calculated (before Python 2.3) using a "depth-first left-to-right traversal" :
 
-a simple depth-first left-to-right scheme(http://python-history.blogspot.com/2010/06/method-resolution-order.html)
+a simple [depth-first left-to-right scheme](http://python-history.blogspot.com/2010/06/method-resolution-order.html)
 ```
 class A:
   def save(self): pass
