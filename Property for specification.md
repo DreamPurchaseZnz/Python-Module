@@ -1,4 +1,4 @@
-# property
+# Property
 class property(fget=None, fset=None, fdel=None, doc=None)
 ```
 fget                 ---> a function for getting an attribute value
