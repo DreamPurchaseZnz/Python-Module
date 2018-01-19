@@ -134,25 +134,30 @@ second
 first
 that's it
 ```
+Diamond Problem
 
-the order to resolve \__init\__ is calculated (before Python 2.3) using a "depth-first left-to-right traversal" :
-
-a simple [depth-first left-to-right scheme](http://python-history.blogspot.com/2010/06/method-resolution-order.html)
+According to this article about Method Resolution Order by Guido van Rossum, the order to resolve __init__ is calculated (before Python 2.3) using a "depth-first left-to-right traversal" :
 ```
-class A:
-  def save(self): pass
-
-class B(A): pass
-
-class C(A):
-  def save(self): pass
-
-class D(B, C): pass
-
+Third --> First --> object --> Second --> object
 ```
-Here, class D inherits from B and C, both of which inherit from class A.
+After removing all duplicates, except for the last one, we get :
+```
+Third --> First --> Second --> object
+```
+So, lets follow what happens when we instantiate an instance of the Third class, e.g. x = Third().
+```
+1. According to MRO __init__ of Third is called first.
+2. Next, according to the MRO, inside the __init__ method super(Third,
+self).__init__() resolves to the __init__ method of First, which gets called.
+3. Inside __init__ of First super(First, self).__init__() calls the __init__ of Second, because that is what the MRO dictates!
+4. Inside __init__ of Second super(Second, self).__init__() calls the __init__ of object, which amounts to nothing. After that "second" is printed.
+5. After super(First, self).__init__() completed, "first" is printed.
+6. After super(Third, self).__init__() completed, "that's it" is printed.
+```
+Thus: 
+The MRO algorithm has been improved from Python 2.3 onwards to work well in complex cases, 
+but I guess that using the **"depth-first left-to-right traversal" + "removing duplicates expect for the last"** still works in most cases (please comment if this is not the case). Be sure to read the blog post by Guido!
 
-Using the classic MRO, methods would be found by searching the classes in the order D, B, A, C, A
+From [depth-first left-to-right scheme](https://stackoverflow.com/questions/3277367/how-does-pythons-super-work-with-multiple-inheritance)
 
-However, this is unlikely what you want in this case! Since both B and C inherit from A, one can argue that the redefined method C.save() is actually the method that you want to call,**since it can be viewed as being "more specialized" than the method in A**
 
