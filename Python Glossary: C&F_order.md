@@ -63,6 +63,10 @@ def decorator_funciton(original_function):
         return original_function(*args, **kwargs)
     return wrapper_function
 ```
+**Mechanism**: The decorator_function only take the function as the argument, then return a wrapperfunction. Therefore, you just put 
+the latter argument pass to the original function. It doesn't pass through the decorator function, instead, the wrapper function take 
+all the parameters and pass to the original function.
+
 then we define a function we can decorate it using *decorator_funciton*
 ```
 @decorator_funciton
