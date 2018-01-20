@@ -123,7 +123,7 @@ Perform a string [formatting operation](https://docs.python.org/3.5/library/func
 The string on which this method is called can contain literal text or replacement fields delimited by braces {}.
 Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument.
 Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
-(Using % and str.format for great good!)[https://pyformat.info/#named_placeholders]
+[Using % and str.format for great good!](https://pyformat.info/#named_placeholders)
 
 The general form of a standard format specifier is
 ```
