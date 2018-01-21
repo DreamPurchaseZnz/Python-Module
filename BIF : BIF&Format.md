@@ -83,6 +83,34 @@ hash()
 memoryview()	
 set()
 ```
+```
+n=int(input("Enter the lenght of the rectangle: "))
+m=int(input("Enter the width: "))
+c="c"
+def print_rect(n, m, c):
+    for a in range(m):
+        print (n*c)
+print_rect(n, m, c)
+input("Press enter to close")
+Enter the lenght of the rectangle: >? 12
+Enter the width: >? 15
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+cccccccccccc
+Press enter to close
+```
 
 ## open- write string to txt file
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
