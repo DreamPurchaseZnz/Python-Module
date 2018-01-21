@@ -213,12 +213,12 @@ shutil.unregister_archive_format
 ```
 
 # Module : sys 
-—System-specific parameters and functions
+This module provides access to some variables used or maintained by the interpreter and
+to functions that interact strongly with the interpreter. It is always available.
+
 ```
 sys.path
 sys.platform
-sys.stdin
-sys.stdout
 ```
 ```
 sys.path
@@ -230,8 +230,27 @@ Out[91]:
 sys.platform
 Out[92]: 
 'win32'
+```
+```
+sys.stdin
+sys.stdout
+sys.stderr
+```
+```
+class StatusPrinter(object):
+    def __init__(self, file=sys.stderr):
+        self.file = file
+        self.last_printed_len = 0
+    
+    def print_status(self, s):
+        self.file.write('\r'+s+' '*max(self.last_printed_len-len(s), 0))
+        self.file.flush()
+        self.last_printed_len = len(s)
 
 ```
-
+```
+sp = StatusPrinter(file)
+    sp.print_status(prefix + format_meter(0, total, 0))
+```
 
 
