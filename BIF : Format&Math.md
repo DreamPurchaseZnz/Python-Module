@@ -95,22 +95,12 @@ input("Press enter to close")
 Enter the lenght of the rectangle: >? 12
 Enter the width: >? 15
 cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
-cccccccccccc
+...
 Press enter to close
 ```
+# Math
+[Mathematical functions](https://docs.python.org/3/library/math.html)
+
 
 ## open- write string to txt file
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
