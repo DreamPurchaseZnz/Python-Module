@@ -1,7 +1,7 @@
-Build-in-Functions(67)
---------------------------------------------------------------------------------------------------------		
+# [Build-in-Functions(67)](https://docs.python.org/3/library/functions.html)
+	
+## commenly used
 ```
-# commenly used
 abs                                                  ---> the absolute value
 max                                                  ---> Return the largest item in an iterable
 round                                                ---> Return the nearest integer to its input
@@ -18,9 +18,7 @@ zip                                                  ---> Return an iterator tha
 isinstance                                           ---> Judge if the argument object is an instance of classinfo argument
 type                                                 ---> The type of object
 str
-
-## other method
-dict()	
+dict()
 help()	
 setattr()
 all()	
@@ -32,28 +30,32 @@ any()
 divmod()	
 id()	
 object()	
-sorted()
-ascii()	
 enumerate()	
+int()	
+bool()	
+filter()	
+super()
+float()	
+tuple()
+map()	
+sorted()
+sum() 
+```
+## other method
+```
+ascii()	
 input()	
 oct()	
 staticmethod()
 bin()	
 eval()	
-int()	
-bool()	
 exec()	
 ord()	
-sum() 
 bytearray()	
-filter()	
 issubclass()	
 pow()	
-super()
 bytes()	
-float()	
 iter()		
-tuple()
 callable()	
 property()	
 chr()	
@@ -65,7 +67,6 @@ locals()
 repr()	
 compile()	  
 globals()	
-map()	
 reversed()	
 __import__()
 complex()	
@@ -81,8 +82,28 @@ Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EO
 and when called, raise SystemExit with the specified exit code.
 
 ## open- write string to txt file
-open() returns a file object, and is most commonly used with two arguments: open(filename, mode)
-
+Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
+```
+open(
+file,            --> a path-like object giving the pathname
+mode='r',        --> is an optional string that specifies the mode in which the file is opened.
+buffering=-1,    --> is an optional integer used to set the buffering policy.
+encoding=None, 
+errors=None, 
+newline=None,
+closefd=True, 
+opener=None)
+```
+```
+'r' open for reading (default)
+'w' open for writing, truncating the file first
+'x' open for exclusive creation, failing if the file already exists
+'a' open for writing, appending to the end of the file if it exists
+'b' binary mode
+'t' text mode (default)
+'+' open a disk file for updating (reading and writing)
+'U' universal newlines mode (deprecated)
+```
 Methods
 ```
 f.read
