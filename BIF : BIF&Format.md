@@ -41,6 +41,13 @@ map()
 sorted()
 sum() 
 ```
+divmod: Take two (non complex) numbers as arguments and return a pair of numbers consisting of their quotient and remainder when using integer division
+```
+divmod(a, b)   # the result is the same as (a // b, a % b)
+```
+exit: Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, 
+
+and when called, raise SystemExit with the specified exit code.
 ## other method
 ```
 ascii()	
@@ -76,10 +83,6 @@ hash()
 memoryview()	
 set()
 ```
-### exit()
-Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, 
-
-and when called, raise SystemExit with the specified exit code.
 
 ## open- write string to txt file
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
