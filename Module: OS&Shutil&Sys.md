@@ -143,66 +143,41 @@ os.path.isdir
 os.path.islink
 ```
 ```
-os.path.normpath('./z/n/z/./d')
-Out[37]: 
-'z\\n\\z\\d'
-os.path.normpath('./z/n/z/.//d')
-Out[38]: 
-'z\\n\\z\\d'
+os.path.normpath('./z/n/z/./d')   # 'z\\n\\z\\d'
+os.path.normpath('./z/n/z/.//d')  # 'z\\n\\z\\d'
 
-os.path.join('./z/n', '/z')                  ---> start with a slash, python consider the following part 
-                                                  as an absolute path(for Unix like). every thing before them is discarded
-Out[40]: 
-'/z'
-os.path.join('./z/n', '//z')                 ---> Windows like \\[server name]\
-Out[43]: 
-'//z'
-os.path.join('./z/n', 'c:')                  ---> drive 
-Out[44]: 
-'c:'
-os.path.join('./z/n', 'c:','foo')
-Out[45]: 
-'c:foo'
-
+os.path.join('./z/n', '/z')       # '/z'          ---> start with a slash, python consider the following part 
+                                                       as an absolute path(for Unix like).
+                                                       every thing before them is discarded
+os.path.join('./z/n', '//z')      # '//z'         ---> Windows like \\[server name]\
+os.path.join('./z/n', 'c:')       # 'c:'          ---> drive 
+os.path.join('./z/n', 'c:','foo') # 'c:foo'
 ```
 ```
-os.path.join("c:\\music\\ap\\", "mahadeva.mp3")
-Out[46]: 
-'c:\\music\\ap\\mahadeva.mp3'
-os.path.join("c:\\music\\ap", "mahadeva.mp3")
-Out[47]: 
-'c:\\music\\ap\\mahadeva.mp3'
-os.path.expanduser("~")  
-Out[48]: 
-'C:\\Users\\CYD'
-os.path.join(os.path.expanduser("~"), "Python")
-Out[49]: 
-'C:\\Users\\CYD\\Python'
+os.path.join("c:\\music\\ap\\", "mahadeva.mp3")  # 'c:\\music\\ap\\mahadeva.mp3'
+os.path.join("c:\\music\\ap", "mahadeva.mp3")    # 'c:\\music\\ap\\mahadeva.mp3'
+os.path.expanduser("~")                          # 'C:\\Users\\CYD'
+os.path.join(os.path.expanduser("~"), "Python")  # 'C:\\Users\\CYD\\Python'
 ```
 ```
-os.path.split("c:\\music\\ap\\mahadeva.mp3") 
-Out[50]: 
-('c:\\music\\ap', 'mahadeva.mp3')
+os.path.split("c:\\music\\ap\\mahadeva.mp3")     # ('c:\\music\\ap', 'mahadeva.mp3')
 (filepath, filename) = os.path.split("c:\\music\\ap\\mahadeva.mp3") 
 (shortname, extension) = os.path.splitext(filename) 
-shortname
-Out[53]: 
-'mahadeva'
-extension
-Out[54]: 
-'.mp3'
-
-
+shortname  # 'mahadeva'
+extension  # '.mp3'
 ```
-# Module : shutil 
-—High-level file operations
+# Module : [shutil](https://docs.python.org/2/library/shutil.html)
+The shutil module offers a number of high-level operations on files and collections of files.
+In particular, functions are provided which support file copying and removal.
+For operations on individual files, see also the os module.
 
 functions provided in shutil support file copying and removal as following:
 ```
 shutil.copyfile         
 shutil.copytree                                      --->  Recursively copy an entire directory tree rooted at src
 shutil.rmtree                                        --->  Delete an entire directory tree; path must point to a directory
-shutil.move                                          
+shutil.move
+shutil.copy(src, dst)
 ```
 Archiving operations to create and read compressed and archived files relying on zipfile and tarfile modules
 ```
@@ -211,6 +186,18 @@ shutil.get_archive_formats
 shutil.register_archive_format
 shutil.unregister_archive_format
 ```
+*shutil.copy* Copy the file src to the file or directory dst.If dst is a directory, a file with the same basename as src is created (or *overwritten*) in the directory specified. Permission bits are copied. src and dst are path names given as strings
+```
+shutil.copy(os.getcwd()+ '/base_options.py', './Test')
+Out[66]: 
+'./Test\\base_options.py'
+
+```
+
+
+
+
+
 
 # Module : sys 
 This module provides access to some variables used or maintained by the interpreter and
