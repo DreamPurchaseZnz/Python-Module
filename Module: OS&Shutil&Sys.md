@@ -42,7 +42,9 @@ os.symlink                                          --->  Create a symbolic link
 os.stat
 ```
 *os.remove()* will remove a file.
+
 *os.rmdir()* will remove an empty directory.
+
 *shutil.rmtree()* will delete a directory and all its contents.
 ```
 os.listdir(os.getcwd()) # ['.idea', 'block_provider', 'logs', 'Runet.py', 'RunRunet.py']
