@@ -1,8 +1,5 @@
 # module: os
->The Python Standard Library: File and Directory Access and Generic Operating System Services
-
-
----------------------------------------------------------------------------------------------------------
+The Python Standard Library: File and Directory Access and Generic Operating System Services
 Miscellaneous operating system interfaces
 
 ## Process Parameters             
@@ -44,16 +41,13 @@ os.renames
 os.symlink                                          --->  Create a symbolic link pointing to source named link_name
 os.stat
 ```
+*os.remove()* will remove a file.
+*os.rmdir()* will remove an empty directory.
+*shutil.rmtree()* will delete a directory and all its contents.
 ```
-os.listdir(os.getcwd())
-Out[55]: 
-['.idea', 'block_provider', 'logs', 'Runet.py', 'RunRunet.py']
-dirname = "c:\\"
-os.listdir(dirname)   
-Out[57]: 
-['$360Section',
- '$Recycle.Bin',
+os.listdir(os.getcwd()) # ['.idea', 'block_provider', 'logs', 'Runet.py', 'RunRunet.py']
 
+dirname = "c:\\"
 [f for f in os.listdir(dirname)
     if os.path.isfile(os.path.join(dirname, f))]
 Out[58]: 
@@ -61,15 +55,6 @@ Out[58]:
  'bootmgr',
  'BOOTNXT',
  'hiberfil.sys',
-
-[f for f in os.listdir(dirname)
-     if os.path.isdir(os.path.join(dirname, f))] 
-Out[59]: 
-['$360Section',
- '$Recycle.Bin',
- '.cache',
- '360SANDBOX',
-
 ```
 There is a more complex example, used for search the specific extension file.
 ```
