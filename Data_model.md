@@ -192,4 +192,47 @@ Class method objects
 
 
 ## Special method names -Magic Method(Explained another chapter)
+### Basic customization
+
+### Customizing attribute access
+customize the meaning of attribute access (use of, assignment to, or deletion of x.name) for class instances
+```
+object.__getattr__(self, name)
+object.__getattribute__(self, name)
+object.__setattr__(self, name, value)
+object.__delattr__(self, name)
+object.__dir__(self)
+```
+
+3.3.2.1. Implementing Descriptors
+3.3.2.2. Invoking Descriptors
+3.3.2.3. __slots__
+3.3.2.3.1. Notes on using __slots__
+### Customizing class creation
+3.3.3.1. Metaclasses
+3.3.3.2. Determining the appropriate metaclass
+3.3.3.3. Preparing the class namespace
+3.3.3.4. Executing the class body
+3.3.3.5. Creating the class object
+3.3.3.6. Metaclass example
+### Customizing instance and subclass checks
+### Emulating callable objects
+### Emulating container types
+### Emulating numeric types
+### With Statement Context Managers
+### Special method lookup
+
+## Coroutines
+###  Awaitable Objects
+###  Coroutine Objects
+###  Asynchronous Iterators
+###  Asynchronous Context Managers
+
+
+
+
+
+
+
+
 
