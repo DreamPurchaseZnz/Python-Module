@@ -195,10 +195,10 @@ Class method objects
 ### Basic customization
 
 ### Customizing attribute access
-customize the meaning of attribute access (use of, assignment to, or deletion of x.name) for class instances
+customize the meaning of attribute access (use of, assignment to, or deletion of x.name) for [class instances](https://stackoverflow.com/questions/3278077/difference-between-getattr-vs-getattribute)
 ```
 object.__getattr__(self, name)
-object.__getattribute__(self, name)
+object.__getattribute__(self, name) 
 object.__setattr__(self, name, value)
 object.__delattr__(self, name)
 object.__dir__(self)
