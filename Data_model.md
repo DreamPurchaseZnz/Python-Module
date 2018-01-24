@@ -217,6 +217,17 @@ object.__dir__(self)
 3.3.3.6. Metaclass example
 ### Customizing instance and subclass checks
 ### Emulating callable objects
+object.\__call\__(self[, args...])
+Called when the instance is “called” as a function; if this method is defined, x(arg1, arg2, ...) is a shorthand for x.\__call\__(arg1, arg2, ...)
+```
+class A:
+    def __init__(self, a=default)
+        self.a = a
+    def __call__(self, b)
+        pass
+
+Equal to the structure: def(b, a=default) 
+```
 ### Emulating container types
 ### Emulating numeric types
 ### With Statement Context Managers
