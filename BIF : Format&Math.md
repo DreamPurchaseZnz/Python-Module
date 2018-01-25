@@ -106,7 +106,7 @@ cccccccccccc
 Press enter to close
 ```
 
-## open- write string to txt file
+## [open- write string to txt file](https://learnpythonbreakpython.com/?s=c10)
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
 ```
 open(
