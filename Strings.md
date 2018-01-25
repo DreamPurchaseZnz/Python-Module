@@ -47,15 +47,16 @@ you can see a *print.txt* file, the content is:
 
 ## [Multi strings in Python](https://www.smallsurething.com/multi-line-strings-in-python/)
 At some points We will want to define a multi-line string and find that the obvious solution just don't feel clean.
-There are three method:
 
-### CONCATENATION
 ```
-template = "This is the first line.\n" 
-           "This is the second line.\n" 
-           "This is the third line."
-           
+template = ("This is the first line.\n"
+"This is the second line.\n"
+"This is the third line.")
+
 print(template)
+This is the first line.
+This is the second line.
+This is the third line.
 ```
 
 
