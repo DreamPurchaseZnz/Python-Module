@@ -1,5 +1,5 @@
-# Strings
-## Print
+# [Strings](https://www.tutorialspoint.com/python/python_strings.htm)
+## Print function
 In principle, every computer program has to communicate with the environment or the "outside world".
 To this purpose nearly every programming language has special I/O functionalities, i.e. input/output
 
@@ -85,8 +85,7 @@ Backslash notation	Hexadecimal character	Description
 ```
 \n, \t, \v, \f , \a used in python.
 ```
-
-## [Multi strings in Python](https://www.smallsurething.com/multi-line-strings-in-python/)
+[Multi strings in Python](https://www.smallsurething.com/multi-line-strings-in-python/)
 At some points We will want to define a multi-line string and find that the obvious solution just don't feel clean.
 
 ```
@@ -143,6 +142,24 @@ If present, it specifies that the output will be prefixed by '0b', '0o', or '0x'
 The ',' option signals the use of a comma for a thousands separator.
 For a locale aware separator, use the 'n' integer presentation type instead.
 
+*Type* method
+```
+%c  haracter
+%s  string conversion via str() prior to formatting
+%i  signed decimal integer
+%d  signed decimal integer
+%u  unsigned decimal integer
+%o  octal integer
+%x  hexadecimal integer (lowercase letters)
+%X  hexadecimal integer (UPPERcase letters)
+%e  exponential notation (with lowercase 'e')
+%E  exponential notation (with UPPERcase 'E')
+%f  floating point real number
+%g  the shorter of %f and %e
+%G  the shorter of %f and %E
+```
+
+
 ###  Comparison with the old %-formatting
 In most of the cases the syntax is similar to the old %-formatting, 
 with the addition of the {} and with : used instead of %. For example, '%03.2f' can be translated to '{:03.2f}'
@@ -178,4 +195,176 @@ items
 'Correct answers: 88.64%'
 ```
 8. Using type-specific formatting
+
+
+## Triple Quotes
+Python's thriple quotes comes to the rescue by allowing to span multiple lines including verbatim NewlINES and other special characters
+
+Thy syntax for triple quotes consists fo three consecutive single or double quotes
+
+When the above code is executed, it produces the following result.
+```
+para_str = """this is a long string that is made up of
+several lines and non-printable characters such as
+TAB ( \t ) and they will show up that way when displayed.
+NEWLINEs within the string, whether explicitly given like
+this within the brackets [ \n ], or just a NEWLINE within
+the variable assignment will also show up.
+"""
+print(para_str)
+this is a long string that is made up of
+several lines and non-printable characters such as
+TAB ( 	 ) and they will show up that way when displayed.
+NEWLINEs within the string, whether explicitly given like
+this within the brackets [ 
+ ], or just a NEWLINE within
+
+```
+
+Raw strings do not treat the backslash as a special character at all. Every character you put into a raw string stays the way you wrote it −
+```
+print('C:\\nowhere')    # C:\nowhere
+print(r'C:\\nowhere')   # C:\\nowhere
+```
+Now let's make use of raw string. We would put expression in **r'expression'** as follows −
+
+## Unicode String
+Normal strings in python are stored internally as 8-bit ASCII, while the unicode string are stored as 16-bit
+Unicode. This allows for a more varied set of characters , including special characters from most languages in the world
+```
+print(u'Hello, world!')
+Hello, world!
+
+```
+
+## Built-in String Methods
+```
+capitalize()
+Capitalizes first letter of string
+
+center(width, fillchar)
+Returns a space-padded string with the original string centered to a total of width columns.
+
+count(str, beg= 0,end=len(string))
+Counts how many times str occurs in string or in a substring of string if starting index beg and ending index end are given.
+
+decode(encoding='UTF-8',errors='strict')
+Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding.
+
+encode(encoding='UTF-8',errors='strict')
+Returns encoded string version of string; on error, default is to raise a ValueError unless errors is given with 'ignore' or 'replace'.
+
+endswith(suffix, beg=0, end=len(string))
+Determines if string or a substring of string (if starting index beg and ending index end are given) ends with suffix; returns true if so and false otherwise.
+
+expandtabs(tabsize=8)
+Expands tabs in string to multiple spaces; defaults to 8 spaces per tab if tabsize not provided.
+
+find(str, beg=0 end=len(string))
+Determine if str occurs in string or in a substring of string if starting index beg and ending index end are given returns index if found and -1 otherwise.
+
+index(str, beg=0, end=len(string))
+Same as find(), but raises an exception if str not found.
+
+isalnum()
+Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.
+
+isalpha()
+Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.
+
+isdigit()
+Returns true if string contains only digits and false otherwise.
+
+islower()
+Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.
+
+isnumeric()
+Returns true if a unicode string contains only numeric characters and false otherwise.
+
+isspace()
+Returns true if string contains only whitespace characters and false otherwise.
+
+istitle()
+Returns true if string is properly "titlecased" and false otherwise.
+
+isupper()
+Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.
+
+join(seq)
+Merges (concatenates) the string representations of elements in sequence seq into a string, with separator string.
+
+len(string)
+Returns the length of the string
+
+ljust(width[, fillchar])
+Returns a space-padded string with the original string left-justified to a total of width columns.
+
+lower()
+Converts all uppercase letters in string to lowercase.
+
+lstrip()
+Removes all leading whitespace in string.
+
+maketrans()
+Returns a translation table to be used in translate function.
+
+max(str)
+Returns the max alphabetical character from the string str.
+
+min(str)
+Returns the min alphabetical character from the string str.
+
+replace(old, new [, max])
+Replaces all occurrences of old in string with new or at most max occurrences if max given.
+
+rfind(str, beg=0,end=len(string))
+Same as find(), but search backwards in string.
+
+rindex( str, beg=0, end=len(string))
+Same as index(), but search backwards in string.
+
+rjust(width,[, fillchar])
+Returns a space-padded string with the original string right-justified to a total of width columns.
+
+rstrip()
+Removes all trailing whitespace of string.
+
+split(str="", num=string.count(str))
+Splits string according to delimiter str (space if not provided) and returns list of substrings; split into at most num substrings if given.
+
+splitlines( num=string.count('\n'))
+Splits string at all (or num) NEWLINEs and returns a list of each line with NEWLINEs removed.
+
+startswith(str, beg=0,end=len(string))
+Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.
+
+strip([chars])
+Performs both lstrip() and rstrip() on string.
+
+swapcase()
+Inverts case for all letters in string.
+
+title()
+Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.
+
+translate(table, deletechars="")
+Translates string according to translation table str(256 chars), removing those in the del string.
+
+upper()
+Converts lowercase letters in string to uppercase.
+
+zfill (width)
+Returns original string leftpadded with zeros to a total of width characters; intended for numbers, zfill() retains any sign given (less one zero).
+
+isdecimal()
+Returns true if a unicode string contains only decimal characters and false otherwise.
+```
+
+
+
+
+
+
+
+
 
