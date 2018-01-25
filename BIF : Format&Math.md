@@ -105,9 +105,6 @@ cccccccccccc
 ...
 Press enter to close
 ```
-# Math
-[Mathematical functions](https://docs.python.org/3/library/math.html)
-
 
 ## open- write string to txt file
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
@@ -245,4 +242,7 @@ items
 'Correct answers: 88.64%'
 ```
 8. Using type-specific formatting
+
+# Math
+[Mathematical functions](https://docs.python.org/3/library/math.html)
 
