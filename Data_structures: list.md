@@ -13,82 +13,59 @@ count                                    ---> Return the number of times x appea
 sort                                     ---> Sort the items of the list in place
 reverse                                  ---> Reverse the elements of the list, in place
 ```
-append:
+```
+a = [1,3,5,7,9]
+a.pop()          # 9
+a                # [1, 3, 5, 7]
+a.append(9)      # [1, 3, 5, 7, 9]
+a.extend([11,13])# [1, 3, 5, 7, 9, 11, 13]
+a.pop()          # 13
+a.pop()          # 11
+a                # [1, 3, 5, 7, 9]
+a.remove(1)      # [3, 5, 7, 9]
+a.insert(1, 4)   # [3, 4, 5, 7, 9]
+a.index(4)       # 1
+a.count(4)       # 1
+a.sort()         # [3, 4, 5, 7, 9]
+a.reverse()      # [9, 7, 5, 4, 3]
+```
+### append Vs extend
+**append**:
 add an item to the end of the list; equivalent to a[len(a):]=[x]
 ```
 x = [1,2,3]
-x.append([4,5])
-print(x)
-Out[14]: 
-[1, 2, 3, [4, 5]]
-```
-```
+x.append([4,5])     # [1, 2, 3, [4, 5]]
 x = [1,2,3]
-x[len(x):]=[4]
-x
-Out[25]: 
-[1, 2, 3, 4]
-
+x[len(x):]=[4]      # [1, 2, 3, 4]
 ```
 
+**extend**
 list.extend(seq)- This method does not return any value but add the content to existing list
 
 Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L
 ```
-x.extend([4,5])
-x
-Out[18]: 
-[1, 2, 3, [4, 5], 4, 5]
-```
-```
-x[len(x):]=[4,5]
-x
-Out[28]: 
-[1, 2, 3, 4, 4, 5]
-
-```
-
-```
-aList = [123, 'xyz', 'zara', 'abc', 123];
+x.extend([4,5])                 # [1, 2, 3, [4, 5], 4, 5]
+x[len(x):]=[4,5]                # [1, 2, 3, 4, 4, 5]
+aList = [123, 'xyz', 
+'zara', 'abc', 123];
 bList = [2009, 'manni'];
-aList.extend(bList)
-aList
-Out[20]: 
-[123, 'xyz', 'zara', 'abc', 123, 2009, 'manni']
-
+aList.extend(bList)             # [123, 'xyz', 'zara', 'abc', 123, 2009, 'manni']
 ```
 when it comes to the numpy array, the append/extend method can't be used to append/extend
 it by attribute.
 ```
 import numpy as np
-c['e'].append(np.array([1,2]))
-c['e']
-Out[16]: 
-[array([1, 2])]
-c['e'].append(np.array([1,2]))
-c['e']
-Out[18]: 
-[array([1, 2]), array([1, 2])]
-c['e'][1]
-Out[19]: 
-array([1, 2])
+c['e'].append(np.array([1,2]))  # [array([1, 2])]
+c['e'].append(np.array([1,2]))  # [array([1, 2]), array([1, 2])]
+c['e'][1]                       # array([1, 2])
 c['e'][1].append([4,5])
 AttributeError: 'numpy.ndarray' object has no attribute 'append'
 ```
 np.append method can be used for this situation
 ```
-c['e'][1]=np.append(4, c['e'][1])
-c['e'][1]
-Out[23]: 
-array([4, 1, 2])
-c['e'][1]=np.append(c['e'][1],[4,5])
-c['e'][1]
-Out[25]: 
-array([4, 1, 2, 4, 5])
-
-
+c['e'][1]=np.append(4, c['e'][1])       # array([4, 1, 2])
+c['e'][1]=np.append(c['e'][1],[4,5])    # array([4, 1, 2, 4, 5])
 ```
-
 
 ## 1. More on Lists
 ```
