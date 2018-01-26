@@ -24,3 +24,10 @@ This is an error unless the replacement is intended. See section Standard Module
 Packages are a way of structuring Python’s module namespace by using “dotted module names”
 
 For example, the module name A.B designates a submodule named B in a package named A
+
+
+## Reload a module
+```
+from importlib import reload
+reload(module)
+```
