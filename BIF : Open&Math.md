@@ -54,8 +54,10 @@ and when called, raise SystemExit with the specified exit code.
 ### dir() does much more than look up __dict__
 Look here:[stackoverflow](https://stackoverflow.com/questions/14361256/whats-the-biggest-difference-between-dir-and-dict-in-python)
 
+### zip()
 
-## other method
+### enumerate()
+
 ```
 ascii()	
 input()	
