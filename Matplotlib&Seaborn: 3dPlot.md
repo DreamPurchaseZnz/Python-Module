@@ -59,7 +59,7 @@ shade                         ---> Whether to shade the face colors
 
 ```
 # Seaborn
-## sns.cubehelix_palette
+## [sns.cubehelix_palette](http://seaborn.pydata.org/generated/seaborn.cubehelix_palette.html)
 Make a sequential palette from cubhelix system
 
 This produces a colormap with linearly-increasing brightness, which means that information will be
@@ -105,7 +105,7 @@ ax=None                      ---> if provided, plot on this axis
 )
 ```
 
-## sns.kdeplot
+## [sns.kdeplot](http://seaborn.pydata.org/generated/seaborn.kdeplot.html)
 Fit and plot a univariate or bivariate kernel density estimate
 ```
 seaborn.kdeplot(
