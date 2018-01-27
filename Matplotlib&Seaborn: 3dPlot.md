@@ -58,7 +58,7 @@ shade                         ---> Whether to shade the face colors
 **kwargs)
 
 ```
-# Seaborn
+# [Seaborn](http://seaborn.pydata.org/index.html)
 ## [sns.cubehelix_palette](http://seaborn.pydata.org/generated/seaborn.cubehelix_palette.html)
 Make a sequential palette from cubhelix system
 
@@ -77,7 +77,7 @@ reverse=False,
 as_cmap=False
 )
 ```
-## sns.distplot
+## [sns.distplot](http://seaborn.pydata.org/generated/seaborn.distplot.html)
 Flexibly plot a univariate distribution of observations
 conbines:
 - matplotlib *hist* function
@@ -127,6 +127,8 @@ cbar_kws=None,
 ax=None, 
 **kwargs)
 ```
+![kdeplot](http://seaborn.pydata.org/_images/seaborn-kdeplot-10.png)
+
 
 ## sns.jointplot
 
