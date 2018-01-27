@@ -11,11 +11,29 @@ squeeze=True,
 subplot_kw=None, 
 gridspec_kw=None,                          --->  figure() call below
 ```
-Return ---> fig, ax
-Creates just a figure and only one subplot
+Return : fig, ax
 ```
-fig,ax = plt.subplots()
+f, axes = plt.subplots(3, 3, figsize=(9, 9), sharex=True, sharey=True)
 ```
+when the above code is executed, the result is as follow:
+```
+axes
+output:
+array([[<matplotlib.axes._subplots.AxesSubplot object at 0x000000001CDCB080>,
+        <matplotlib.axes._subplots.AxesSubplot object at 0x00000000191F15C0>,
+        <matplotlib.axes._subplots.AxesSubplot object at 0x000000001BFB5518>],
+       [<matplotlib.axes._subplots.AxesSubplot object at 0x000000001BCA95F8>,
+        <matplotlib.axes._subplots.AxesSubplot object at 0x00000000201F15F8>,
+        <matplotlib.axes._subplots.AxesSubplot object at 0x0000000019220630>],
+       [<matplotlib.axes._subplots.AxesSubplot object at 0x00000000201E4D68>,
+        <matplotlib.axes._subplots.AxesSubplot object at 0x0000000019207518>,
+        <matplotlib.axes._subplots.AxesSubplot object at 0x000000001C8FEBA8>]],
+      dtype=object)
+      
+type(axes) # numpy.ndarray
+axes.shape # 3x3
+```
+
 Creates two subplots and unpacks the output array immediately
 ```
 fig, (ax1,ax2) = plt.subplots(1,2, sharey=True)
