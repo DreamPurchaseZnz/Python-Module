@@ -1,4 +1,4 @@
-# Mplot3d
+# [Mplot3d](https://matplotlib.org/tutorials/toolkits/mplot3d.html#sphx-glr-tutorials-toolkits-mplot3d-py)
 - Line plots
 - Scatter plots
 - Wireframe plots
@@ -58,6 +58,9 @@ shade                         ---> Whether to shade the face colors
 **kwargs)
 
 ```
+[surface_plot](https://matplotlib.org/_images/sphx_glr_surface3d_001.png)
+
+
 # [Seaborn](http://seaborn.pydata.org/index.html)
 ## [sns.cubehelix_palette](http://seaborn.pydata.org/generated/seaborn.cubehelix_palette.html)
 Make a sequential palette from cubhelix system
