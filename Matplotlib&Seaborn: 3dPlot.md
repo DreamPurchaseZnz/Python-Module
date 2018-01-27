@@ -58,7 +58,7 @@ shade                         ---> Whether to shade the face colors
 **kwargs)
 
 ```
-[surface_plot](https://matplotlib.org/_images/sphx_glr_surface3d_001.png)
+![surface_plot](https://matplotlib.org/_images/sphx_glr_surface3d_001.png)
 
 
 # [Seaborn](http://seaborn.pydata.org/index.html)
