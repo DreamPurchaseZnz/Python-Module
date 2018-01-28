@@ -138,7 +138,7 @@ ax=None,
 ![kdeplot](http://seaborn.pydata.org/_images/seaborn-kdeplot-10.png)
 
 
-## sns.jointplot
+## [sns.jointplot](http://seaborn.pydata.org/generated/seaborn.jointplot.html)
 
 ```
 seaborn.jointplot(
