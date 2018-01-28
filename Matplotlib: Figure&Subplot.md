@@ -1,4 +1,4 @@
-# figure()
+# Figure()
 ```
 matplotlib.pyplot.figure(
 num=None,                        ---> integer or string, optional, default: none :number attribute
@@ -14,6 +14,9 @@ return
 ```
 figure                          ---> The Figure instance returned will
                                      also be passed to new_figure_manager in the backends
+```
+```
+figure.savefig
 ```
 
 # Subplots
