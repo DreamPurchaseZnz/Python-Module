@@ -1,3 +1,21 @@
+# figure()
+```
+matplotlib.pyplot.figure(
+num=None,                        ---> integer or string, optional, default: none :number attribute
+figsize=None,                    ---> tuple of integer,(weight,heigt) units:inches
+dpi=None,                        ---> resolution of figure
+facecolor=None,                  ---> the background color 
+edgecolor=None,                  ---> border color
+frameon=True, 
+FigureClass=<class 'matplotlib.figure.Figure'>,
+**kwargs)
+```
+return
+```
+figure                          ---> The Figure instance returned will
+                                     also be passed to new_figure_manager in the backends
+```
+
 # Subplots
 Create a figure and a set of subplots
 This utility wrapper makes it convenient to create common layouts of subplots
@@ -83,25 +101,6 @@ height_ratios=None)
 [a good explanation here](https://matplotlib.org/users/gridspec.html?highlight=gridspec)
 I just post it. Maybe after some days or months ,i will review it 
 
-
-
-# figure()
-```
-matplotlib.pyplot.figure(
-num=None,                        ---> integer or string, optional, default: none :number attribute
-figsize=None,                    ---> tuple of integer,(weight,heigt) units:inches
-dpi=None,                        ---> resolution of figure
-facecolor=None,                  ---> the background color 
-edgecolor=None,                  ---> border color
-frameon=True, 
-FigureClass=<class 'matplotlib.figure.Figure'>,
-**kwargs)
-```
-return
-```
-figure                          ---> The Figure instance returned will
-                                     also be passed to new_figure_manager in the backends
-```
 
 
 # Set The Color Of A Matplotlib Plot
