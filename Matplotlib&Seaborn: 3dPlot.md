@@ -69,10 +69,10 @@ This produces a colormap with linearly-increasing brightness, which means that i
 preserved if printed to black and white or viewed by someone who is colorblind.
 ```
 seaborn.cubehelix_palette(
-n_colors=6,                                ---> number of colors in the palette
-start=0,                                   ---> the hue at the start of helix
-rot=0.4,                                   
-gamma=1.0, 
+n_colors=6,        ---> number of discrete rendered colors in the palette
+start=0,           ---> Sets the starting position in the RGB(120) color space. 0=blue, 1 = red, 2=green, 0.5=purple
+rot=0.4,           ---> The number of rotations through the rainbow, Sign Indicates the direction of rainbow            
+gamma=1.0,         ---> The gamma correction for intensity
 hue=0.8, 
 light=0.85, 
 dark=0.15,
@@ -80,6 +80,11 @@ reverse=False,
 as_cmap=False
 )
 ```
+[Cubehelix.make Argument Reference](https://jiffyclub.github.io/palettable/cubehelix/)
+
+
+
+
 ## [sns.distplot](http://seaborn.pydata.org/generated/seaborn.distplot.html)
 Flexibly plot a univariate distribution of observations
 conbines:
