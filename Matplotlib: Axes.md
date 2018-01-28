@@ -383,13 +383,18 @@ Axes.get_position
 Axes.set_position                                         ---> Set the axes position: pos = [left, bottom, width, height]
 
 ```
+```
+ax.get_anchor()      # 'C'
+ax.set_anchor("SW")
+```
+
+
 
 -------------------------------------------------------------------------------------------------------------------
-                                                  USUAL METHOD ABOUT ARTIST
+                                                 ADVANCED METHOD ABOUT ARTIST
 -------------------------------------------------------------------------------------------------------------------
 ## Interactive
 ```
-
 Axes.can_pan
 Axes.can_zoom
 Axes.get_navigate
@@ -425,7 +430,28 @@ Axes.set_cursor_props
 > Pass
 
 ## Bulk property manipulation
-> Pass
+```
+Axes.set                   ---> A property batch setter. Pass kwargs to set properties
+Axes.update
+Axes.properties            ---> Return a dictionary mapping property name
+Axes.update_from           ---> Copy properties from other to self
+```
+As the subsection title depitched, we can set a batch of properties.
+```
+ax.set(xlim=[-1, 1], ylim=[-1, 1], xscale='linear', title='Hi')
+Out[28]: 
+[(-1, 1), None, (-1, 1), <matplotlib.text.Text at 0x1af71908>]
+```
+```
+ax.properties()
+Out[29]: 
+{'adjustable': 'box',
+ 'agg_filter': None,
+ 'alpha': None,
+ 'anchor': 'C',
+ 'animated': False,
+....
+```
 
 ## General Artist Properties
 > Pass
