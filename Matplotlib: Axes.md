@@ -1,4 +1,4 @@
-# Axes class
+# [Axes class](https://matplotlib.org/api/axes_api.html)
 ```
 class matplotlib.axes.Axes(
 fig, 
@@ -136,7 +136,7 @@ n                                           ---> array or list of arrays
 bins                                        ---> array
 patches                                     ---> list or list of lists
 ```
-A good example
+Example:
 ```
 import numpy as np
 import matplotlib.pyplot as plt
