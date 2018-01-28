@@ -33,7 +33,7 @@ bbox_artist(artist, renderer[, props, fill])
 draw_bbox(bbox, renderer[, color, trans])
 ```
 
-## Arc
+## [Arc](https://matplotlib.org/1.5.1/api/patches_api.html)
 ```
 class matplotlib.patches.Arc(
 xy, 
