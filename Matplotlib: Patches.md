@@ -32,3 +32,15 @@ YAArrow(figure, xytip, xybase[, width, …])                    Yet another arro
 bbox_artist(artist, renderer[, props, fill])                 
 draw_bbox(bbox, renderer[, color, trans])
 ```
+
+## Arc
+```
+class matplotlib.patches.Arc(
+xy, 
+width, 
+height, 
+angle=0.0, 
+theta1=0.0, 
+theta2=360.0, 
+**kwargs)
+```
