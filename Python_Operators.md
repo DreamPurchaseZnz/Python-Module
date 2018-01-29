@@ -90,7 +90,7 @@ It is to horrible when you naturally take the operator *^* as the exponent opera
 10>>2 # 2
 10<<2 # 40
 ```
-## Assignment operators
+## [Inplace operators](https://docs.python.org/3.4/library/operator.html)
 assignment operators are used in Python to assign values to variables
 There are various compound operators in Python like a += 5 that adds to the variable 
 and later assigns the same. It is equivalent to a = a + 5.
@@ -167,7 +167,7 @@ operator.setitem(a, b, c)                        Set the value of a at index b t
 ## [Operator defines tools for generalized attribute and item lookups](https://docs.python.org/3.4/library/operator.html)
 
 Take the function as the operand.
-
+### operator.attrgetter
 ```
 operator.attrgetter(attr)                                 
 operator.attrgetter(*attrs)
@@ -178,6 +178,14 @@ Return a callable object that fetches *attr* from its operand, the attribute nam
 - After f = attrgetter('name', 'date'), the call f(b) returns (b.name, b.date).
 - After f = attrgetter('name.first', 'name.last'), the call f(b) returns (b.name.first, b.name.last).
 
+
+
+
+
+
+
+
+### operator.itemgetter
 ```
 operator.itemgetter(item)
 operator.itemgetter(*items)
@@ -211,7 +219,28 @@ sorted(inventory, key=getcount)
 Out[9]: 
 [('orange', 1), ('banana', 2), ('apple', 3), ('pear', 5)]
 ```
+We can think further:
+```
+class ModuleA:
+    def __init__(self):
+        self.a = 1
+        self.b = 2
+class ModuleB:
+    def __init__(self):
+        self.a = 1
+        self.b = 2
+c = ModuleA()
+d = ModuleB()
+from operator import attrgetter
+g = attrgetter('a')
+g(c)                 # 1
+g(d)                 # 1
+```
+We can think Module B are the substitution of Module A, So in this case, attrgetter can save a lot of time to replace the attribute of the moduleA with module B  
 
+
+
+### operator.methodcaller
 ```
 operator.methodcaller(name[, args...])
 ```
@@ -220,6 +249,10 @@ Return a callable object that calls the method name on its operand.
 - After f = methodcaller('name'), the call f(b) returns b.name().
 - After f = methodcaller('name', 'foo', bar=1), the call f(b) returns b.name('foo', bar=1).
 
-
-
+```
+def methodcaller(name, *args, **kwargs):
+    def caller(obj):
+        return getattr(obj, name)(*args, **kwargs)
+    return caller
+```
 
