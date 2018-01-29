@@ -1,6 +1,17 @@
-# [Operators](https://www.programiz.com/python-programming/operators)
+# [Operators](https://docs.python.org/3.4/library/operator.html)
+Standard operators as functions
 
-## What are operators in python?
+The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python. For example, operator.add(x, y) is equivalent to the expression x+y. The function names are those used for special class methods; variants without leading and trailing __ are also provided for convenience.
+
+The functions fall into categories that 
+- perform object comparisons
+- logical operations
+- mathematical operations 
+- sequence operations.
+
+
+
+## [What are operators in python?](https://www.programiz.com/python-programming/operators)
 Operators are special symbols in python that carry out arithmetic or logical computation, the value that the operator operates on is called
 operand.
 ```
