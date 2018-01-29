@@ -1,6 +1,7 @@
 # Decorator
-an operator that transforms a function, for example, a log decorator may be defined to print debugging information  
+An operator that transforms a function, for example, a log decorator may be defined to print debugging information  
 upon function execution:
+
 ## Necessary
 We can use one format to decorate many functions: so you can use it to monitor what the code snippet is going on with only one identifier.
 you can debug the code easily.
@@ -16,7 +17,7 @@ def decorator_funciton(original_function):
         return result     
     return wrapper_function
 ```
-The decorator_function only take the function as the argument, then return a wrapperfunction. Therefore, you just put 
+The decorator_function only take *function* as operand, then return a *callable object*. Therefore, you just put 
 the latter argument pass to the original function. It doesn't pass through the decorator function, instead, the wrapper function take 
 all the parameters and pass to the original function.
 
