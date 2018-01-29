@@ -152,9 +152,73 @@ y = {1:'a',2:'b'}
 1 in y     # True
 x not in y # True
 ```
+## Operations which work with sequences 
+```
+Operator                                         Meaning
+operator.concat(a, b) 
+operator.contains(a, b)                          Test b in a              
+operator.countOf(a, b)                           Return the occurrences of b in a
+operator.delitem(a, b)                           Del the value of a in b
+operator.getitem(a, b)                           Get the value of a in b
+operator.indexOf(a, b)                  
+operator.setitem(a, b, c)                        Set the value of a at index b to c
+
+```
+## [Operator defines tools for generalized attribute and item lookups](https://docs.python.org/3.4/library/operator.html)
+
+Take the function as the operand.
+
+```
+operator.attrgetter(attr)                                 
+operator.attrgetter(*attrs)
+```
+Return a callable object that fetches *attr* from its operand, the attribute names can alse contain dots.
+
+- After f = attrgetter('name'), the call f(b) returns b.name.
+- After f = attrgetter('name', 'date'), the call f(b) returns (b.name, b.date).
+- After f = attrgetter('name.first', 'name.last'), the call f(b) returns (b.name.first, b.name.last).
+
+```
+operator.itemgetter(item)
+operator.itemgetter(*items)
+```
+Return a callable object that fetches item from its operand using the operand's \__getitem\__() method.
 
 
+- After f = itemgetter(2), the call f(r) returns r\[2].
+- After g = itemgetter(2, 5, 3), the call g(r) returns (r\[2], r\[5], r\[3]).
 
+```
+def itemgetter(*items):
+    if len(items) == 1:
+        item = items[0]
+        def g(obj):
+            return obj[item]
+    else:
+        def g(obj):
+            return tuple(obj[item] for item in items)
+    return g
+```
+Example of using itemgetter() to retrieve specific field from a tuple record
+```
+inventory = [('apple', 3), ('banana', 2), ('pear', 5), ('orange', 1)]
+from operator import itemgetter
+getcount = itemgetter(1)
+list(map(getcount, inventory))
+Out[8]: 
+[3, 2, 5, 1]
+sorted(inventory, key=getcount)
+Out[9]: 
+[('orange', 1), ('banana', 2), ('apple', 3), ('pear', 5)]
+```
+
+```
+operator.methodcaller(name[, args...])
+```
+Return a callable object that calls the method name on its operand.
+
+- After f = methodcaller('name'), the call f(b) returns b.name().
+- After f = methodcaller('name', 'foo', bar=1), the call f(b) returns b.name('foo', bar=1).
 
 
 
