@@ -58,10 +58,22 @@ wald(mean, scale[, size])
 weibull(a[, size])
 zipf(a[, size])
 ```
+### [multivariable_normal](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.multivariate_normal.html)
+Draw random samples from  a multivariable normal distribution.
+such a distribution is specified by its mean and convariance matrix.
+```
+numpy.random.multivariate_normal(
+mean,             ---> 1-D array-like (N,)
+cov[,             ---> 2-D array-like (N, N)
+size, 
+check_valid,      ---> {'warning', 'raise', 'ignore'} if the covariance matrix is not positive semidefininate
+tol
+])
+```
 ## Random generator
 ```
-RandomState                                         Container for the Mersenne Twister pseudo-random number generator.
-seed([seed])                                        Seed the generator.
-get_state()                                         Return a tuple representing the internal state of the generator.
-set_state(state)                                    Set the internal state of the generator from a tuple.
+RandomState                       Container for the Mersenne Twister pseudo-random number generator.
+seed([seed])                      Seed the generator.
+get_state()                       Return a tuple representing the internal state of the generator.
+set_state(state)                  Set the internal state of the generator from a tuple.
 ```
