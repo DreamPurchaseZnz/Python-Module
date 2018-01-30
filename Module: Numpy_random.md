@@ -77,3 +77,53 @@ seed([seed])                      Seed the generator.
 get_state()                       Return a tuple representing the internal state of the generator.
 set_state(state)                  Set the internal state of the generator from a tuple.
 ```
+
+# Linear algebra
+np.linalg
+## Matrix and vector products
+```
+dot(a, b[, out])
+linalg.multi_dot(arrays)
+vdot(a, b)
+inner(a, b)
+outer(a, b[, out])
+matmul(a, b[, out])
+tensordot(a, b[, axes])
+einsum(subscripts, *operands[, out, dtype, ...])
+einsum_path(subscripts, *operands[, optimize])
+linalg.matrix_power(M, n)
+kron(a, b)
+```
+## Decompositions
+```
+linalg.cholesky(a)
+linalg.qr(a[, mode])
+linalg.svd(a[, full_matrices, compute_uv])
+```
+## Matrix eigenvalues
+```
+linalg.eig(a)
+linalg.eigh(a[, UPLO])
+linalg.eigvals(a)
+linalg.eigvalsh(a[, UPLO])
+```
+## Norm and other numbers
+```
+linalg.norm(x[, ord, axis, keepdims])
+linalg.cond(x[, p])
+linalg.det(a)
+linalg.matrix_rank(M[, tol, hermitian])
+linalg.slogdet(a)
+trace(a[, offset, axis1, axis2, dtype, out])
+```
+## Solving equations and inverting matrices
+```
+linalg.solve(a, b)
+linalg.tensorsolve(a, b[, axes])
+linalg.lstsq(a, b[, rcond])
+linalg.inv(a)
+linalg.pinv(a[, rcond])
+linalg.tensorinv(a[, ind])
+```
+
+
