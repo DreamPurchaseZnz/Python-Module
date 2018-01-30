@@ -1,4 +1,6 @@
 # [Matplotlib.figure](https://matplotlib.org/api/figure_api.html)
+
+Class
 ```
 AxesStack
 Figure([figsize, dpi, facecolor, edgecolor, …])
@@ -43,11 +45,19 @@ savefig(fname, dpi=None, facecolor='w', edgecolor='w',
         transparent=False, bbox_inches=None, pad_inches=0.1,
         frameon=None)
 ```
+colorbar Create a colorbar for ScalarMappable instance, *mapple*
+```
+colorbar(
+mappable,                                  ---> Store a set of contour lines or filled regions
+cax=None, 
+ax=None,(shrink,                  ---> fraction by which to multiply the size of the colorbar,
+aspect)                           ---> ratio of long to short dimensions
+use_gridspec=True, **kw)
+```
 
 
 
-
-## Subplots
+## Method - Subplots
 Create a figure and a set of subplots
 This utility wrapper makes it convenient to create common layouts of subplots
 ```
@@ -92,7 +102,7 @@ Creates four subplots and acesses them through the returned way
 fig, axes = plt.subplots(2,2, sbuplot_kw=dict(polar=True))
 axe[0,0].plot(x,y)
 ```
-## matplotlib.pyplot.subplot
+## Method - matplotlib.pyplot.subplot
 
 Return a subplot axes positioned by the given grid definition.
 Typical call signature:
