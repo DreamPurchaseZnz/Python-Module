@@ -4,7 +4,7 @@ AxesStack
 Figure([figsize, dpi, facecolor, edgecolor, …])
 SubplotParams([left, bottom, right, top, …])
 ```
-## figure
+## Figure
 ```
 matplotlib.pyplot.figure(
 num=None,                        ---> integer or string, optional, default: none :number attribute
@@ -21,7 +21,7 @@ return
 figure                          ---> The Figure instance returned will
                                      also be passed to new_figure_manager in the backends
 ```
-## method of matplotlib.figure.Figure
+## Method of matplotlib.figure.Figure
 ```
 add_subplot(*args, **kwargs)
 clear(keep_observers=False)
