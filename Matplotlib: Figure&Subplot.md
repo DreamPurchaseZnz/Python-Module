@@ -1,4 +1,11 @@
-# Figure()
+# [Matplotlib.figure](https://matplotlib.org/api/figure_api.html)
+## class
+```
+AxesStack
+Figure([figsize, dpi, facecolor, edgecolor, …])
+SubplotParams([left, bottom, right, top, …])
+```
+## figure
 ```
 matplotlib.pyplot.figure(
 num=None,                        ---> integer or string, optional, default: none :number attribute
@@ -15,9 +22,31 @@ return
 figure                          ---> The Figure instance returned will
                                      also be passed to new_figure_manager in the backends
 ```
+### method of matplotlib.figure.Figure
 ```
-figure.savefig
+add_subplot(*args, **kwargs)
+clear(keep_observers=False)
+clf(keep_observers=False)
+colorbar(mappable, cax=None, ax=None, use_gridspec=True, **kw)
+contains(mouseevent)
+gca(**kwargs)                   ---> Get the current axes, creating one if necessary
+ginput(n=1, timeout=30, show_clicks=True, mouse_add=1, mouse_pop=3, mouse_stop=2)
+legend(*args, **kwargs)
+savefig(fname, **kwargs)
+subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True, subplot_kw=None, gridspec_kw=None)
+text(x, y, s, *args, **kwargs)
+tight_layout(renderer=None, pad=1.08, h_pad=None, w_pad=None, rect=None)
+waitforbuttonpress(timeout=-1)
 ```
+```
+savefig(fname, dpi=None, facecolor='w', edgecolor='w',
+        orientation='portrait', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=0.1,
+        frameon=None)
+```
+
+
+
 
 # Subplots
 Create a figure and a set of subplots
