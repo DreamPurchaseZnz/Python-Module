@@ -1,17 +1,14 @@
-Array Creation Routines
----------------------------------------------------------------------------------------------------
-### Ones and zeros
+# [Array Creation Routines](https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html)
+
+## Ones and zeros
 ```
 empty                                          ---> Without initializing entries
 empty_like                                     ---> The same shape and type as a given array
 eye                                            ---> Diagonal and zeros elsewhere.
 identity                                       ---> Square array with ones on the main diagonal                             
-
-# commonly used
 ones                                           ---> Filled with ones.
 zeros                                          ---> Filled with zeros.
 full                                           ---> Filled with fill_value
-
 zeros_like                                     ---> The same shape and type as a given array.
 ones_like                                      ---> The same shape and type as a given array.
 full_like                                      ---> The same shape and type as a given array.
@@ -60,7 +57,7 @@ samples
 ```
 
 
-### Building matrices
+## Building matrices
 ```
 diag                                           ---> Extract a diagonal or construct a diagonal array.
 diagflat                                       ---> Create a two-dimensional array with the flattened input as a diagonal.
@@ -69,14 +66,14 @@ tril                                           ---> Lower triangle of an array.
 triu                                           ---> Upper triangle of an array.
 vander
 ```
-### The Matrix class
+## The Matrix class
 ```
 mat
 bmat
 ```
 
 
-### From existing data
+## From existing data
 ```
 array                                          ---> Create an array.
 asarray                                        ---> Convert the input to an array.
@@ -91,7 +88,22 @@ fromiter
 fromstring
 loadtxt
 ```
-### Creating record arrays
+
+```
+numpy.loadtxt(
+fname, 
+dtype=<type 'float'>, 
+comments='#',
+delimiter=None, 
+converters=None, 
+skiprows=0, 
+usecols=None, 
+unpack=False, 
+ndmin=0, 
+encoding='bytes')
+```
+
+## Creating record arrays
 ```
 core.records.array
 core.records.fromarrays
@@ -99,18 +111,6 @@ core.records.fromrecords
 core.records.fromstring
 core.records.fromfile
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -206,8 +206,10 @@ array([[0, 1, 0, 0, 0, 0, 0, 0],
 
 
 ```
-
-
+*expand_dims*  expand the shape of an array, Insert a new axis that will appear at the axis position in the expanded array shape.
+```
+numpy.expand_dims(a, axis)
+```
 
 ## Changing kind of array
 ```
