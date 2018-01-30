@@ -118,13 +118,13 @@ core.records.fromfile
 
 
 
-# Array manipulation routines
+# [Array manipulation routines](https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html)
 ----------------------------------------------------------------------------------------------
-### Basic operations
+## Basic operations
 ```
 copyto
 ```
-### Changing array shape
+## Changing array shape
 ```
 reshape                                        ---> Gives a new shape to an array 
 ravel                                          ---> Flatten array according to order C/F 
@@ -150,7 +150,7 @@ Out[16]:
 ```
 
 
-### Transpose-like operations
+## Transpose-like operations
 ```
 moveaxis                                       ---> Permute
 rollaxis  
@@ -166,7 +166,7 @@ array([[1],
        [3]])
 ```
 
-### Changing number of dimension
+## Changing number of dimension
 ```
 atleast_1d
 atleast_2d                                     ---> View inputs as arrays with at least two dimensions. 
@@ -209,7 +209,7 @@ array([[0, 1, 0, 0, 0, 0, 0, 0],
 
 
 
-### Changing kind of array
+## Changing kind of array
 ```
 asarray                                        ---> Convert the input to an array. 
 asanyarray
@@ -221,7 +221,7 @@ asarray_chkfinite
 asscalar 
 require                                        ---> Satisfies requirements. 
 ```
-### Jointing arrays
+## Jointing arrays
 ```
 concatenate                                    ---> Join a sequence  of arrays along an existing axis
 stack                                          ---> Join along a new axis 
@@ -231,7 +231,7 @@ hstack                                         ---> 1D-2D by second axis-columns
 vstack                                         ---> 1D-2D by first  axis-rows
 block                                          ---> Block matrix
 ```
-### Splitting arrays
+## Splitting arrays
 ```
 split                                          ---> Split an array into multiple sub-arrays. 
 array_split                                    ---> Same,but allow that does not equally divide the axis
@@ -239,13 +239,13 @@ dsplit                                         ---> Along the 3rd axis (depth)
 hsplit                                         ---> Horizontally (column-wise)
 vsplit                                         ---> Vertically (row-wise). 
 ```
-### Tiling arrays
+## Tiling arrays
 ```
 tile                                           ---> Repeating A the number of times given by reps. 
 repeat                                         ---> Repeating element of array
 ```
 
-### Adding and removing elements
+## Adding and removing elements
 ```
 delete                                         ---> Along an axis deleted. 
 insert                                         ---> Insert values along the given axis before the given indices. 
@@ -254,7 +254,7 @@ resize                                         ---> Resize to a new shape
 trim_zeros                                     ---> Trim the leading and/or trailing zeros from a 1-D array or sequence. 
 unique                                         ---> Find the unique elements and list
 ```
-### Rearranging elements
+## Rearranging elements
 ```
 flip                                           ---> Reverse the order of elements in an array along the given axis. 
 fliplr                                         ---> Flip array in the left/right direction. 
