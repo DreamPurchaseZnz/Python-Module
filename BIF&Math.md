@@ -87,9 +87,9 @@ and when called, raise SystemExit with the specified exit code.
 ## BIF: dir() does much more than look up __dict__
 Look here:[stackoverflow](https://stackoverflow.com/questions/14361256/whats-the-biggest-difference-between-dir-and-dict-in-python)
 
-## zip()
+## BIF: zip()
 
-## enumerate()
+## BIF: enumerate()
 return an enumerate object. *iterable* must be a sequence, an iterator.
 ```
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']
@@ -98,7 +98,7 @@ Out[15]:
 [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
 ```
  
-## input
+## BIF: input
 ```
 n=int(input("Enter the lenght of the rectangle: "))
 m=int(input("Enter the width: "))
@@ -115,7 +115,7 @@ cccccccccccc
 Press enter to close
 ```
 
-## [open- write string to txt file](https://learnpythonbreakpython.com/?s=c10)
+## BIF: [open- write string to txt file](https://learnpythonbreakpython.com/?s=c10)
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
 ```
 open(
@@ -172,7 +172,47 @@ with open('name.txt','w') as f:
 f = open('name.txt','r')
 print(f.read())      
 ```
+## BIF: [max](https://www.programiz.com/python-programming/methods/built-in/max)
+```
+max(
+iterable,           --> sequence, collection
+*[, key,            --> key function where the iterables are pass and 
+                        comparision is performed based on its return value
+default
+])
+```
+Return the the large item in an iterable or the largest of two or more argument. the *key* argument specifies a
+one-argument ordering function. 
+```
+max(
+arg1,               --> mandatory first object for comparision
+arg2,               --> mandatory second object
+*args[, 
+key])
+```
+```
+print('Maximum is:', max(1, 3, 2, 5, 4))
+Maximum is: 5
 
+
+def sumDigit(num):
+    sum = 0
+    while(num):
+        sum += num % 10
+        num = int(num / 10)
+    return sum
+print('Maximum is:', max(100, 321, 267, 59, 40, key=sumDigit))
+Maximum is: 267
+
+
+num = [15, 300, 2700, 821]
+num1 = [12, 2]
+num2 = [34, 567, 78]
+# using max(iterable, *iterables, key)
+print('Maximum is:', max(num, num1, num2, key=len))
+Maximum is: [15, 300, 2700, 821]
+
+```
 
 
 # Math
