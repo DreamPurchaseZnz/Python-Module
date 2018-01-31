@@ -1,6 +1,6 @@
 # [Build-in-Functions(67)](https://docs.python.org/3/library/functions.html)
 	
-## commenly used
+## ALL 
 ```
 abs                                                  ---> the absolute value
 max                                                  ---> Return the largest item in an iterable
@@ -40,25 +40,6 @@ tuple()
 map()	
 sorted()
 sum() 
-```
-### divmod
-Take two (non complex) numbers as arguments 
-and return a pair of numbers consisting of their quotient and remainder when using integer division
-```
-divmod(a, b)   # the result is the same as (a // b, a % b)
-```
-### exit
-Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, 
-and when called, raise SystemExit with the specified exit code.
-
-### dir() does much more than look up __dict__
-Look here:[stackoverflow](https://stackoverflow.com/questions/14361256/whats-the-biggest-difference-between-dir-and-dict-in-python)
-
-### zip()
-
-### enumerate()
-
-```
 ascii()	
 input()	
 oct()	
@@ -92,6 +73,32 @@ hash()
 memoryview()	
 set()
 ```
+
+## BIF: divmod
+Take two (non complex) numbers as arguments 
+and return a pair of numbers consisting of their quotient and remainder when using integer division
+```
+divmod(a, b)   # the result is the same as (a // b, a % b)
+```
+## BIF: exit
+Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, 
+and when called, raise SystemExit with the specified exit code.
+
+## BIF: dir() does much more than look up __dict__
+Look here:[stackoverflow](https://stackoverflow.com/questions/14361256/whats-the-biggest-difference-between-dir-and-dict-in-python)
+
+## zip()
+
+## enumerate()
+return an enumerate object. *iterable* must be a sequence, an iterator.
+```
+seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+list(enumerate(seasons))
+Out[15]: 
+[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+```
+ 
+## input
 ```
 n=int(input("Enter the lenght of the rectangle: "))
 m=int(input("Enter the width: "))
