@@ -1,3 +1,65 @@
+# [Math](https://docs.scipy.org/doc/numpy/reference/routines.math.html)
+
+The follow operation is element-wise unless otherwise specified
+
+## Trigonometric functions
+```
+
+sin(x, /[, out, where, casting, order, ...])
+cos(x, /[, out, where, casting, order, ...])
+tan(x, /[, out, where, casting, order, ...])
+arcsin(x, /[, out, where, casting, order, ...])
+arccos(x, /[, out, where, casting, order, ...])
+arctan(x, /[, out, where, casting, order, ...])
+hypot(x1, x2, /[, out, where, casting, ...])
+arctan2(x1, x2, /[, out, where, casting, ...])
+degrees(x, /[, out, where, casting, order, ...])
+radians(x, /[, out, where, casting, order, ...])
+unwrap(p[, discont, axis])
+deg2rad(x, /[, out, where, casting, order, ...])
+rad2deg(x, /[, out, where, casting, order, ...])
+```
+## Hyperbolic functions
+
+## rounding
+```
+
+around(a[, decimals, out])
+round_(a[, decimals, out])
+rint(x, /[, out, where, casting, order, ...])
+fix(x[, out])
+floor(x, /[, out, where, casting, order, ...])
+ceil(x, /[, out, where, casting, order, ...])
+trunc(x, /[, out, where, casting, order, ...])
+```
+## Sums, products, differences
+```
+prod(a[, axis, dtype, out, keepdims]) 
+sum(a[, axis, dtype, out, keepdims]) 
+nanprod(a[, axis, dtype, out, keepdims]) 
+nansum(a[, axis, dtype, out, keepdims]) 
+cumprod(a[, axis, dtype, out]) 
+cumsum(a[, axis, dtype, out]) 
+nancumprod(a[, axis, dtype, out]) 
+nancumsum(a[, axis, dtype, out]) 
+diff(a[, n, axis]) 
+ediff1d(ary[, to_end, to_begin]) 
+gradient(f, *varargs, **kwargs) 
+cross(a, b[, axisa, axisb, axisc, axis]) 
+trapz(y[, x, dx, axis]) 
+```
+## Exponents and logarithms
+
+## Other special functions
+
+## Floating point routines
+
+## Arithmetic operations
+
+## Handling complex numbers
+
+## Miscellaneous
+
 # Statistics
 ## [Order statistics](https://docs.scipy.org/doc/numpy-1.13.0/reference/routines.statistics.html)
 ```
