@@ -1,5 +1,44 @@
-[The N-dimensional array](https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.ndarray.html)
----------------------------------------------------------------------------------------------
+# Statistics
+## Order statistics
+```
+amin(a[, axis, out, keepdims])
+amax(a[, axis, out, keepdims])
+nanmin(a[, axis, out, keepdims])
+nanmax(a[, axis, out, keepdims])
+ptp(a[, axis, out])
+percentile(a, q[, axis, out, ...])
+nanpercentile(a, q[, axis, out, ...])
+```
+## Averages and variances
+```
+median(a[, axis, out, overwrite_input, keepdims])
+average(a[, axis, weights, returned])
+mean(a[, axis, dtype, out, keepdims])
+std(a[, axis, dtype, out, ddof, keepdims])
+var(a[, axis, dtype, out, ddof, keepdims])
+nanmedian(a[, axis, out, overwrite_input, ...])
+nanmean(a[, axis, dtype, out, keepdims])
+nanstd(a[, axis, dtype, out, ddof, keepdims])
+nanvar(a[, axis, dtype, out, ddof, keepdims])
+
+```
+## Correlating
+```
+corrcoef(x[, y, rowvar, bias, ddof])
+correlate(a, v[, mode])
+cov(m[, y, rowvar, bias, ddof, fweights, ...])
+```
+## Histograms
+```
+
+histogram(a[, bins, range, normed, weights, ...])
+histogram2d(x, y[, bins, range, normed, weights])
+histogramdd(sample[, bins, range, normed, ...])
+bincount(x[, weights, minlength])
+digitize(x, bins[, right])
+```
+
+# [The N-dimensional array](https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.ndarray.html)
 ## Array attributes
 [Attributes](https://docs.scipy.org/doc/numpy/reference/generated/numpy.chararray.html)
 ```
