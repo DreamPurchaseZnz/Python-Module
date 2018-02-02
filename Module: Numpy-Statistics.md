@@ -1,5 +1,5 @@
 # Statistics
-## Order statistics
+## [Order statistics](https://docs.scipy.org/doc/numpy-1.13.0/reference/routines.statistics.html)
 ```
 amin(a[, axis, out, keepdims])
 amax(a[, axis, out, keepdims])
