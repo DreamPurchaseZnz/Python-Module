@@ -7,7 +7,7 @@ plt.style.use('fivethirtyeight')
 print(plt.style.available)
 ```
 
-The style list is as following:
+[The style list is as following:](https://tonysyu.github.io/raw_content/matplotlib-style-gallery/gallery.html)
 ```
 'seaborn-whitegrid',
 'seaborn-deep',
@@ -33,6 +33,25 @@ The style list is as following:
 'seaborn',
 'seaborn-bright']
 ```
+The ones with distinctive looks are:
+```
+seaborn-*
+This is a set of styles from the Seaborn project [2]. The project is a complement to Matplotlib, providing additional features and improving the default matplotlib aesthetics. Ones I particularly like are seaborn-deep, seaborn-pastel and seaborn-white.
+
+dark_background
+The dark_background style is the standard matplotlib one (e.g. classic) with colours changed for high contrast.
+
+bmh
+This style comes from Bayesian Methods for Hackers [3] book. 
+I find it particularly suits scientific graphing by showing the precision of the plot.
+
+ggplot
+This style comes from the plotting system of the same name for the R language [4]: it takes on a lot of contemporary lessons on presenting data, focusing on simplicity.
+
+fivethirtyeight
+This style emulates the look and feel of the famous data journalist Nate Silver's site fivethirtyeight.com.
+```
+
 
 ## The content of style sheet
 The file's location can be obtained by
