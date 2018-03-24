@@ -1,4 +1,4 @@
-# (Matplotlib Style sheet)[https://matplotlib.org/users/customizing.html]
+# [Matplotlib Style sheet](https://matplotlib.org/users/customizing.html)
 
 ## Calling program
 ```
