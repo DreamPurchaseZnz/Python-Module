@@ -33,23 +33,29 @@ print(plt.style.available)
 'seaborn',
 'seaborn-bright']
 ```
-The ones with distinctive looks are:
+[The ones with distinctive looks are](http://www.futurile.net/2016/02/27/matplotlib-beautiful-plots-with-style/):
 ```
 seaborn-*
-This is a set of styles from the Seaborn project [2]. The project is a complement to Matplotlib, providing additional features and improving the default matplotlib aesthetics. Ones I particularly like are seaborn-deep, seaborn-pastel and seaborn-white.
+This is a set of styles from the Seaborn project [2]. 
+The project is a complement to Matplotlib, providing 
+additional features and improving the default matplotlib aesthetics. 
+Ones I particularly like are seaborn-deep, seaborn-pastel and seaborn-white.
 
 dark_background
-The dark_background style is the standard matplotlib one (e.g. classic) with colours changed for high contrast.
+The dark_background style is the standard matplotlib one (e.g. classic)
+with colours changed for high contrast.
 
 bmh
 This style comes from Bayesian Methods for Hackers [3] book. 
 I find it particularly suits scientific graphing by showing the precision of the plot.
 
 ggplot
-This style comes from the plotting system of the same name for the R language [4]: it takes on a lot of contemporary lessons on presenting data, focusing on simplicity.
+This style comes from the plotting system of the same name for the R language 
+[4]: it takes on a lot of contemporary lessons on presenting data, focusing on simplicity.
 
 fivethirtyeight
-This style emulates the look and feel of the famous data journalist Nate Silver's site fivethirtyeight.com.
+This style emulates the look and feel of the famous data 
+journalist Nate Silver's site fivethirtyeight.com.
 ```
 
 
