@@ -299,7 +299,84 @@ fontdict=None,                    ---> A dictionary controlling the appearance o
 loc='center',                     ---> {'center', 'left','right'}
 **kwargs)
 ```
+*The bbox_to_anchor method of Legend*:[From stackoverflow](https://stackoverflow.com/questions/39803385/what-does-a-4-element-tuple-argument-for-bbox-to-anchor-mean-in-matplotlib)
+```
+loc:
+bbox_to_anchor:
+ncol:
+prop:
+mode: {extend,none}
+```
+```
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.patches as patches
 
+locs = ['upper right', 'lower left', 'center left', 'lower center', 'center',
+        'right']
+
+x0, y0, width, height = 0.5, 0.5, 0.1, 0.4
+
+x = np.arange(0.1, 4, 0.1)
+y = 1.0/x
+
+fig = plt.figure(figsize=(10, 10))
+
+idx = 1
+for i in range(0, 2):
+    for j in range(0, 3):
+        ax = fig.add_subplot(3, 2, idx)
+        ax.plot(x, y, label=r'$\frac{1}{x}$')
+        ax.legend(loc=locs[idx-1], bbox_to_anchor=(x0, y0, width, height),
+            edgecolor='g', fontsize='large', framealpha=0.5,
+            borderaxespad=0)
+        ax.add_patch(
+            patches.Rectangle((x0, y0), width, height, color='r',
+                            fill=False, transform=ax.transAxes)
+        )
+        ax.text(0.6, 0.2, s="loc = '{}'".format(locs[idx-1]),
+        transform=ax.transAxes)
+        idx += 1
+
+plt.show()
+
+```
+```
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.patches as patches
+
+locs = ['upper right', 'lower left', 'center left', 'lower center', 'center',
+        'right']
+
+x0, y0, width, height = 0.5, 0.5, 0, 0
+
+x = np.arange(0.1, 4, 0.1)
+y = 1.0/x
+
+fig = plt.figure(figsize=(10, 10))
+
+idx = 1
+for i in range(0, 2):
+    for j in range(0, 3):
+        ax = fig.add_subplot(3, 2, idx)
+        ax.plot(x, y, label=r'$\frac{1}{x}$')
+        ax.legend(loc=locs[idx-1], bbox_to_anchor=(x0, y0, width, height),
+            edgecolor='g', fontsize='large', framealpha=0.5,
+            borderaxespad=0)
+        ax.add_patch(
+            patches.Rectangle((x0, y0), width, height, color='r',
+                            fill=False, transform=ax.transAxes)
+        )
+        ax.text(0.6, 0.2, s="loc = '{}'".format(locs[idx-1]),
+        transform=ax.transAxes)
+        ax.plot(x0, y0, 'r.', markersize=8, transform=ax.transAxes)
+        idx += 1
+
+plt.show()
+```
+Also can be seen in [another stackoverflow](https://stackoverflow.com/questions/4700614/how-to-put-the-legend-out-of-the-plot)
 ### Axis scales
 ```
 Axes.set_xscale                                               ---> Set the x-axis scale e.g log etc
