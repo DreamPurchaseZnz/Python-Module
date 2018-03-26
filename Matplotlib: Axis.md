@@ -5,6 +5,12 @@ matplotlib.axis.XAxis
 matplotlib.axis.YAxis
 matplotlib.axis.Ticker
 ```
+```
+axs[0, 1].plot(3 * np.cos(an), 3 * np.sin(an))
+axs[0, 1].axis('equal')
+axs[0, 1].set_title('equal, looks like circle', fontsize=10)
+```
+
 ## Formatters and Locators
 ```
 
