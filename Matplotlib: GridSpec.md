@@ -1,5 +1,5 @@
 # [GridSpec](https://matplotlib.org/users/gridspec.html)
-
+[constrainedlayout_guide](https://matplotlib.org/tutorials/intermediate/constrainedlayout_guide.html?highlight=constrained%20layout%20guide)
 ```
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
