@@ -226,5 +226,24 @@ class StatusPrinter(object):
 sp = StatusPrinter(file)
     sp.print_status(prefix + format_meter(0, total, 0))
 ```
+## Examples
+### Recursively delete empty folder
+```
+def delete_empty_dir(dir):
+    """
+    Recursively delete empty folder
+    """
+    if os.path.exists(dir):
+        if os.path.isdir(dir):
+            for d in os.listdir(dir):
+                path = os.path.join(dir, d)     # find the list of subfolders
+                if os.path.isdir(path):
+                    delete_empty_dir(path)      # recursive
+        if not os.listdir(dir):
+            os.rmdir(dir)
+            print("remove the empty dir: {}".format(dir))
+    else:
+        print("Please start your performance!")  
 
+```
 
