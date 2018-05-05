@@ -38,7 +38,8 @@ os.rmdir                                            --->  Remove a directory
 os.removedirs
 os.rename
 os.renames
-os.symlink                                          --->  Create a symbolic link pointing to source named link_name
+os.symlink                                          --->  Create a symbolic link 
+                                                          pointing to source named link_name
 os.stat
 ```
 *os.remove()* will remove a file.
@@ -70,7 +71,8 @@ def listDirectory(directory, fileExtList):
     print(fileList)
     
 listDirectory(os.getcwd(), ['.py'])
-['C:\\Users\\CYD\\Desktop\\DenseNet_advanced\\RU-Net\\runet.py', 'C:\\Users\\CYD\\Desktop\\DenseNet_advanced\\RU-Net\\runrunet.py']
+['C:\\Users\\CYD\\Desktop\\DenseNet_advanced\\RU-Net\\runet.py', 
+'C:\\Users\\CYD\\Desktop\\DenseNet_advanced\\RU-Net\\runrunet.py']
 ```
 of course, there is a package. So there will be more convenient to search what you want with pathon rather than the windows search function.
 ```
@@ -118,12 +120,16 @@ os.path.dirname(path)                                 --->  Return the directory
 os.path.exists(path)                                  --->  Return True if path refers to an existing path
 
 os.path.abspath                                       --->  Normpath(join(os.getcwd(), path)).
-os.path.normpath                                      --->  Normalize a pathname by collapsing redundant separators and up-level 
+os.path.normpath                                      --->  Normalize a pathname by collapsing 
+                                                            redundant separators and up-level 
                                                             references
 
-os.path.join(path, *paths)                            --->  Join one or more path components intelligently
-os.path.split(path)                                   --->  Split the pathname path into a pair, (head, tail) 
-os.path.splitdrive(path)                              --->  Split the pathname path into a pair (drive, tail) 
+os.path.join(path, *paths)                            --->  Join one or more path 
+                                                            components intelligently
+os.path.split(path)                                   --->  Split the pathname path 
+                                                            into a pair, (head, tail) 
+os.path.splitdrive(path)                              --->  Split the pathname path 
+                                                            into a pair (drive, tail) 
 os.path.splitext(path)                                
 os.path.isfile
 os.path.isdir
@@ -133,7 +139,8 @@ os.path.islink
 os.path.normpath('./z/n/z/./d')   # 'z\\n\\z\\d'
 os.path.normpath('./z/n/z/.//d')  # 'z\\n\\z\\d'
 
-os.path.join('./z/n', '/z')       # '/z'          ---> start with a slash, python consider the following part 
+os.path.join('./z/n', '/z')       # '/z'          ---> start with a slash, python consider 
+                                                       the following part 
                                                        as an absolute path(for Unix like).
                                                        every thing before them is discarded
 os.path.join('./z/n', '//z')      # '//z'         ---> Windows like \\[server name]\
@@ -161,8 +168,10 @@ For operations on individual files, see also the os module.
 functions provided in shutil support file copying and removal as following:
 ```
 shutil.copyfile         
-shutil.copytree                                      --->  Recursively copy an entire directory tree rooted at src
-shutil.rmtree                                        --->  Delete an entire directory tree; path must point to a directory
+shutil.copytree                                      --->  Recursively copy an entire 
+                                                           directory tree rooted at src
+shutil.rmtree                                        --->  Delete an entire directory tree; 
+                                                           path must point to a directory
 shutil.move
 shutil.copy(src, dst)
 ```
