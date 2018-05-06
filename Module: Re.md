@@ -89,7 +89,13 @@ re.X
 ### re.split(pattern, string, maxsplit=0, flags=0)
 
 ### re.findall(pattern, string, flags=0)
+find all occurrence of pattern, not just the first one
+```
+>>> text = "He was carefully disguised but captured quickly by police."
+>>> re.findall(r"\w+ly", text)
+['carefully', 'quickly']
 
+```
 
 # Examples
 ```
