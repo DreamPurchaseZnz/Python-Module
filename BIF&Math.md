@@ -71,7 +71,7 @@ hasattr()
 delattr()	
 hash()	
 memoryview()	
-set()
+set()                                     ---> to create a unordered collections
 ```
 
 ## BIF: divmod
