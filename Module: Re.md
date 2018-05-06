@@ -22,7 +22,7 @@ $             ---> the end of string
 |             ---> or
 
 ## groups
-(...)         ---> match whatever regular expression inside the parentheses
+(...)         ---> Match whatever regular expression inside the parentheses
 (?...)
 (?iLmsux)
 (?:...)
@@ -41,6 +41,13 @@ Example
 >>> m.group(0)
 'def'
 ```
+```
+import re
+m = re.findall('abc(.)', 'abcd.efg)
+-> d
+```
+
+
 Furthermore
 
 ```
@@ -137,6 +144,11 @@ print(subbed_urls)
 
 # for match in matches:
 #     print(match.group(3))
+
+c = re.findall(r'https?://(www\.)?(\w+)(\.\w+)', urls)
+print(c)
+[('www.', 'google', '.com'), ('', 'coreyms', '.com'), ('', 'youtube', '.com'), ('www.', 'nasa', '.gov')]
+
 ```
 
 
