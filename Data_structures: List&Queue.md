@@ -110,3 +110,42 @@ c['e'][1]=np.append(c['e'][1],[4,5])    # array([4, 1, 2, 4, 5])
 
 
 ```
+# Queue
+The queue module implements multi-producer, multi-consumer queues; It is especially useful in threaded 
+programming when information must be exchanged safely between multiple threads.
+```
+FIFO       ---> first input, first output
+LIFO       ---> last input, first output
+```
+```
+queue.Queue(maxsize=0)
+queue.LifoQueue(maxsize=0)
+queue.PriorityQueue(maxsize=0)
+queue.Empty
+queue.Full
+```
+## Queue Objects
+```
+Queue.qsize()
+
+Queue.empty()              ---> Return True
+
+Queue.full()               ---> Return True
+
+Queue.put(
+item,                      ---> Put item into queue
+block=True, 
+timeout=None
+)
+Queue.get(block=True, timeout=None)
+Queue.join()
+```
+
+
+
+
+
+
+
+
+
