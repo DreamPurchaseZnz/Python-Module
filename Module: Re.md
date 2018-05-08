@@ -98,10 +98,14 @@ re.X
 ### re.findall(pattern, string, flags=0)
 find all occurrence of pattern, not just the first one
 ```
+Scanned left-to-right, and matches are returned in the order found;
+```
+*if one or more groups are present in the pattern, return a list of groups*
+
+```
 >>> text = "He was carefully disguised but captured quickly by police."
 >>> re.findall(r"\w+ly", text)
 ['carefully', 'quickly']
-
 ```
 
 # Examples
