@@ -22,7 +22,23 @@ soup = BeautifulSoup(html_doc, 'html.parser')
 
 print(soup.prettify())
 ```
-Navigate the data structure
+
+## Parser
+```
+BeautifulSoup(markup, "html.parser")
+BeautifulSoup(markup, "lxml")                      ---> very fast
+BeautifulSoup(markup, "lxml-xml") 
+BeautifulSoup(markup, "xml") 
+BeautifulSoup(markup, "html5lib")
+```
+## Tree - Kind of objects
+Tag has a lot of attributes and methods
+```
+soup = BeautifulSoup('<b class="boldest">Extremely bold</b>')
+tag = soup.b
+type(tag)
+```
+## Navigate the data structure
 ```
 soup.title
 Out[20]: 
@@ -49,21 +65,30 @@ Extract all the text from a page
 ```
 print(soup.get_text())
 ```
-## Parser
+### Going sideways
+You can use .next_sibling and .previous_sibling to navigate between page elements that are on the same level of the parse tree:
 ```
-BeautifulSoup(markup, "html.parser")
-BeautifulSoup(markup, "lxml")                      ---> very fast
-BeautifulSoup(markup, "lxml-xml") 
-BeautifulSoup(markup, "xml") 
-BeautifulSoup(markup, "html5lib")
+for sibling in soup.a.next_siblings:
+    print(repr(sibling))
+# u',\n'
+# <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>
+# u' and\n'
+# <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>
+# u'; and they lived at the bottom of a well.'
+# None
+
+for sibling in soup.find(id="link3").previous_siblings:
+    print(repr(sibling))
+# ' and\n'
+# <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>
+# u',\n'
+# <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
+# u'Once upon a time there were three little sisters; and their names were\n'
+# None
+
+
 ```
-## Tree - Kind of objects
-Tag has a lot of attributes and methods
-```
-soup = BeautifulSoup('<b class="boldest">Extremely bold</b>')
-tag = soup.b
-type(tag)
-```
+
 ## search the tree
 ```
 html_doc = """
