@@ -1,4 +1,12 @@
 # Selenium
+## [Installation](http://selenium-python.readthedocs.io/installation.html)
+```
+Downloading Python bindings for Selenium:   pip install selenium
+Drivers: Chrome verson correspond to the Chrome driver version
+```
+* [Drivers List](http://chromedriver.storage.googleapis.com/index.html?/)
+* [Correspondings](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+
 ## Get started
 
 
