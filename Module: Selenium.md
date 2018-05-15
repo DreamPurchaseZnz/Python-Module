@@ -53,6 +53,28 @@ service_log_path=None,
 chrome_options=None
 )
 ```
+Methods
+```
+add_cookie
+back
+close
+create_web_element
+delete_all_cookies
+execute
+execute_async_script
+execute_script                    ---> java script
+file_detector_context
+find_element
+find_element_by_class_name
+find_element_by_css_selector
+find_element_by_id
+find_element_by_link_text
+find_element_by_name
+find_element_by_partial_link_text
+find_element_by_tag_name
+...
+
+```
 
 
 
