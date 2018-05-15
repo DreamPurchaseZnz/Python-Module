@@ -135,4 +135,51 @@ string,
 **find_parents and find_parent** work the way up the tree rather than the way of find_all 
 
 ## modifying the tree
-    
+Each tag has the attributes    
+```
+soup = BeautifulSoup('<b class="boldest">Extremely bold</b>', 'lxml')
+tag = soup.b       ; <b class="boldest">Extremely bold</b>
+tag["class"]       ;['boldest']
+tag["id"]=1        ; <b class="boldest" id="1">Extremely bold</b>
+del tag['id']      ; <b class="boldest">Extremely bold</b>
+```
+### append
+```
+markup = '<a href="http://example.com/">I linked to <i>example.com</i></a>'
+soup= BeautifulSoup(markup, 'lxml')
+tag = soup.a                         ;<a href="http://example.com/">I linked to <i>example.com</i></a>
+tag.string = "New link text"         ;<a href="http://example.com/">New link text</a>
+tag["href"]                          ;'http://example.com/'
+```
+```
+soup = BeautifulSoup("<b></b>",'lxml')
+original_tag = soup.b               
+new_tag = soup.new_tag("a", href="http://www.example.com")
+original_tag.append(new_tag)         ; <b><a href="http://www.example.com"></a></b>
+new_tag.string = "Link text."        ; <b><a href="http://www.example.com">Link text.</a></b>
+```
+
+
+## Output
+### Pretty-printing
+```
+markup = '<a href="http://example.com/">I linked to <i>example.com</i></a>'
+soup = BeautifulSoup(markup,'lxml')
+
+soup.prettify()
+Out[54]: 
+'<html>\n <body>\n  <a href="http://example.com/">\n   I linked to\n   <i>\n    example.com\n   </i>\n  </a>\n </body>\n</html>'
+
+print(soup.prettify())
+<html>
+ <body>
+  <a href="http://example.com/">
+   I linked to
+   <i>
+    example.com
+   </i>
+  </a>
+ </body>
+</html>
+
+```
