@@ -135,6 +135,9 @@ string,
 **find_parents and find_parent** work the way up the tree rather than the way of find_all 
 
 ## modifying the tree
+<tag class='attribute'>string<tag> 
+
+
 Each tag has the attributes    
 ```
 soup = BeautifulSoup('<b class="boldest">Extremely bold</b>', 'lxml')
