@@ -1,4 +1,4 @@
-# Module: pandas.DataFrame
+# Module: Pandas.DataFrame
 ----------------------------------------------------------------------------------------------------------------
 Two-dimensional size-mutable, potentially heterogenious tabular data structure with labeled axes(rows and columns)
 Arithmetic operation align on both row and column lables ,can be thought of dict_like container for series objects
