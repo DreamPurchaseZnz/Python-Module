@@ -3,7 +3,8 @@
 import imageio
 import os
 images = []
-path = r"C:\Users\CYD\Documents\NB_COPY\GAN_Models\WGAN\Conditional-WassersteinGAN-master\Inproved_rgan\RGAN\Experient_Comic\spec_rgan"
+path = r"C:\Users\CYD\Documents\NB_COPY\GAN_Models\WGAN\Conditional-WassersteinGAN-master
+\Inproved_rgan\RGAN\Experient_Comic\spec_rgan"
 filenames = os.listdir(path)
 for num, filename in enumerate(filenames):
     if num % 10 == 0:
