@@ -1,3 +1,17 @@
+## png2gif
+```
+import imageio
+import os
+images = []
+path = r"C:\Users\CYD\Documents\NB_COPY\GAN_Models\WGAN\Conditional-WassersteinGAN-master\Inproved_rgan\RGAN\Experient_Comic\spec_rgan"
+filenames = os.listdir(path)
+for num, filename in enumerate(filenames):
+    if num % 10 == 0:
+        images.append(imageio.imread(os.path.join(path, filename)))
+imageio.mimsave(r'C:\Users\CYD\Desktop\comic.gif', images, duration=0.25)
+
+```
+
 GOTO [here](http://pillow.readthedocs.io/en/3.1.x/reference/Image.html)
 
 Convertion between variou format
