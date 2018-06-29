@@ -141,6 +141,16 @@ Queue.get(block=True, timeout=None)
 Queue.join()
 ```
 
+# Tuple
+```
+(2, 3) + (1, )
+Out[2]: 
+(2, 3, 1)
+(2, 3) + (1, 2)
+Out[3]: 
+(2, 3, 1, 2)
+
+```
 
 
 
