@@ -25,8 +25,23 @@ RegularPolygon(xy, numVertices[, radius, …])                  A regular polygo
 Shadow(patch, ox, oy[, props])                                Create a shadow of the given patch offset by ox, oy.
 Wedge(center, r, theta1, theta2[, width])                     Wedge shaped patch.
 YAArrow(figure, xytip, xybase[, width, …])                    Yet another arrow class.
-
 ```
+### Rectangle
+```
+matplotlib.patches.Rectangle(
+xy,                              ---> lower left at xy 
+width, height, angle=0.0,        ---> specified width, height, angle
+fill                             ---> bool
+color
+linestyle or ls                 
+
+**kwargs)
+```
+
+
+
+
+
 ## Functions
 ```
 bbox_artist(artist, renderer[, props, fill])                 
