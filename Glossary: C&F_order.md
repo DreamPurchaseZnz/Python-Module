@@ -52,6 +52,30 @@ is represented in the row-major order as:
 ```
 row-major , used in C, thus is also known as the C order, the Numpy arrays are by default in row-major order.
 
+> Tips: 
+> reshape x= transpose
+For example
+```
+import numpy as np
+>> a = np.array([[1,2,3],[4, 5, 6]])
+ 
+array([[1, 2, 3],
+       [4, 5, 6]])
+       
+>> np.reshape(a, (3,2))
+
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+>> a.T 
+array([[1, 4],
+       [2, 5],
+       [3, 6]])
+
+```
+
+
+
 ## decorator
 an operator that transforms a function, for example, a log decorator may be defined to print debugging information  
 upon function execution:
