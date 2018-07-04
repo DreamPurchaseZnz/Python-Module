@@ -70,7 +70,7 @@ ax4 = plt.subplot(gs[-1, 0])
 ax5 = plt.subplot(gs[-1, -2])
 ```
 ### our case
-The range is [a,b), where the b is not in the group and a=b+n
+The range is \[a,b), where the b is not in the group and a=b+n
 ```
 gs = gridspec.GridSpec(2, 6)
 ax1 = plt.subplot(gs[0, 0:2])
@@ -96,6 +96,7 @@ ax4 = plt.subplot(gs2[:, :-1])
 ax5 = plt.subplot(gs2[:-1, -1])
 ax6 = plt.subplot(gs2[-1, -1])
 Here :
+```
 ```
 # left  = 0.125  # the left side of the subplots of the figure
 # right = 0.9    # the right side of the subplots of the figure
