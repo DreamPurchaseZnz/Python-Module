@@ -24,6 +24,7 @@ figure                          ---> The Figure instance returned will
                                      also be passed to new_figure_manager in the backends
 ```
 ## Method of matplotlib.figure.Figure
+Fig.add_subplot
 ```
 add_subplot(*args, **kwargs)
 clear(keep_observers=False)
@@ -39,12 +40,15 @@ text(x, y, s, *args, **kwargs)
 tight_layout(renderer=None, pad=1.08, h_pad=None, w_pad=None, rect=None)
 waitforbuttonpress(timeout=-1)
 ```
+### savefig
+
 ```
 savefig(fname, dpi=None, facecolor='w', edgecolor='w',
         orientation='portrait', papertype=None, format=None,
         transparent=False, bbox_inches=None, pad_inches=0.1,
         frameon=None)
 ```
+### colorbar
 colorbar Create a colorbar for ScalarMappable instance, *mapple*
 ```
 colorbar(
@@ -54,9 +58,13 @@ ax=None,(shrink,                  ---> fraction by which to multiply the size of
 aspect)                           ---> ratio of long to short dimensions
 use_gridspec=True, **kw)
 ```
+### add_subplot(*args, **kwargs)
+```
+*args: describing the position of the subplot
 
-
-
+Return:
+axes
+```
 ## Method - Subplots
 Create a figure and a set of subplots
 This utility wrapper makes it convenient to create common layouts of subplots
