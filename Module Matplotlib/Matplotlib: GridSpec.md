@@ -11,6 +11,23 @@ import matplotlib.gridspec as gridspec
 # ax3 = plt.subplot2grid((3, 3), (1, 2), rowspan=2)
 ```
 ## Basic Example of using subplot2grid
+Create an axis at specific location inside a regular grid
+```
+matplotlib.pyplot.subplot2grid(
+shape, 
+loc, 
+rowspan=1, 
+colspan=1, 
+fig=None, **kwargs)[source]
+```
+subplot2grid(shape, loc, rowspan=1, colspan=1)
+```
+gridspec=GridSpec(shape[0], shape[1])
+subplotspec=gridspec.new_subplotspec(loc, rowspan, colspan)
+subplot(subplotspec)
+```
+
+
 ```
 ax1 = plt.subplot2grid((2, 6), (0, 0), colspan=2)
 ax2 = plt.subplot2grid((2, 6), (0, 2), colspan=2)
@@ -19,7 +36,28 @@ ax4 = plt.subplot2grid((2, 6), (1, 1), colspan=2)
 ax5 = plt.subplot2grid((2, 6), (1, 3), colspan=2)
 ```
 
-## GridSpec and SubplotSpec
+## GridSpec and Subplot
+```
+class matplotlib.gridspec.GridSpec(
+nrows, 
+ncols, 
+figure=None, 
+left=None, 
+bottom=None, 
+right=None, 
+top=None, 
+wspace=None, 
+hspace=None, 
+width_ratios=None, 
+height_ratios=None)[source]
+```
+```
+subplot(
+nrows, 
+ncols, 
+index, 
+**kwargs)
+```
 ```
 gs = gridspec.GridSpec(2, 2)
 ax = plt.subplot(gs[0, 0])
