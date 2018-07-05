@@ -1,4 +1,23 @@
 # [Matplotlib.figure](https://matplotlib.org/api/figure_api.html)
+```
+Assuming you have imported pyplot as
+
+import matplotlib.pyplot as plt
+
+plt.cla()        ---> clears an axis, 
+                      i.e. the currently active axis in the current figure. 
+                      It leaves the other axes untouched.
+
+plt.clf()        ---> clears the entire current figure with all its axes, 
+                      but leaves the window opened, 
+                      such that it may be reused for other plots.
+
+plt.close()      ---> closes a window, which will be the current window, 
+                      if not specified otherwise. 
+                      plt.close('all') will close all open figures.
+
+
+```
 
 Class
 ```
