@@ -2,17 +2,20 @@
 regular expression matching operation
 
 ## RE Syntax
-Special characters are:
+### Special characters
 ```
 .             ---> any character
 ^             ---> the start of string
 $             ---> the end of string
+```
 
-# Quantifiers:
+### Quantifiers:
+```
 *             ---> match 0 or more repetitions of preceding RE
 +             ---> match 1 or more repetitions
 ?             ---> match 0 or 1 repetition
-*?, +?, ??    ---> match in non-greedy or minimal 
+*?, +?, ??    ---> match in non-greedy or minimal
+                   few characters as possible will be matched
 {m}           ---> m copys of previous RE
 {m,n}         ---> m->n copys 
 {m,n}         ---> m->n copys but less one will won
@@ -20,8 +23,30 @@ $             ---> the end of string
 \             ---> escape special character
 []            ---> a set of character, range or variance [1-9a-y]
 |             ---> or
+```
 
-## groups
+```
+re.search(r'Co+kie', 'Cooookie').group()   # 'Cooookie'
+re.search(r'Ca*o*kie', 'Caokie').group()   # 'Caokie'
+
+# Checks for exactly zero or one occurrence 
+of a or o or both in the given sequence
+re.search(r'Colou?r', 'Color').group()       # 'Color'
+re.search(r'\d{9,10}', '0987654321').group() # '0987654321'
+```
+
+Greedy and Non-greedy
+
+```
+pattern = "cookie"
+sequence = "Cake and cookie"
+heading  = r'<h1>TITLE</h1>'
+re.match(r'<.*>', heading).group()     # '<h1>TITLE</h1>'
+re.match(r'<.*?>', heading).group()    # '<h1>'
+```
+
+### groups
+```
 (...)         ---> Match whatever regular expression inside the parentheses
 (?...)
 (?iLmsux)
@@ -36,15 +61,15 @@ $             ---> the end of string
 ```
 Example
 ```
->>> import re
->>> m = re.search('(?<=abc)def', 'abcdef')
->>> m.group(0)
-'def'
+import re
+m = re.search('(?<=abc)def', 'abcdef')
+m.group(0)    # 'def'
 ```
 ```
 import re
-m = re.findall('abc(.)', 'abcd.efg)
--> d
+m = re.findall('abc(.)', 'abcd.efg)     # d
+re.search(r"Co.k.e", "Cookie").group()  # 'Cookie'        ---> . any character
+
 ```
 
 
@@ -67,6 +92,24 @@ Furthermore
 \a      \b      \f      \n newline
 \r      \t      \v      \x
 \\
+```
+```
+import re
+re.search(r"Co.k.e", "Cookie")               # <_sre.SRE_Match object; span=(0, 6), match='Cookie'>
+re.search(r"Co.k.e", "Cookie").group()       # 'Cookie'
+re.search(r'Co\wk\we', 'Cookie').group()     # 'Cookie'
+re.search(r'C\Wke', 'C@ke').group()          # 'C@ke'
+re.search(r'Eat\scake', 'Eat cake').group()  # 'Eat cake'
+re.search(r'Cook\Se', 'Cookie').group()      # 'Cookie'
+re.search(r'Eat\tcake', 'Eat    cake').group() 
+re.search(r'c\d\dkie', 'c00kie').group()         # 'c00kie'
+re.search(r'cake$', 'Eat cake').group()          # 'cake'
+re.search(r'^Eat', 'Eat cake').group()           # 'Eat'
+re.search(r'Number: [0-6]', 'Number: 5').group() # 'Number: 5'
+re.search(r'Number: [^5]', 'Number: 0').group()  # 'Number: 0'
+
+
+
 ```
 
 ## module contents
