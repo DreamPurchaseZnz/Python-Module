@@ -1,6 +1,16 @@
 # [glob](https://docs.python.org/3/library/glob.html)
 Unix style pathname pattern expansion
 
+## Special regular expression
+```
+*                 matches everything
+?                 matches any single character
+[seq]             matches any character in seq
+[!seq]            matches any character not in seq
+
+```
+
+
 ## Functionality
 find all the pathnames matching a specified pattern
 
