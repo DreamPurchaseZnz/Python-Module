@@ -18,6 +18,7 @@ copy                               ---> Boolean ,default False
 import pandas as pd
 Backend Qt5Agg is interactive backend. Turning interactive mode on.
 import numpy as np
+
 df = pd.DataFrame(np.random.randn(5, 3), 
                   index=['a', 'c', 'e', 'f', 'h'],
                   columns=['one', 'two', 'three'])
