@@ -14,6 +14,25 @@ columns                            ---> Columns index
 dtype                              ---> Data type to force otherwise infer
 copy                               ---> Boolean ,default False
 ```
+```
+import pandas as pd
+Backend Qt5Agg is interactive backend. Turning interactive mode on.
+import numpy as np
+df = pd.DataFrame(np.random.randn(5, 3), 
+                  index=['a', 'c', 'e', 'f', 'h'],
+                  columns=['one', 'two', 'three'])
+
+df: 
+        one       two     three
+a  1.321618  0.020105 -1.177809
+c -0.136758  1.216013  1.209642
+e  0.211499 -0.188715  0.307192
+f  0.059934 -0.375001 -0.568702
+h  0.400770  0.223357  0.744262
+
+
+```
+
 
 **Attributes**
 ```
