@@ -19,7 +19,8 @@ copy                               ---> Boolean ,default False
 ```
 T                                  ---> Transpose index and columns
 at              
-axes                               ---> Return a list with the row axis labels and column axis labels as the only members.
+axes                               ---> Return a list with the row axis labels 
+                                        and column axis labels as the only members.
 blocks              
 dtypes              
 empty              
