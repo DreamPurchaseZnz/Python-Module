@@ -13,9 +13,247 @@ fastpath=False
 )
 ```
 ## Attribute
-
+```
+T
+asobject
+at
+axes
+base
+blocks
+data
+dtype
+dtypes
+flags
+ftype
+ftypes
+hasnans
+iat
+iloc
+index
+is_monotonic
+is_monotonic_decreasing
+is_monotonic_increasing
+is_unique
+itemsize
+ix
+loc
+nbytes
+ndim
+shape
+size
+strides
+values
+empty
+imag
+is_copy
+name
+real
+```
 ## Methods
+```
+abs()
+add(other[, level, fill_value, axis])
+add_prefix(prefix)
+add_suffix(suffix)
+agg(func[, axis])
+aggregate(func[, axis])
+align(other[, join, axis, level, copy, …])
+all([axis, bool_only, skipna, level])
+any([axis, bool_only, skipna, level])
+append(to_append[, ignore_index, …])
+apply(func[, convert_dtype, args])
+argmax([axis, skipna])
+argmin([axis, skipna])
+argsort([axis, kind, order])
+as_blocks([copy])
+as_matrix([columns])
+asfreq(freq[, method, how, normalize, …])
+asof(where[, subset])
+astype(dtype[, copy, errors])
+at_time(time[, asof])
+autocorr([lag])
+between(left, right[, inclusive])
+between_time(start_time, end_time[, …])
+bfill([axis, inplace, limit, downcast])
+bool()
+cat
+clip([lower, upper, axis, inplace])
+clip_lower(threshold[, axis, inplace])
+clip_upper(threshold[, axis, inplace])
+combine(other, func[, fill_value])
+combine_first(other)
+compound([axis, skipna, level])
+compress(condition, *args, **kwargs)
+consolidate([inplace])
+convert_objects([convert_dates, …])
+copy([deep])
+corr(other[, method, min_periods])
+count([level])
+cov(other[, min_periods])
+cummax([axis, skipna])
+cummin([axis, skipna])
+cumprod([axis, skipna])
+cumsum([axis, skipna])
+describe([percentiles, include, exclude])
+diff([periods])
+div(other[, level, fill_value, axis])
+divide(other[, level, fill_value, axis])
+divmod(other[, level, fill_value, axis])
+dot(other)
+drop([labels, axis, index, columns, level, …])
+drop_duplicates([keep, inplace])
+dropna([axis, inplace])
+dt
+duplicated([keep])
+eq(other[, level, fill_value, axis])
+equals(other)
+ewm([com, span, halflife, alpha, …])
+expanding([min_periods, center, axis])
+factorize([sort, na_sentinel])
+ffill([axis, inplace, limit, downcast])
+fillna([value, method, axis, inplace, …])
+filter([items, like, regex, axis])
+first(offset)
+first_valid_index()
+floordiv(other[, level, fill_value, axis])
+from_array(arr[, index, name, dtype, copy, …])
+from_csv(path[, sep, parse_dates, header, …])
+ge(other[, level, fill_value, axis])
+get(key[, default])
+get_dtype_counts()
+get_ftype_counts()
+get_value(label[, takeable])
+get_values()
+groupby([by, axis, level, as_index, sort, …])
+gt(other[, level, fill_value, axis])
+head([n])
+hist([by, ax, grid, xlabelsize, xrot, …])
+idxmax([axis, skipna])
+idxmin([axis, skipna])
+infer_objects()
+interpolate([method, axis, limit, inplace, …])
+isin(values)
+isna()
+isnull()
+item()
+items()
+iteritems()
+keys()
+kurt([axis, skipna, level, numeric_only])
+kurtosis([axis, skipna, level, numeric_only])
+last(offset)
+last_valid_index()
+le(other[, level, fill_value, axis])
+lt(other[, level, fill_value, axis])
+mad([axis, skipna, level])
+map(arg[, na_action])
+mask(cond[, other, inplace, axis, level, …])
+max([axis, skipna, level, numeric_only])
+mean([axis, skipna, level, numeric_only])
+median([axis, skipna, level, numeric_only])
+memory_usage([index, deep])
+min([axis, skipna, level, numeric_only])
+mod(other[, level, fill_value, axis])
+mode()
+mul(other[, level, fill_value, axis])
+multiply(other[, level, fill_value, axis])
+ne(other[, level, fill_value, axis])
+nlargest([n, keep])
+nonzero()
+notna()
+notnull()
+nsmallest([n, keep])
+nunique([dropna])
+pct_change([periods, fill_method, limit, freq])
+pipe(func, *args, **kwargs)
+plot
+pop(item)
+pow(other[, level, fill_value, axis])
+prod([axis, skipna, level, numeric_only, …])
+product([axis, skipna, level, numeric_only, …])
+ptp([axis, skipna, level, numeric_only])
+put(*args, **kwargs)
+quantile([q, interpolation])
+radd(other[, level, fill_value, axis])
+rank([axis, method, numeric_only, …])
+ravel([order])
+rdiv(other[, level, fill_value, axis])
+reindex([index])
+reindex_axis(labels[, axis])
+reindex_like(other[, method, copy, limit, …])
+rename([index])
+rename_axis(mapper[, axis, copy, inplace])
+reorder_levels(order)
+repeat(repeats, *args, **kwargs)
+replace([to_replace, value, inplace, limit, …])
+resample(rule[, how, axis, fill_method, …])
+reset_index([level, drop, name, inplace])
+rfloordiv(other[, level, fill_value, axis])
+rmod(other[, level, fill_value, axis])
+rmul(other[, level, fill_value, axis])
+rolling(window[, min_periods, center, …])
+round([decimals])
+rpow(other[, level, fill_value, axis])
+rsub(other[, level, fill_value, axis])
+rtruediv(other[, level, fill_value, axis])
+sample([n, frac, replace, weights, …])
+searchsorted(value[, side, sorter])
+select(crit[, axis])
+sem([axis, skipna, level, ddof, numeric_only])
+set_axis(labels[, axis, inplace])
+set_value(label, value[, takeable])
+shift([periods, freq, axis])
+skew([axis, skipna, level, numeric_only])
+slice_shift([periods, axis])
+sort_index([axis, level, ascending, …])
+sort_values([axis, ascending, inplace, …])
+sortlevel([level, ascending, sort_remaining])
+squeeze([axis])
+std([axis, skipna, level, ddof, numeric_only])
+str
+sub(other[, level, fill_value, axis])
+subtract(other[, level, fill_value, axis])
+sum([axis, skipna, level, numeric_only, …])
+swapaxes(axis1, axis2[, copy])
+swaplevel([i, j, copy])
+tail([n])
+take(indices[, axis, convert, is_copy])
+to_clipboard([excel, sep])
+to_csv([path, index, sep, na_rep, …])
+to_dense()
+to_dict([into])
+to_excel(excel_writer[, sheet_name, na_rep, …])
+to_frame([name])
+to_hdf(path_or_buf, key, **kwargs)
+to_json([path_or_buf, orient, date_format, …])
+to_latex([buf, columns, col_space, header, …])
+to_msgpack([path_or_buf, encoding])
+to_period([freq, copy])
+to_pickle(path[, compression, protocol])
+to_sparse([kind, fill_value])
+to_sql(name, con[, schema, if_exists, …])
+to_string([buf, na_rep, float_format, …])
+to_timestamp([freq, how, copy])
+to_xarray()
+tolist()
+transform(func, *args, **kwargs)
+transpose(*args, **kwargs)
+truediv(other[, level, fill_value, axis])
+truncate([before, after, axis, copy])
+tshift([periods, freq, axis])
+tz_convert(tz[, axis, level, copy])
+tz_localize(tz[, axis, level, copy, ambiguous])
+unique()
+unstack([level, fill_value])
+update(other)
+valid([inplace])
+value_counts([normalize, sort, ascending, …])
+var([axis, skipna, level, ddof, numeric_only])
+view([dtype])
+where(cond[, other, inplace, axis, level, …])
+xs(key[, axis, level, drop_level])
 
+```
 
 # Module: Pandas.DataFrame
 ----------------------------------------------------------------------------------------------------------------
