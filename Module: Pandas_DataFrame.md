@@ -1,4 +1,4 @@
-# [pandas.Series](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html)
+# [Pandas.Series](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html)
 
 One-dimensional ndarray with axis labels (including time series)
 
@@ -255,7 +255,7 @@ xs(key[, axis, level, drop_level])
 
 ```
 
-# Module: Pandas.DataFrame
+# Module: [Pandas.DataFrame](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)
 ----------------------------------------------------------------------------------------------------------------
 Two-dimensional size-mutable, potentially heterogenious tabular data structure with labeled axes(rows and columns)
 Arithmetic operation align on both row and column lables ,can be thought of dict_like container for series objects
