@@ -328,8 +328,30 @@ float_precision=None)
 Return 
 DataFrame or TextParser
 ```
-
-
+## Read_excel
+```
+pandas.read_excel(
+io,                             ---> string, path object (pathlib.Path or py._path.local.LocalPath)
+sheet_name=0,                   ---> string, int, mixed list of strings/ints
+header=0,                       ---> Row (0-indexed) to use for the column labels of the parsed DataFrame.
+skiprows=None, 
+skip_footer=0, 
+index_col=None, 
+names=None, 
+usecols=None, 
+parse_dates=False, 
+date_parser=None, 
+na_values=None, 
+thousands=None,                   ---> Thousands separator for parsing string columns to numeric.
+convert_float=True, 
+converters=None, 
+dtype=None, 
+true_values=None, 
+false_values=None, 
+engine=None, 
+squeeze=False, 
+**kwds)
+```
 
 
 
