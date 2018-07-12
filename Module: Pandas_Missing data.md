@@ -126,6 +126,57 @@ method='pad'          ---> {‘pad’, ‘ffill’, ‘bfill’, None}
 
 ### String/Regular Expression Replacement
 
+Python strings prefixed with the r character such as r'hello world' are so-called “raw” strings. 
 
+They have different semantics regarding backslashes than strings without this prefix. 
+
+```
+In [105]: d = {'a': list(range(4)), 'b': list('ab..'), 'c': ['a', 'b', np.nan, 'd']}
+
+In [106]: df = pd.DataFrame(d)
+
+In [107]: df.replace('.', np.nan)
+Out[107]: 
+   a    b    c
+0  0    a    a
+1  1    b    b
+2  2  NaN  NaN
+3  3  NaN    d
+
+```
+```
+
+In [108]: df.replace(r'\s*\.\s*', np.nan, regex=True)
+Out[108]: 
+   a    b    c
+0  0    a    a
+1  1    b    b
+2  2  NaN  NaN
+3  3  NaN    d
+```
+### Numeric Replacement
+```
+In [118]: df = pd.DataFrame(np.random.randn(10, 2))
+
+In [119]: df[np.random.rand(df.shape[0]) > 0.5] = 1.5
+
+In [120]: df.replace(1.5, np.nan)
+Out[120]: 
+          0         1
+0 -0.844214 -1.021415
+1  0.432396 -0.323580
+2  0.423825  0.799180
+3  1.262614  0.751965
+4       NaN       NaN
+5       NaN       NaN
+6 -0.498174 -1.060799
+7  0.591667 -0.183257
+8  1.019855 -1.482465
+9       NaN       NaN
+```
+
+## Missing data casting rules and indexing
+
+While pandas supports storing arrays of integer and boolean type, these types are not capable of storing missing data. Until we can switch to using a native NA type in NumPy, we’ve established some “casting rules”.
 
 
