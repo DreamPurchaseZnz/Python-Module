@@ -206,7 +206,7 @@ shift([periods, freq, axis])
 skew([axis, skipna, level, numeric_only])
 slice_shift([periods, axis])
 sort_index([axis, level, ascending, …])
-sort_values([axis, ascending, inplace, …])
+sort_values([axis, ascending, inplace, …])                       ---> sort by values
 sortlevel([level, ascending, sort_remaining])
 squeeze([axis])
 std([axis, skipna, level, ddof, numeric_only])
