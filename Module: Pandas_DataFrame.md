@@ -295,18 +295,18 @@ h  0.400770  0.223357  0.744262
 **Attributes**
 ```
 T                                  ---> Transpose index and columns
-at              
+at                                 ---> Acess a single value for row/column label pair         
 axes                               ---> Return a list with the row axis labels 
                                         and column axis labels as the only members.
 blocks              
 dtypes              
 empty              
 ftypes              
-iat              
-iloc              
+iat                                ---> integer position compared with at
+iloc                                           
 is_copy              
 ix              
-loc              
+loc                               ---> Access a group of rows and columns by label(s) or a boolean array           
 ndim                              ---> Number of axes / array dimensions
 shape                             ---> Return a tuple representing the dimensionality of the DataFrame.
 size                              ---> Number of elements in the NDFrame
