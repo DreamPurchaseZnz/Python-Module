@@ -1,3 +1,22 @@
+# [pandas.Series](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html)
+
+One-dimensional ndarray with axis labels (including time series)
+
+```
+class pandas.Series(
+data=None, 
+index=None, 
+dtype=None, 
+name=None, 
+copy=False, 
+fastpath=False
+)
+```
+## Attribute
+
+## Methods
+
+
 # Module: Pandas.DataFrame
 ----------------------------------------------------------------------------------------------------------------
 Two-dimensional size-mutable, potentially heterogenious tabular data structure with labeled axes(rows and columns)
