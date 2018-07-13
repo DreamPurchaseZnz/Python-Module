@@ -18,6 +18,34 @@ python fibo.py <arguments>
 - the directory containing the input script 
 - PYTHONPATH (a list of directory names, with the same syntax as the shell variable PATH)
 - The installation-dependent default
+```
+import sys
+sys.path
+
+Out[3]: 
+['C:\\Program Files (x86)\\JetBrains\\PyCharm 2016.3.3\\helpers\\pydev',
+ 'C:\\Program Files (x86)\\JetBrains\\PyCharm 2016.3.3\\helpers\\pydev',
+ 'C:\\Program Files\\Anaconda3\\python35.zip',
+ 'C:\\Program Files\\Anaconda3\\DLLs',
+ 'C:\\Program Files\\Anaconda3\\lib',
+ 'C:\\Program Files\\Anaconda3',
+ 'C:\\Users\\CYD\\AppData\\Roaming\\Python\\Python35\\site-packages',
+ 'C:\\Program Files\\Anaconda3\\lib\\site-packages',
+ 'C:\\Program Files\\Anaconda3\\lib\\site-packages\\Sphinx-1.4.6-py3.5.egg',
+ 'c:\\users\\cyd\\src\\tqdm',
+ 'c:\\users\\cyd\\gym',
+ 'C:\\Program Files\\Anaconda3\\lib\\site-packages\\win32',
+ 'C:\\Program Files\\Anaconda3\\lib\\site-packages\\win32\\lib',
+ 'C:\\Program Files\\Anaconda3\\lib\\site-packages\\Pythonwin',
+ 'C:\\Program Files\\Anaconda3\\lib\\site-packages\\setuptools-27.2.0-py3.5.egg',
+ 'C:\\Program Files\\Anaconda3\\lib\\site-packages\\IPython\\extensions',
+ 'C:\\Users\\CYD\\Desktop\\Draw\\DRAW-SET',
+ 'C:/Users/CYD/Desktop/Draw/DRAW-SET']
+
+
+```
+
+
 
 ### “Compiled” Python files
 
