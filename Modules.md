@@ -1,7 +1,38 @@
+# Modules
+- use a handy function
+Module: a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter
 
-# Packages
+## More on modules
+### Executing modules as scripts
+When you run a Python module with
+```
+python fibo.py <arguments>
+```
+
+### The Module Search Path
+
+ The directory containing the script being run is placed 
+ at the beginning of the search path, ahead of the standard library path
+ 
+- a built-in module with that name
+- the directory containing the input script 
+- PYTHONPATH (a list of directory names, with the same syntax as the shell variable PATH)
+- The installation-dependent default
+
+### “Compiled” Python files
+
+##  Standard Modules
+Python comes with a library of standard modules, described in a separate document, the Python Library Reference
+
+## The dir() Function
+The built-in function dir() is used to find out which names a module defines. It returns a sorted list of strings
+
+
+## Packages
 
 Packages are a way of structuring Python’s module namespace by using “dotted module names”.
+
+The \__init\__.py files are required to make Python treat the directories as containing packages
 ```
  __init__.py files
 ```
