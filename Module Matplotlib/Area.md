@@ -1,4 +1,45 @@
 # Area
+## Axes.fill(*args, data=None, **kwargs)[source]
+```
+ax.fill(x, y)                    # a polygon with default color
+ax.fill(x, y, "b")               # a blue polygon
+ax.fill(x, y, x2, y2)            # two polygons
+ax.fill(x, y, "b", x2, y2, "r")  # a blue and a red polygon
+```
+
+## matplotlib.axes.Axes.fill_between
+Fill the area between two horizontal curves.
+
+The curves are defined by the points (x, y1) and (x, y2). This creates one or multiple polygons describing the filled area.
+
+You may exclude some horizontal sections from filling using where.
+
+By default, the edges connect the given points directly. Use step if the filling should be a step function, i.e. constant in between x.
+
+```
+x : array (length N)
+The x coordinates of the nodes defining the curves.
+
+y1 : array (length N) or scalar
+The y coordinates of the nodes defining the first curve.
+
+y2 : array (length N) or scalar, optional, default: 0
+The y coordinates of the nodes defining the second curve.
+
+where : array of bool (length N), optional, default: None
+
+alpha:	float or None
+color: color
+```
+
+
+
+
+
+
+
+
+
 
 
 ## matplotlib.pyplot.stackplot
