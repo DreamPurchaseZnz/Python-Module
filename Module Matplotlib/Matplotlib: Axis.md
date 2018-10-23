@@ -24,6 +24,12 @@ Axis.set_minor_formatter
 Axis.set_minor_locator
 
 ```
+## reverse axis
+```
+plt.gca().invert_xaxis()
+```
+
+
 ## Axis Label
 
 ## Ticks, tick labels and Offset text
