@@ -1,4 +1,9 @@
 # [GridSpec](https://matplotlib.org/users/gridspec.html)
+gridspec is a module which specifies the location of the subplot in the figure.
+
+
+specifies the geometry of the grid that a subplot will be placed. The number of rows and number of columns of the grid need to be set. Optionally, the subplot layout parameters (e.g., left, right, etc.) can be tuned.
+
 [constrainedlayout_guide](https://matplotlib.org/tutorials/intermediate/constrainedlayout_guide.html?highlight=constrained%20layout%20guide)
 
 [tight_layout_guide](https://matplotlib.org/users/tight_layout_guide.html)
