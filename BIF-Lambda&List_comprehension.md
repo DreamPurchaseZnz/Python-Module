@@ -18,6 +18,7 @@ Out[77]:
 map() is a function which takes two argments
 ```
 r = map(func, seqence)
+map(function_to_apply, list_of_inputs)
 ```
 The first argment *func* is  a function and the second a sequence. 
 map() applies the function *func* to all the elements of the sequence *seq*. Before python3 , map() used to return a list, which each 
@@ -32,6 +33,42 @@ list(map(lambda x,y: x+y, a,b))
 Out[85]: 
 [2, 5, 8, 11]
 ```
+That is:
+```
+map(function_to_apply, list_of_inputs)
+```
+```
+items = [1, 2, 3, 4, 5]
+squared = []
+for i in items:                       # pass all the list elements to a function one-by-one
+    squared.append(i**2)              #  then collect the output
+```
+Map allows us to implement this in a much simpler and nicer way. Here you go:
+```
+items = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, items))
+```
+
+```
+def multiply(x):                   #Instead of a list of inputs 
+    return (x*x)
+def add(x):                        # we can even have a list of functions!
+    return (x+x)
+
+funcs = [multiply, add]
+for i in range(5):
+    value = list(map(lambda x: x(i), funcs))
+    print(value)
+
+# Output:
+# [0, 0]
+# [1, 2]
+# [4, 4]
+# [9, 6]
+# [16, 8]
+```
+
+
 ## Mapping a list of functions
 we can write a function which applies a branch of functions, which may be an iterable
 ```
