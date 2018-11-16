@@ -79,6 +79,8 @@ def map_functions(x, functions):
      for func in functions:
          res.append(func(x))
      return res
+     
+# test the result
 family_of_functions = (sin, cos, tan)
 print(map_functions(pi, family_of_functions))
 
