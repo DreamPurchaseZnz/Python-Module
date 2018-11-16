@@ -112,6 +112,10 @@ The function filter need a function f as its first argment. **f has to return a 
 
 ## Reducing a list
 the function reduce has been dropped from the core of python when migrating to python3
+
+Reduce is a really useful function for performing some computation on a list and returning the result.
+
+It applies **a rolling computation** to sequential pairs of values in a list. For example, if you wanted to compute the product of a list of integers.
 ```
 reduce(func, seq)
 ```
@@ -124,6 +128,23 @@ If seq = \[s1,s2,...,sn\], calling reduce(function, sequence) work like this:
 1.func(s1,s2)
     2. func(func(s1,s2),s3)
       3. ....
+```
+
+So the normal way you might go about doing this task in python is using a basic for loop:
+```
+product = 1
+list = [1, 2, 3, 4]
+for num in list:
+    product = product * num
+
+# product = 24
+```
+Now let’s try it with reduce:
+```
+from functools import reduce
+product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
+
+# Output: 24
 ```
 If we want to use the reduce function, we have to import functools to be capable of using reduce.
 ```
