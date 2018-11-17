@@ -1,5 +1,5 @@
 # Dictionaries in python
-
+## Basic Operation
 ### Store the variables
 ```
 released = {
@@ -31,5 +31,17 @@ use the key to search the value
 ```
 a = released["iphone 5"]
 ```
-
-  
+## mMethod
+```
+clear()
+copy()
+fromkeys(seq[, v])
+get(key[,d])
+items()
+keys()
+pop(key[,d]
+popitem()
+setdefault(key[,d])
+update([other])
+values()
+```
