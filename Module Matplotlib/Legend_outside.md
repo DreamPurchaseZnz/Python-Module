@@ -1,0 +1,1 @@
+# Legend outside the figure
