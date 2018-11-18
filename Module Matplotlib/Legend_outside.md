@@ -1,5 +1,7 @@
 # Legend outside the figure
 
+[here](https://jdhao.github.io/2018/01/23/matplotlib-legend-outside-of-axes/)
+
 According to the documentation of Axes.legend() method, We can use the parameters loc and bbox_to_anchor to control the position of the legend. But the documentation for the two parameters are not very clear.
 
 In plain words, bbox_to_anchor accepts a list of four values: (x0, y0, width, height). It will create a bounding box on the axes, inside which the actual legend will be put. The lower left coordinate of the bounding box is (x0, y0). Its width and height are given by width and height, respectively. Often, you will see that a list of only two values are given to bbox_to_anchor, which means that the width and height of the bounding box is zero.
