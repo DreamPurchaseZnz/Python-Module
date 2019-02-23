@@ -1,5 +1,6 @@
 # Regular expression operations
 regular expression matching operation
+[re chinese explain](https://blog.csdn.net/m0_37852369/article/details/78829174)
 
 ## RE Syntax
 ### Special characters
