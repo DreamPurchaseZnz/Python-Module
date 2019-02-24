@@ -134,6 +134,51 @@ string,
 
 **find_parents and find_parent** work the way up the tree rather than the way of find_all 
 
+```
+soup.find_all("title")                            # name 
+# [<title>The Dormouse's story</title>]
+
+soup.find_all("p", "title")                                   # attrs
+# [<p class="title"><b>The Dormouse's story</b></p>]
+
+soup.find_all("a")                                                # name
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
+#  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
+#  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
+
+
+soup.find_all(id="link2")                                            # keyword arguments
+# [<a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
+```
+
+### css
+It’s very useful to search for a tag that has a certain CSS class, but the name of the CSS attribute, “class”, is a reserved word in Python
+
+```
+soup.find_all("a", class_="sister")                                    # css
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
+#  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
+#  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
+
+
+soup.find_all("a", attrs={"class": "sister"})
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
+#  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
+#  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
+```
+### string
+```
+soup.find_all("a", string="Elsie")
+# [<a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>]
+```
+
+### limit
+```
+soup.find_all("a", limit=2)
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
+#  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
+```
+
 ## modifying the tree
 <tag class='attribute'>string<tag> 
 
