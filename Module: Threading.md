@@ -41,6 +41,9 @@ join()                              ---> waiting until the thread terminates;
                                          the thread whose join() method is called terminates
 ```
 ### Lock objects
+
+The class implementing primitive lock objects. Once a thread has acquired a lock, subsequent attempts to acquire it block, until it is released; any thread may release it.
+
 ```
 class threading.Lock
 ```
