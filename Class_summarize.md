@@ -120,6 +120,47 @@ d = C()
 >>d.a
 >>AttributeError: 'C' object has no attribute 'a'
 ```
+To achieve this
+```
+class A:
+  def __init__(self):
+   print "enter A"
+   print "leave A"
+
+ class B(A):
+  def __init__(self):
+   print "enter B"
+   A.__init__(self)
+   print "leave B"
+
+ >>> b = B()
+ enter B
+ enter A
+ leave A
+ leave B
+```
+One method
+```
+class B(C):    # A --> C
+  def __init__(self):
+   print "enter B"
+   C.__init__(self) # A --> C
+   print "leave B"
+```
+other method-super
+
+```
+class A(object):    # A must be new-style class
+  def __init__(self):
+   print "enter A"
+   print "leave A"
+
+class B(C):     # A --> C
+  def __init__(self):
+   print "enter B"
+   super(B, self).__init__()
+   print "leave B"
+```
 
 ### Instance Objects
 
