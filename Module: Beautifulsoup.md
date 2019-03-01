@@ -1,5 +1,18 @@
 # [Beautifulsoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find)
+
+```
+Table of content
+
+1. Kind of objects
+2. Navigating the tress
+3. Searching the tree
+4. Modifying the tree 
+5. Output
+6. Encodings
+```
+
 ## Good start
+The soup is used for the whole context
 ```
 html_doc = """
 <html><head><title>The Dormouse's story</title></head>
@@ -15,6 +28,8 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 ```
+
+
 Use bs4 to parse the html_doc
 ```
 from bs4 import BeautifulSoup
@@ -166,6 +181,55 @@ soup.find_all("a", attrs={"class": "sister"})
 #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
 #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 ```
+
+If you want to search for tags that match two or more CSS classes, you should use a CSS selector:
+```
+css_soup.select("p.strikeout.body")
+# [<p class="body strikeout"></p>]
+```
+
+### css selectors
+here are some of the basics
+```
+soup.select("title")
+# [<title>The Dormouse's story</title>]
+
+soup.select("p:nth-of-type(3)")
+# [<p class="story">...</p>]
+```
+Find tags beneath other tags:
+```
+soup.select("body a")
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
+#  <a class="sister" href="http://example.com/lacie"  id="link2">Lacie</a>,
+#  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
+
+soup.select("html head title")
+# [<title>The Dormouse's story</title>]
+```
+Find tags directly beneath other tags:
+```
+soup.select("head > title")
+# [<title>The Dormouse's story</title>]
+
+soup.select("p > a")
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
+#  <a class="sister" href="http://example.com/lacie"  id="link2">Lacie</a>,
+#  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
+
+soup.select("p > a:nth-of-type(2)")
+# [<a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
+
+soup.select("p > #link1")
+# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>]
+
+soup.select("body > a")
+# []
+```
+
+
+
+
 ### string
 ```
 soup.find_all("a", string="Elsie")
