@@ -1,5 +1,34 @@
 # [Array Creation Routines](https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html)
 
+## Savez and load
+```
+numpy.savez(file, *args, **kwds)[source]
+```
+```
+>>> from tempfile import TemporaryFile
+>>> outfile = TemporaryFile()
+>>> x = np.arange(10)
+>>> y = np.sin(x)
+
+>>> np.savez(outfile, x, y)
+>>> outfile.seek(0) # Only needed here to simulate closing & reopening file
+>>> npzfile = np.load(outfile)
+>>> npzfile.files
+['arr_1', 'arr_0']
+>>> npzfile['arr_0']
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+
+>>> outfile = TemporaryFile()
+>>> np.savez(outfile, x=x, y=y)
+>>> outfile.seek(0)
+>>> npzfile = np.load(outfile)
+>>> npzfile.files
+['y', 'x']
+>>> npzfile['x']
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
+
 ## Ones and zeros
 ```
 empty                                          ---> Without initializing entries
