@@ -1,4 +1,16 @@
+# Matplotlib
+```
+savefig(fname, dpi=None, facecolor='w', edgecolor='w',
+        orientation='portrait', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=0.1,
+        frameon=None, metadata=None)
+```
+
+
+
 # [Axes class](https://matplotlib.org/api/axes_api.html)
+
+
 ```
 class matplotlib.axes.Axes(
 fig, 
