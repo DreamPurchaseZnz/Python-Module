@@ -57,7 +57,28 @@ cbar.set_ticklabels(['low', 'medium', 'high'])
 
 plt.show()
 ```
+```
+import matplotlib.pyplot as plt
+import numpy as np
 
+fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(8.5, 5))
+
+for ax in axes.flat:
+    ax.set_axis_off()
+    im = ax.imshow(np.random.random((16, 16)), cmap='viridis',
+                   vmin=0, vmax=1)
+
+# notice that here we use ax param of figure.colorbar method instead of
+
+# the cax param as the above example
+
+cbar = fig.colorbar(im, ax=axes.ravel().tolist(), shrink=0.95)
+
+cbar.set_ticks(np.arange(0, 1.1, 0.5))
+cbar.set_ticklabels(['low', 'medium', 'high'])
+
+plt.show()
+```
 Third method:
 ```
 fig = plt.figure(figsize=(9, 9))
