@@ -238,7 +238,7 @@ Hello, world!
 ```
 
 ## Built-in String Methods
-
+```
 capitalize()
 Capitalizes first letter of string
 
@@ -358,7 +358,7 @@ Returns original string leftpadded with zeros to a total of width characters; in
 
 isdecimal()
 Returns true if a unicode string contains only decimal characters and false otherwise.
-
+```
 Examples:
 
 ```
