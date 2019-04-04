@@ -238,7 +238,7 @@ Hello, world!
 ```
 
 ## Built-in String Methods
-```
+
 capitalize()
 Capitalizes first letter of string
 
@@ -296,7 +296,7 @@ Merges (concatenates) the string representations of elements in sequence seq int
 len(string)
 Returns the length of the string
 
-ljust(width[, fillchar])
+ljust(width\[, fillchar\])
 Returns a space-padded string with the original string left-justified to a total of width columns.
 
 lower()
@@ -314,7 +314,7 @@ Returns the max alphabetical character from the string str.
 min(str)
 Returns the min alphabetical character from the string str.
 
-replace(old, new [, max])
+replace(old, new \[, max\])
 Replaces all occurrences of old in string with new or at most max occurrences if max given.
 
 rfind(str, beg=0,end=len(string))
@@ -323,7 +323,7 @@ Same as find(), but search backwards in string.
 rindex( str, beg=0, end=len(string))
 Same as index(), but search backwards in string.
 
-rjust(width,[, fillchar])
+rjust(width,\[, fillchar\])
 Returns a space-padded string with the original string right-justified to a total of width columns.
 
 rstrip()
@@ -338,7 +338,7 @@ Splits string at all (or num) NEWLINEs and returns a list of each line with NEWL
 startswith(str, beg=0,end=len(string))
 Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.
 
-strip([chars])
+strip(\[chars\])
 Performs both lstrip() and rstrip() on string.
 
 swapcase()
@@ -358,7 +358,7 @@ Returns original string leftpadded with zeros to a total of width characters; in
 
 isdecimal()
 Returns true if a unicode string contains only decimal characters and false otherwise.
-```
+
 Examples:
 
 ```
