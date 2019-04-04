@@ -100,7 +100,7 @@ json.dump
 json.load
 ```
 
-### python file object attributes
+### Python file object attributes
 ```
 name             # Returns the name of the file
 closed           # Returns true if file is closed. False otherwise.
@@ -110,7 +110,7 @@ softspace        # Returns a Boolean that indicates whether a space character
 encoding         # The encoding of the file
 ```
 
-### handling files through os module
+### Handling files through os module
 perform Operating System dependent operations such as making a folder, 
 listing contents of a folder, know about a process, end a process etc.
 ```
