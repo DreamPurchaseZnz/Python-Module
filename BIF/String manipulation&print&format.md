@@ -359,8 +359,12 @@ Returns original string leftpadded with zeros to a total of width characters; in
 isdecimal()
 Returns true if a unicode string contains only decimal characters and false otherwise.
 ```
+Examples:
 
-
+```
+str = "0000000this is string example....wow!!!0000000";
+print str.strip( '0' )
+```
 
 
 
