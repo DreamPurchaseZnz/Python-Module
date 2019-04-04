@@ -1,4 +1,77 @@
 # Matplotlib
+
+## Starting a new figure
+First method:
+```
+plt.figure(figsize=(10, 3.5))
+
+plt.subplot(1, 2, 1)
+plt.imshow(I, cmap='RdBu')
+plt.colorbar()
+```
+```
+import pylab as plt
+import numpy as np
+my_image1 = np.linspace(0, 10, 10000).reshape(100,100)
+my_image2 = np.sqrt(my_image1.T) + 3
+plt.subplot(1, 2, 1)
+plt.imshow(my_image1, vmin=0, vmax=10, cmap='jet', aspect='auto')
+plt.subplot(1, 2, 2)
+plt.imshow(my_image2, vmin=0, vmax=10, cmap='jet', aspect='auto')
+plt.colorbar()
+```
+Second method
+```
+from sklearn.datasets import load_digits
+digits = load_digits(n_class=6)
+
+fig, ax = plt.subplots(8, 8, figsize=(6, 6))
+for i, axi in enumerate(ax.flat):
+    axi.imshow(digits.images[i], cmap='binary')
+    axi.set(xticks=[], yticks=[])
+```
+```
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(8.5, 5))
+
+for ax in axes.flat:
+    ax.set_axis_off()
+    im = ax.imshow(np.random.random((16, 16)), cmap='viridis',
+                   vmin=0, vmax=1)
+
+fig.subplots_adjust(bottom=0.1, top=0.9, left=0.1, right=0.8,
+                    wspace=0.02, hspace=0.02)
+
+# add an axes, lower left corner in [0.83, 0.1] measured in figure coordinate with axes width 0.02 and height 0.8
+
+cb_ax = fig.add_axes([0.83, 0.1, 0.02, 0.8]) # add_axes(rect, projection=None, polar=False, **kwargs)
+                                             # add_axes(ax)
+cbar = fig.colorbar(im, cax=cb_ax)
+
+ set the colorbar ticks and tick labels
+cbar.set_ticks(np.arange(0, 1.1, 0.5))
+cbar.set_ticklabels(['low', 'medium', 'high'])
+
+plt.show()
+```
+
+Third method:
+```
+fig = plt.figure(figsize=(9, 9))
+ax = fig.add_subplot(121)
+ax.imshow(lab_feat, cmap="jet")
+ax2 = fig.add_subplot(122)
+ax2.imshow(acou_feat, cmap="jet")
+ax2.colorbar()
+plt.show()
+```
+
+
+
+## savefig
 ```
 savefig(fname, dpi=None, facecolor='w', edgecolor='w',
         orientation='portrait', papertype=None, format=None,
