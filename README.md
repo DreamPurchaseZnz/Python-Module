@@ -1,4 +1,131 @@
 # Python
+
+## Reading and Writing Files
+### Open file with specific mode
+The built-in python function open has the following arguments
+```
+open(
+file,                        # basically is the path where your file resides, if at current directory,
+                               just provide the name 
+mode='r', 
+buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+```
+```
+r                   # Open file for reading only. 
+                      Starts reading from beginning of file. This default mode.
+rb	                 # Open a file for reading only in binary format. 
+                      Starts reading from beginning of file.
+r+	                 # Open file for reading and writing. 
+                      File pointer placed at beginning of the file.
+w	                  # Open file for writing only. File pointer placed at beginning of the file. 
+                      Overwrites existing file and creates a new one if it does not exists.
+wb	                 # Same as w but opens in binary mode.
+w+	                 # Same as w but also alows to read from file.
+wb+	                # Same as wb but also alows to read from file.
+a	                  # Open a file for appending. 
+                      Starts writing at the end of file. Creates a new file if file does not exist.
+ab	                 # Same as a but in binary format. Creates a new file if file does not exist.
+a+	                 # Same a a but also open for reading.
+ab+	                # Same a ab but also open for reading.
+```
+### Read from a file
+```
+read([n])                   # n is the number of bytes to be read
+readline([n])               # n is the number of bytes in a line to be read
+readlines()
+```
+if read() without any argument, just output the entire file
+
+You can read the file line by line using a for loop
+```
+f = open(file, "r")
+for line in f:
+  print(line)
+  
+f.close
+```
+Readlines() method maintains a list of each line in the file.
+```
+f=open(file, "r")
+f.readlines()
+```
+
+
+### Closing a file
+When you see a close() method, you will clear all the buffer and close the file
+```
+myfile.close()
+```
+
+### Writing to a file
+```
+write(string) (for text) or write(byte_string) (for binary)
+writelines(list)
+```
+```
+new_file=open("D:\\new_dir\\newfile.txt",mode="w",encoding="utf-8")
+new_file.write("Writing to a new file\n")
+new_file.write("Writing to a new file\n")
+new_file.write("Writing to a new file\n")
+new_file.close()
+```
+Note that reading from a file does not print anything because the file cursor is at the end of the file. To set the cursor at the beginning, you can use the seek() method of file object:
+```
+cars=["Audi\n","Bentely\n","Toyota\n"]
+new_file=open("D:\\new_dir\\newfile.txt",mode="a+",encoding="utf-8")
+for car in cars:
+    new_file.write(car)
+print("Tell the byte at which the file cursor is:",new_file.tell())
+new_file.seek(0)
+for line in new_file:
+    print(line)
+```
+The tell() method of file object tells at which byte the file cursor is located. In seek(offset,reference_point) the reference points are 0 (the beginning of the file and is default), 1 (the current position of file) and 2 (the end of the file).
+
+Note the use of .seek() and .truncate(): the argument in .truncate() is 5 that says that truncate the file till 5 bytes of text are left. And output shows exactly 5 bytes of text left including space. You are only left with next() method so let's complete this section of the tutorial! Here you are using same file created above with name multiplelines.txt.
+
+
+### Json file
+objects consists of keys and values.
+```
+{
+"Algeria":"Algiers",
+"Andorra":"Andorra la Vella",
+"Nepal":"Kathmandu",
+"Netherlands":"Amsterdam",
+}
+```
+```
+json.dump
+json.load
+```
+
+### python file object attributes
+```
+name             # Returns the name of the file
+closed           # Returns true if file is closed. False otherwise.
+mode             # The mode in which file is open.
+softspace        # Returns a Boolean that indicates whether a space character 
+                   needs to be printed before another value when using the print statement.
+encoding         # The encoding of the file
+```
+
+### handling files through os module
+perform Operating System dependent operations such as making a folder, 
+listing contents of a folder, know about a process, end a process etc.
+```
+os.makedirs()              # Create a new folder
+os.listdir()               # List the contents of a folder
+os.getcwd()                # Show current working directory
+os.path.getsize()          # show file size in bytes of file passed in parameter
+os.path.isfile()           # Is passed parameter a file
+os.path.isdir()            # Is passed parameter a folder
+os.chdir                   # Change directory/folder
+os.rename(current,new)     # Rename a file
+os.remove(file_name)       # Delete a file
+```
+
+
 ## python- how to get the list of detailed function of a particular module
 use the command
 ```
