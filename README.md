@@ -126,7 +126,7 @@ os.remove(file_name)       # Delete a file
 ```
 
 
-## python- how to get the list of detailed function of a particular module
+## Check the list of detailed function of a particular module
 use the command
 ```
 __dict__
