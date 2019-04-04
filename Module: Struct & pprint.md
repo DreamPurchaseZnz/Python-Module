@@ -51,3 +51,47 @@ print(var)
 tup = struct.unpack('qf', var) 
 print(tup) 
 ```
+
+# Pprint
+The pprint module provides a capability to “pretty-print” arbitrary Python data structures 
+in a form which can be used as input to the interpreter. 
+If the formatted structures include objects which are not fundamental Python types, 
+the representation may not be loadable.
+
+The formatted representation keeps objects on a single line if it can, 
+and breaks them onto multiple lines if they don’t fit within the allowed width
+```
+class pprint.PrettyPrinter(indent=1, width=80, depth=None, stream=None, *, compact=False)
+```
+```
+>>> import pprint
+>>> stuff = ['spam', 'eggs', 'lumberjack', 'knights', 'ni']
+>>> stuff.insert(0, stuff[:])
+>>> pp = pprint.PrettyPrinter(indent=4)
+>>> pp.pprint(stuff)
+[   ['spam', 'eggs', 'lumberjack', 'knights', 'ni'],
+    'spam',
+    'eggs',
+    'lumberjack',
+    'knights',
+    'ni']
+>>> pp = pprint.PrettyPrinter(width=41, compact=True)
+>>> pp.pprint(stuff)
+[['spam', 'eggs', 'lumberjack',
+  'knights', 'ni'],
+ 'spam', 'eggs', 'lumberjack', 'knights',
+ 'ni']
+>>> tup = ('spam', ('eggs', ('lumberjack', ('knights', ('ni', ('dead',
+... ('parrot', ('fresh fruit',))))))))
+>>> pp = pprint.PrettyPrinter(depth=6)
+>>> pp.pprint(tup)
+('spam', ('eggs', ('lumberjack', ('knights', ('ni', ('dead', (...)))))))
+```
+The pprint module also provides several shortcut functions:
+```
+pprint.pformat(object, indent=1, width=80, depth=None, *, compact=False)
+pprint.pprint(object, stream=None, indent=1, width=80, depth=None, *, compact=False)
+pprint.isreadable(object)
+pprint.isrecursive(object)
+pprint.saferepr(object)
+```
