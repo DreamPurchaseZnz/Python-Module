@@ -27,8 +27,63 @@ To access and set attribute, we can do the following：
 setattr(object, key, values)
 getattr(object, key)
 ```
+## Hidden the attribute
+In this case, the @property decorator makes it so you call the full_name(self) method like it is just a normal property, when in reality it is actually a method that contains code to be run when the property is set.
+```
+c = Object()
+class Celsius:
+    def __init__(self, temperature = 0):
+        self._temperature = temperature
+    def to_fahrenheit(self):
+        return (self.temperature * 1.8) + 32
+    @property
+    def temperature(self):
+        print("Getting value")
+        return self._temperature
+```
+```
+c = Celsius()
+c.temperature
+Getting value
+0
+
+c.temperature()
+Getting value
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: 'int' object is not callable
+
+c.temperature=1
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+AttributeError: can't set attribute
+```
+
 
 ## Property protocol
+```
+class Person(object):  
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    @property
+    def full_name(self):
+        return self.first_name + ' ' + self.last_name
+
+    @full_name.setter
+    def full_name(self, value):
+        first_name, last_name = value.split(' ')
+        self.first_name = first_name
+        self.last_name = last_name
+
+    @full_name.deleter
+    def full_name(self):
+        del self.first_name
+        del self.last_name
+```
+
+
 ```
 class property(fget=None, fset=None, fdel=None, doc=None)
 fget                 ---> a function for getting an attribute value
