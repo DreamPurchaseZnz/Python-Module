@@ -1,6 +1,36 @@
-# Property
-class property(fget=None, fset=None, fdel=None, doc=None)
+# Managing class attributes in python
+We are trying to get the attribute or set the attribute of an object which is very common in all python programs
+especially when working with classes
 ```
+object.attribute or object.attribute = value`
+```
+
+Sometimes we want to hook into the attribute and perform some changes to it.
+```
+>>> obj.attribute
+>>> obj.attribute = value
+```
+Features, here are some python features that help us manage attribute access in our code
+```
+__getattr__ 
+__setattr__
+Property Protocol
+```
+For a class, we can check out what attributes are under this class object
+
+```
+object.__dict__                    # return dictionary of the key value pair of object attributes
+object.__dict__.keys()
+```
+To access and set attribute, we can do the following：
+```
+setattr(object, key, values)
+getattr(object, key)
+```
+
+## Property protocol
+```
+class property(fget=None, fset=None, fdel=None, doc=None)
 fget                 ---> a function for getting an attribute value
 fset                 ---> a function for setting an attribute value
 fdel                 ---> a function for deleting an attribute value
