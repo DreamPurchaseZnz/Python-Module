@@ -1,4 +1,75 @@
 # [Data Structures](https://docs.python.org/3.5/tutorial/datastructures.html)
+## Tuple and list 
+There are little difference between lists and tuples.
+```
+tuple/list[number]                # access the value at postion number
+tuple/list + tuple/list           # concatenation
+tuple/list * 3                    # repetation
+```
+## Tuple
+A tuple is a sequence of immutable  python objects. Tuple are sequences, just like the lists. The difference between lists and tuples
+are, tuples cannot be changed unlike the lists and tuples  use parentheses, whereas lists use the square bracks.
+```
+tup1 = ('physics', 'chemistry', 1997, 2000);
+tup2 = (1, 2, 3, 4, 5 );
+tup3 = "a", "b", "c", "d";
+```
+
+
+### accessing the values of the tuple 
+use the square bracks for slicing along the axis.
+```
+tup1 = ('physics', 'chemistry', 1997, 2000);
+tup2 = (1, 2, 3, 4, 5, 6, 7 );
+print "tup1[0]: ", tup1[0];
+print "tup2[1:5]: ", tup2[1:5];
+```
+As you can see, tuple cannot be changed, but you are able to take portions of the existing tuples to create a new one.
+```
+tup1 = (12, 34.56);
+tup2 = ('abc', 'xyz');
+
+# Following action is not valid for tuples
+# tup1[0] = 100;
+
+# So let's create a new tuple as follows
+tup3 = tup1 + tup2;
+print tup3;
+```
+### basic tuple operations
+Tuple respond to the + and * operators  much like strings; they mean concatenation and repetition here too, except the result is 
+a new tuple not a string.
+
+```
+Python                      Expression	Results                       Description
+len((1, 2, 3))	               3	                                       Length
+(1, 2, 3) + (4, 5, 6)      	(1, 2, 3, 4, 5, 6)	                      Concatenation
+('Hi!',) * 4	             ('Hi!', 'Hi!', 'Hi!', 'Hi!')	                Repetition
+3 in (1, 2, 3)	                   True	                                 Membership
+for x in (1, 2, 3): print x,	    1 2 3	                                 Iteration
+```
+
+```
+c = (1, 2, 3)                      # tuple
+c[1]
+2
+c * 3
+(1, 2, 3, 1, 2, 3, 1, 2, 3)
+c = [1, 2, 3]                      # list
+c * 3
+[1, 2, 3, 1, 2, 3, 1, 2, 3]
+```
+
+### functions
+```
+cmp(tuple1, tuple2)               # Compares elements of both tuples.
+len(tuple)                        # Gives the total length of the tuple.
+max(tuple)                        # Returns item from the tuple with max value.
+min(tuple)                        # Returns item from the tuple with min value.
+tuple(seq)                        # Converts a list into tuple.
+```
+
+
 ## 0. List
 
 All of the methods of list objects
