@@ -1,33 +1,37 @@
-# [Array Creation Routines](https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html)
+# [Numpy Tutorial](https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html)
 
-## Savez and load
+## Numpy save Vs pickle
+If you'd like to save multiple arrays in the same format as np.save, use np.savez.
 ```
 numpy.savez(file, *args, **kwds)[source]
 ```
 ```
->>> from tempfile import TemporaryFile
->>> outfile = TemporaryFile()
->>> x = np.arange(10)
->>> y = np.sin(x)
+import numpy as np
 
->>> np.savez(outfile, x, y)
->>> outfile.seek(0) # Only needed here to simulate closing & reopening file
->>> npzfile = np.load(outfile)
->>> npzfile.files
-['arr_1', 'arr_0']
->>> npzfile['arr_0']
-array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr1 = np.arange(8).reshape(2, 4)
+arr2 = np.arange(10).reshape(2, 5)
+np.savez('mat.npz', name1=arr1, name2=arr2)
 
-
->>> outfile = TemporaryFile()
->>> np.savez(outfile, x=x, y=y)
->>> outfile.seek(0)
->>> npzfile = np.load(outfile)
->>> npzfile.files
-['y', 'x']
->>> npzfile['x']
-array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+data = np.load('mat.npz')
+print data['name1']
+print data['name2']
 ```
+
+Note that the order is not preserved. If you do need to preserve order, you might consider using pickle instead.
+```
+# Note: This is Python2.x specific. It's identical except for the import on 3.x
+import cPickle as pickle
+import numpy as np
+
+data = [np.arange(8).reshape(2, 4), np.arange(10).reshape(2, 5)]
+
+with open('mat.pkl', 'wb') as outfile:
+    pickle.dump(data, outfile, pickle.HIGHEST_PROTOCOL)
+
+with open('mat.pkl', 'rb') as infile:
+    result = pickle.load(infile)
+```
+
 
 ## Ones and zeros
 ```
