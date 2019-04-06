@@ -1,3 +1,27 @@
+## Set the class initial value by default
+There are two methods
+```
+class Object():
+    def __init__(var=var_init,**kwargs)
+        self.var = var
+    def use_var(self, x)
+        self.var
+```
+```
+class Object():
+    def __init__(self, var=None,**kwargs)
+        self._var = var
+    
+    @property
+    def var(self):
+        if self._var is None
+            self._var=var_init
+        return self._var
+    
+    def use_var(self, x)
+        self.var not the self._var
+```
+
 ## Variables inside and outside of a class \__init\__() function
 
 
