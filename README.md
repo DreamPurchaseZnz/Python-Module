@@ -1,4 +1,38 @@
 # Python
+## [Working with files](https://realpython.com/working-with-files-in-python/)
+
+### Filename pattern matching
+These are methods and functions available to you:
+```
+endswith() and startswith() string methods
+fnmatch.fnmatch()
+glob.glob()
+pathlib.Path.glob()
+```
+#### Using string methods
+```
+>>> import os
+
+>>> # Get .txt files
+>>> for f_name in os.listdir('some_directory'):
+...     if f_name.endswith('.txt'):
+...         print(f_name)
+```
+#### simple filename pattern matching  using fnmatch
+```
+>>> import os
+>>> import fnmatch
+
+>>> for file_name in os.listdir('some_directory/'):
+...     if fnmatch.fnmatch(file_name, '*.txt'):
+...         print(file_name)
+```
+#### Filename Pattern Matching Using glob
+```
+>>> import glob
+>>> glob.glob('*.py')
+['admin.py', 'tests.py']
+```
 
 ## Reading and Writing Files
 ### Open file with specific mode
