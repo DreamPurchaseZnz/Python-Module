@@ -72,6 +72,9 @@ for k, v in s:
 sorted(d.items())
 ```
 ## namedtuple
+Returns a new tuple subclass named typename.
+The new subclass is used to create tuple-like objects 
+that have fields accessible by attribute lookup as well as being indexable and iterable
 ```
 collections.namedtuple(
 typename, 
@@ -79,9 +82,40 @@ field_names,
 *, 
 rename=False, 
 defaults=None, 
-module=None)
+module=None)               
 ```
 Python supports a type of container like dictionaries called “namedtuples()” present in module, “collection“. Like dictionaries they contain keys that are hashed to a particular value. But on contrary, it supports both access from key value and iteration, the functionality that dictionaries lack.
+
+```
+import collections
+
+Person = collections.namedtuple('Person', 'name age gender')
+
+print 'Type of Person:', type(Person)
+
+bob = Person(name='Bob', age=30, gender='male')
+print '\nRepresentation:', bob
+
+jane = Person(name='Jane', age=29, gender='female')
+print '\nField by name:', jane.name
+
+print '\nFields by index:'
+for p in [ bob, jane ]:
+    print '%s is a %d year old %s' % p
+```
+```
+$ python collections_namedtuple_person.py
+
+Type of Person: <type 'type'>
+
+Representation: Person(name='Bob', age=30, gender='male')
+
+Field by name: Jane
+
+Fields by index:
+Bob is a 30 year old male
+Jane is a 29 year old female
+```
 
 ### Access Operations
 
