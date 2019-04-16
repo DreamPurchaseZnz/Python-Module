@@ -84,37 +84,49 @@ rename=False,
 defaults=None, 
 module=None)               
 ```
-Python supports a type of container like dictionaries called “namedtuples()” present in module, “collection“. Like dictionaries they contain keys that are hashed to a particular value. But on contrary, it supports both access from key value and iteration, the functionality that dictionaries lack.
+Named tuples are basically easy-to-create, lightweight object types. Named tuple instances can be referenced using object-like variable dereferencing or the standard tuple syntax. They can be used similarly to struct or other common record types, except that they are immutable. 
 
 ```
 import collections
 
 Person = collections.namedtuple('Person', 'name age gender')
-
-print 'Type of Person:', type(Person)
-
 bob = Person(name='Bob', age=30, gender='male')
-print '\nRepresentation:', bob
-
 jane = Person(name='Jane', age=29, gender='female')
-print '\nField by name:', jane.name
 
-print '\nFields by index:'
 for p in [ bob, jane ]:
     print '%s is a %d year old %s' % p
 ```
 ```
-$ python collections_namedtuple_person.py
-
-Type of Person: <type 'type'>
-
-Representation: Person(name='Bob', age=30, gender='male')
-
-Field by name: Jane
-
 Fields by index:
 Bob is a 30 year old male
 Jane is a 29 year old female
+```
+```
+pt1 = (1.0, 5.0)
+pt2 = (2.5, 1.5)
+
+from math import sqrt
+line_length = sqrt((pt1[0]-pt2[0])**2 + (pt1[1]-pt2[1])**2)
+```
+```
+from collections import namedtuple
+Point = namedtuple('Point', 'x y')
+pt1 = Point(1.0, 5.0)
+pt2 = Point(2.5, 1.5)
+
+from math import sqrt
+line_length = sqrt((pt1.x-pt2.x)**2 + (pt1.y-pt2.y)**2)
+```
+Furthermore, you can also replace ordinary immutable classes that have no functions, only fields with them. You can even use your named tuple types as base classes:
+```
+class Point(namedtuple('Point', 'x y')):   # explictly
+    pass
+pt = Point("1", "2")
+
+Point = namedtuple('Point', 'x y')         # implictly
+pt = Point("1", "2")
+
+ namedtuple('Point', 'x y')                # nothing
 ```
 
 ### Access Operations
