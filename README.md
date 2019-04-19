@@ -1,4 +1,26 @@
 # Python
+## Modular programming
+```
+class Modular
+  def __init__():
+    Initialization 
+   
+  def __call__():
+    interaction
+```
+This modular can allow you to program in a graphical way, that is, predefine a function block with parameters setting, 
+put you input into the block and output what you want.
+```
+modular = Modular()
+...
+
+output = modular(Input)
+```
+When there are a lots of function blocks, this method can be very effective.
+
+
+
+
 ## [Working with files](https://realpython.com/working-with-files-in-python/)
 
 ### Filename pattern matching
