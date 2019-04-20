@@ -1,5 +1,5 @@
 # Python
-## Modular programming
+## Modular programming and Ensemble programming
 ```
 class Modular
   def __init__():
@@ -17,6 +17,10 @@ modular = Modular()
 output = modular(Input)
 ```
 When there are a lots of function blocks, this method can be very effective.
+
+### Ensemble programming
+The most important thing is that you must set the inference standards to regularize the module building
+
 
 
 
