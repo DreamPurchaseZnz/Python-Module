@@ -214,7 +214,7 @@ sound/                          Top-level package
 
 The __init__.py files are required to make Python treat the directories as containing packages,__init__.py can just be an empty file
 
-### Individual modules
+#### Individual modules
 Users of the package can import individual modules from the package
 ```
 import sound.effects.echo
