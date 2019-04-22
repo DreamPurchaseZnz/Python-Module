@@ -235,6 +235,39 @@ class StatusPrinter(object):
 sp = StatusPrinter(file)
     sp.print_status(prefix + format_meter(0, total, 0))
 ```
+### Use sys.argv in python
+sys.argv is a list in Python, which contains the command-line arguments passed to the script. 
+
+With the len(sys.argv) function you can count the number of arguments. 
+
+If you are gonna work with command line arguments, you probably want to 
+use sys.argv. 
+
+To use sys.argv, you will first have to import the sys module.
+```
+import sys
+print "This is the name of the script: ", sys.argv[0]
+print "Number of arguments: ", len(sys.argv)
+print "The arguments are: " , str(sys.argv)
+```
+```
+
+This is the name of the script:  sysargv.py
+Number of arguments in:  1
+The arguments are:  ['sysargv.py']
+
+If I run it again with additional arguments, I will get this output:
+
+This is the name of the script:  sysargv.py
+Number of arguments in:  3
+The arguments are:  ['sysargv.py', 'arg1', 'arg2']
+```
+
+
+
+
+
+
 ## Examples
 ### Recursively delete empty folder
 ```
