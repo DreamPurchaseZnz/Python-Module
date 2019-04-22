@@ -198,10 +198,15 @@ Out[66]:
 # Module : sys 
 This module provides access to some variables used or maintained by the interpreter and
 to functions that interact strongly with the interpreter. It is always available.
-
+#### Path
 ```
 sys.path
 sys.platform
+```
+The variable sys.path is a list of strings that determines the interpreter’s search path for modules. It is initialized to a default path taken from the environment variable PYTHONPATH, or from a built-in default if PYTHONPATH is not set. You can modify it using standard list operations:
+```
+>>> import sys
+>>> sys.path.append('/ufs/guido/lib/python')
 ```
 ```
 sys.path
@@ -209,11 +214,13 @@ Out[91]:
 ['C:\\Program Files (x86)\\JetBrains\\PyCharm 2016.3.3\\helpers\\pydev',
  'C:\\Program Files (x86)\\JetBrains\\PyCharm 2016.3.3\\helpers\\pydev',
  'C:\\Program Files\\Anaconda3\\python35.zip']
-
+```
+```
 sys.platform
 Out[92]: 
 'win32'
 ```
+#### Input and output
 ```
 sys.stdin
 sys.stdout
@@ -235,8 +242,32 @@ class StatusPrinter(object):
 sp = StatusPrinter(file)
     sp.print_status(prefix + format_meter(0, total, 0))
 ```
-### Use sys.argv in python
-sys.argv is a list in Python, which contains the command-line arguments passed to the script. 
+####  Argument passed in python
+When you run a Python module with
+```
+python fibo.py <arguments>
+```
+the code in the module will be executed, just as if you imported it, but with the __name__ set to "__main__". That means that by adding this code at the end of your module:
+```
+if __name__ == "__main__":
+    import sys
+    fib(int(sys.argv[1]))
+```
+you can make the file usable as a script as well as an importable module, because the code that parses the command line only runs if the module is executed as the “main” file:
+```
+$ python fibo.py 50
+1 1 2 3 5 8 13 21 34
+```
+```
+>>> import fibo
+>>>
+```
+
+sys.argv is the list of commandline arguments passed to the Python program. 
+argv represents all the items that come along via the command line input
+```
+sys.argv 
+```
 
 With the len(sys.argv) function you can count the number of arguments. 
 
@@ -251,23 +282,46 @@ print "Number of arguments: ", len(sys.argv)
 print "The arguments are: " , str(sys.argv)
 ```
 ```
-
+python sysargv.py
 This is the name of the script:  sysargv.py
 Number of arguments in:  1
 The arguments are:  ['sysargv.py']
-
+```
 If I run it again with additional arguments, I will get this output:
-
+```
+python sysargv.py arg1 arg2
 This is the name of the script:  sysargv.py
 Number of arguments in:  3
 The arguments are:  ['sysargv.py', 'arg1', 'arg2']
 ```
 
+####  Prompts for commands
+One particular module deserves some attention: sys, which is built into every Python interpreter. The variables sys.ps1 and sys.ps2 define the strings used as primary and secondary prompts:
+```
+>>> import sys
+>>> sys.ps1
+'>>> '
+>>> sys.ps2
+'... '
+>>> sys.ps1 = 'C> '
+C> print 'Yuck!'
+Yuck!
+C>
+```
+These two variables are only defined if the interpreter is in interactive mode.
 
-
-
-
-
+#### the dir() function
+The built-in function dir() is used to find out which names a module defines. It returns a sorted list of strings:
+```
+>>> import fibo, sys
+>>> dir(fibo)
+['__name__', 'fib', 'fib2']
+>>> dir(sys)  
+['__displayhook__', '__doc__', '__excepthook__', '__name__', '__package__',
+ '__stderr__', '__stdin__', '__stdout__', '_clear_type_cache',
+ '_current_frames', '_getframe', '_mercurial', 'api_version', 'argv',
+ 'builtin_module_names', 'byteorder', 'call_tracing', 'callstats',
+```
 ## Examples
 ### Recursively delete empty folder
 ```
