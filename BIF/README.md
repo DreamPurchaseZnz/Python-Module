@@ -1,6 +1,6 @@
 # [Build-in-Functions(67)](https://docs.python.org/3/library/functions.html)
 
-#### dir Vs __dict__
+## dir Vs __dict__
 
 dir() is a powerful inbuilt function in Python3, which returns 
 ```
