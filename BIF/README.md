@@ -1,24 +1,48 @@
 # [Build-in-Functions(67)](https://docs.python.org/3/library/functions.html)
-	
+
+#### dir Vs __dict__
+
+dir() is a powerful inbuilt function in Python3, which returns 
+```
+list of the attributes and 
+            methods of any object 
+```
+say functions , modules, strings, lists, dictionaries etc.
+
+[stackoverflow](https://stackoverflow.com/questions/14361256/whats-the-biggest-difference-between-dir-and-dict-in-python)
+The same applies to many built-in types; lists do not have a \_\_dict\_\_ attribute,
+but you can still list all the attributes using dir():
+```
+>>> [].__dict__
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute '__dict__'
+>>> dir([])
+['__add__', '__class__', '__contains__', '__delattr__'
+```
+dir() doesn't just look up an object's \_\_dict\_\_ (which sometimes doesn't even exist), it will use the object's heritage (its class or type, and any superclasses, or parents, of that class or type) to give you a complete picture of all available attributes.
+
+An instance \_\_dict\_\_ is just the 'local' set of attributes on that instance, and does not contain every attribute available on the instance. Instead, you need to look at the class and the class's inheritance tree too.
+
+
+
 ## ALL 
 ```
-abs                                                  ---> the absolute value
-max                                                  ---> Return the largest item in an iterable
-round                                                ---> Return the nearest integer to its input
-min                                                  ---> Return the largest item in an iterable
-len                                                  ---> The length of an object
-
-open                                                 ---> Open a file and return a file object(file orient API)	
-print                                                ---> Print object to text stream file  
-format                                               ---> Convert  a value to a 'formatted' representation
-list                                                 ---> Mutable squence type
-range                                                ---> Specific number of times in for loops
-zip                                                  ---> Return an iterator that aggregate elements from each of iteratles
-
-isinstance                                           ---> Judge if the argument object is an instance of classinfo argument
-type                                                 ---> The type of object
+abs                                                
+max                                                 
+round                                               
+min                                                 
+len                                                 
+open                                               
+print                                            
+format                                  
+list                                     
+range                                 
+zip                                            
+isinstance                                         
+type                               
 str
-dict()
+dict                      
 help()	
 setattr()
 all()	
@@ -74,22 +98,20 @@ memoryview()
 set()                                     ---> to create a unordered collections
 ```
 
-## BIF: divmod
+#### BIF: divmod
 Take two (non complex) numbers as arguments 
 and return a pair of numbers consisting of their quotient and remainder when using integer division
 ```
 divmod(a, b)   # the result is the same as (a // b, a % b)
 ```
-## BIF: exit
+#### BIF: exit
 Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, 
 and when called, raise SystemExit with the specified exit code.
 
-## BIF: dir() does much more than look up __dict__
-Look here:[stackoverflow](https://stackoverflow.com/questions/14361256/whats-the-biggest-difference-between-dir-and-dict-in-python)
 
-## BIF: zip()
+#### BIF: zip()
 
-## BIF: enumerate()
+#### BIF: enumerate()
 return an enumerate object. *iterable* must be a sequence, an iterator.
 ```
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']
@@ -98,7 +120,7 @@ Out[15]:
 [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
 ```
  
-## BIF: input
+#### BIF: input
 ```
 n=int(input("Enter the lenght of the rectangle: "))
 m=int(input("Enter the width: "))
@@ -115,7 +137,7 @@ cccccccccccc
 Press enter to close
 ```
 
-## BIF: [open- write string to txt file](https://learnpythonbreakpython.com/?s=c10)
+#### BIF: [open- write string to txt file](https://learnpythonbreakpython.com/?s=c10)
 Open file and return a corresponding file object. If the file cannot be opened, an OSError is raised
 ```
 open(
@@ -172,7 +194,7 @@ with open('name.txt','w') as f:
 f = open('name.txt','r')
 print(f.read())      
 ```
-## BIF: [max](https://www.programiz.com/python-programming/methods/built-in/max)
+#### BIF: [max](https://www.programiz.com/python-programming/methods/built-in/max)
 ```
 max(
 iterable,           --> sequence, collection
