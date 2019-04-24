@@ -1,4 +1,10 @@
 # Matplotlib
+## plt.tight_layout()
+plotting a dataset using matplotlib where I have an xlabel that is quite "tall" (it's a formula rendered in TeX that contains a fraction and is therefore has the height equivalent of a couple of lines of text).
+
+In any case, the bottom of the formula is always cut off when I draw the figures. Changing figure size doesn't seem to help this, and I haven't been able to figure out how to shift the x-axis "up" to make room for the xlabel. Something like that would be a reasonable temporary solution, but what would be nice would be to have a way to make matplotlib recognize automatically that the label is cut off and resize accordingly.
+
+
 
 ## Starting a new figure
 First method:
