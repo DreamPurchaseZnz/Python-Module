@@ -14,6 +14,21 @@
 - Statistics (scipy.stats)
 - Multidimensional image processing (scipy.ndimage)
 - File IO (scipy.io)
+
+## DCT
+Return the Discrete Cosine Transform of arbitrary type sequence x
+```
+scipy.fftpack.dct(
+x, 
+type=2, 
+n=None, 
+axis=-1, 
+norm=None, 
+overwrite_x=False
+)
+```
+
+
 ## [signal processing](https://docs.scipy.org/doc/scipy/reference/signal.html)
 ```
 Convolution
