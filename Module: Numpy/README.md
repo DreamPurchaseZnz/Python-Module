@@ -1,4 +1,10 @@
 # [Numpy Tutorial](https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html)
+## where
+```
+numpy.where(condition[, x, y])
+```
+Return elements chosen from x or y depending on condition.
+
 
 ## Numpy save Vs pickle
 If you'd like to save multiple arrays in the same format as np.save, use np.savez.
