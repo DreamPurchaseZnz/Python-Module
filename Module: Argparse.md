@@ -1,6 +1,40 @@
 # Module: [Argparse](https://docs.python.org/3/library/argparse.html)
 The argparse module makes it easy to write user-friendly command line interfaces. The program defines what arguments it requires.
  The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments
+## Override the attribute and Print Summary
+Override the attribute:
+- Remove the redundant blank in the string series
+- split the equation connected by the equal symbol and seperated by the commas
+- for each key and value pair, do set the class attribute with key and values
+
+Print summary:
+- filter out the attributes which is not magic attributes and not the callable methods
+- sort the output
+- print each key and value  in each line
+
+```
+def override_model_attrs(model, overrides):
+  if overrides is not None and len(overrides.strip()):
+    overrides = [p.split('=') for p in overrides.split(',')]
+    for key, val in overrides:
+      val_type = type(getattr(model, key))
+      if val_type == bool:
+        setattr(model, key, val in ['True', 'true', 't', '1'])
+      elif val_type == list:
+        setattr(model, key, val.split(';'))
+      else:
+        setattr(model, key, val_type(val))
+
+  attrs = sorted([x for x in dir(model) if (not x.startswith('_') and not callable(getattr(model, x)))])
+  
+  summary = '\n'.join([
+      '{},{}'.format(k, getattr(model, k))
+      for k in attrs
+  ])
+
+  return model, summary
+```
+
 ## Read from a file
 
 - open the config file
