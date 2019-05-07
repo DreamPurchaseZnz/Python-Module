@@ -1,50 +1,46 @@
 # Module: [Argparse](https://docs.python.org/3/library/argparse.html)
->The argparse module makes it easy to write user-friendly command line interfaces.
-The program defines what arguments it requires.
+The argparse module makes it easy to write user-friendly command line interfaces. The program defines what arguments it requires.
  The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments
 # Example
 the following code like:
 ```
-import argparse
+  from argparse import ArgumentParser
+  parser = ArgumentParser()
 
-parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('integers', metavar='N', type=int, nargs='+',
-                    help='an integer for the accumulator')
-parser.add_argument('--sum', dest='accumulate', action='store_const',
-                    const=sum, default=max,
-                    help='sum the integers (default: find the max)')
+  parser.add_argument('mode', type=str, choices=['train', 'eval', 'infer'])
+  parser.add_argument('train_dir', type=str)
+  parser.add_argument('--data_cfg', type=str, help='Path to dataset configuration')
+  parser.add_argument('--model_type', type=str, choices=['regular', 'small'])
+  parser.add_argument('--data_dir', type=str, required=True)
+  parser.add_argument('--model_overrides', type=str)
+  parser.add_argument('--train_ckpt_every_nsecs', type=int)
+  parser.add_argument('--max_steps', type=int)
+  parser.add_argument('--infer_batch_size', type=int)
+  parser.add_argument('--train_summary_every_nsecs', type=int)
+  parser.add_argument('--eval_dataset_name', type=str)
+  parser.add_argument('--eval_wavenet_meta_fp', type=str)
+  parser.add_argument('--eval_wavenet_ckpt_fp', type=str)
+  parser.add_argument('--infer_dataset_name', type=str)
+  parser.add_argument('--infer_ckpt_path', type=str)
 
-args = parser.parse_args()
-print(args.accumulate(args.integers))
+  parser.set_defaults(
+      mode=None,
+      train_dir=None,
+      model_type="regular",
+      data_dir=None,
+      model_overrides=None,
+      train_ckpt_every_nsecs=360,
+      train_summary_every_nsecs=60,
+      max_steps=100000,
+      infer_batch_size=1,
+      eval_dataset_name=None,
+      eval_wavenet_meta_fp=None,
+      eval_wavenet_ckpt_fp=None,
+      infer_dataset_name=None,
+      infer_ckpt_path=None
+      )
 
-```
-Assuming the Python code above is saved into a file called prog.py,
-
-it can be run at the command line and provides useful help messages:
-```
-$ python prog.py -h
-usage: prog.py [-h] [--sum] N [N ...]
-
-Process some integers.
-
-positional arguments:
- N           an integer for the accumulator
-
-optional arguments:
- -h, --help  show this help message and exit
- --sum       sum the integers (default: find the max)
-
-```
-
-When run with the appropriate arguments, it prints either the sum or the max of the command-line integers:
-
-```
-$ python prog.py 1 2 3 4
-4
-
-$ python prog.py 1 2 3 4 --sum
-10
-
+  args = parser.parse_args()
 ```
 
 ## 1. Creating a parser
@@ -469,6 +465,8 @@ ArgumentParser.get_default(dest)
 >>> parser.get_default('foo')
 'badger'
 ```
+
+
 ###  Printing help
 will take care of formatting and printing any usage or error messages
 ```
