@@ -1,7 +1,19 @@
 # Module: [Argparse](https://docs.python.org/3/library/argparse.html)
 The argparse module makes it easy to write user-friendly command line interfaces. The program defines what arguments it requires.
  The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments
-# Example
+## Read from a file
+```
+with open(args.data_cfg, 'r') as f:               # open the config file
+ for l in f.read().strip().splitlines():          # read each line
+   k, v = l.split(',')                            # split the key and value
+   try:                                           # to certain the value
+     v = int(v) 
+   except:
+     v = float(v)
+   setattr(args, 'data_' + k, v)                  # set the class attribute
+```
+
+##  Example
 the following code like:
 ```
   from argparse import ArgumentParser
