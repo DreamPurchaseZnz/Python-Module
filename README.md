@@ -239,12 +239,24 @@ value_when_true if condition else value_when_false
 [value_false, value_true][<test>]
 [lambda: value_false, lambda: value_true][<test>]()
 [Loop value for i in range(size)]
+[expression] and [on_true] or [on_false]
 ```
 e.g.
 ```
-count = 0 if count == N else N + 1
-count = [0,N+1][count==N]
-count = [lambda:0, lambda:N+1][count==N]()
+condition_if_true if condition else condition_if_false
+```
+```
+is_nice = True
+state = "nice" if is_nice else "not nice"
+```
+```
+(if_test_is_false, if_test_is_true)[test]
+```
+```
+nice = True
+personality = ("mean", "nice")[nice]
+print("The cat is ", personality)
+# Output: The cat is nice
 ```
 e.g.
 ```
