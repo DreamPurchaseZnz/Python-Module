@@ -86,6 +86,12 @@ defaults=None,                # If verbose is True, the class definition is prin
                                 just before being built
 module=None)               
 ```
+
+```
+Personfunc = namedtuple('Person', 'name age gender')
+Personfunc                                           # decorator tentatively
+<class '__main__.Person'>
+```
 ### namedtuple Vs tuple
 Named tuple instances can be referenced using object-like variable dereferencing or the standard tuple syntax. 
 They can be used similarly to struct or other common record types, except that they are immutable. 
