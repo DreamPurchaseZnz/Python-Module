@@ -56,8 +56,8 @@ iter                                                ---> For in iterations
 
 # Get value
 fromkeys
-update                                              ---> Update the dictionary with the key/value pairs from other
-items                                               ---> View objects 
+update               ---> Update the dictionary with the key/value pairs from other
+items                ---> View objects 
 values                                              ---> Dynamic view on dictionary'entries
 keys                                                ---> Iteration
 ```
