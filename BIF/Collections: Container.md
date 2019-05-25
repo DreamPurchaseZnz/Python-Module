@@ -72,9 +72,16 @@ for k, v in s:
 sorted(d.items())
 ```
 ## [Namedtuple](https://www.reddit.com/r/Python/comments/38ee9d/intro_to_namedtuple/)
-Returns a new tuple subclass named typename.
-The new subclass is used to create tuple-like objects 
-that have fields accessible by attribute lookup as well as being indexable and iterable
+
+The return value of namedtuple is a class. No dark magic. You do not need to "convert" a namedtuple return into a class; it returned exactly that.
+
+namedtuple creates a new class that inherits from \_\_builtin\_\_.tuple. When you call namedtuple('Point', 'x y')(1, 0), you're getting is the tuple object (1, 0) with the following syntactic sugar:
+```
+a __dict__ mapping where {'x': 1, 'y', 0}
+two properties x and y that call __getitem__(0) and __getitem__(1) respectively.
+a __repr__ method that returns 'Point(x=1, y=0)'
+```
+
 ```
 collections.namedtuple(
 typename,                     # This is the name of the new tuple subclass 
