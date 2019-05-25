@@ -1,5 +1,15 @@
 # Python
-## lambda
+
+## Iterable
+```
+__iter__
+```
+To check:
+```
+"__iter__" in dir(checkobject)
+```
+
+## Lambda
 A lambda function is a small anonymous function.
 A lambda function can take any number of arguments, but can only have one expression.
 ```
@@ -13,11 +23,9 @@ def myfunc(n):
   return lambda a : a * n
 ```
 ```
-mydoubler = myfunc(2)
-print(mydoubler(11))
+mydoubler = myfunc(2)                     # smi function
+print(mydoubler(11))                      # completely functions
 ```
-
-
 
 
 ## Modular programming and Ensemble programming
@@ -32,18 +40,15 @@ class Modular
 This modular can allow you to program in a graphical way, that is, predefine a function block with parameters setting, 
 put you input into the block and output what you want.
 ```
-modular = Modular()
+modular = Modular()               # smi-create a instance
 ...
 
-output = modular(Input)
+output = modular(Input)           # when call, completely create a instance
 ```
 When there are a lots of function blocks, this method can be very effective.
 
 ### Ensemble programming
 The most important thing is that you must set the inference standards to regularize the module building
-
-
-
 
 
 ## [Working with files](https://realpython.com/working-with-files-in-python/)
