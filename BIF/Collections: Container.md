@@ -71,7 +71,7 @@ for k, v in s:
   
 sorted(d.items())
 ```
-## namedtuple
+## [namedtuple](https://www.reddit.com/r/Python/comments/38ee9d/intro_to_namedtuple/)
 Returns a new tuple subclass named typename.
 The new subclass is used to create tuple-like objects 
 that have fields accessible by attribute lookup as well as being indexable and iterable
