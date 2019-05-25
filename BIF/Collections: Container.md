@@ -77,30 +77,35 @@ The new subclass is used to create tuple-like objects
 that have fields accessible by attribute lookup as well as being indexable and iterable
 ```
 collections.namedtuple(
-typename, 
-field_names, 
-*, 
+typename,                     # This is the name of the new tuple subclass 
+field_names,                  # a sequence of names for each field. 
+                                It can be a sequence as in a list ['x', 'y', 'z'] 
+                                or string x y z (without commas, just whitespace) or x, y, z.
 rename=False, 
-defaults=None, 
+defaults=None,                # If verbose is True, the class definition is printed 
+                                just before being built
 module=None)               
 ```
-Named tuples are basically easy-to-create, lightweight object types. Named tuple instances can be referenced using object-like variable dereferencing or the standard tuple syntax. They can be used similarly to struct or other common record types, except that they are immutable. 
+## Methods 
+All the regular tuple methods are supported. Ex: min(), max(), len(), in, not in, concatenation (+), index, slice, etc
+And there are a few additional ones for namedtuple. Note: these all start with an underscore.
+```
+_replace
+_make
+_asdict.
+```
+Named tuple instances can be referenced using object-like variable dereferencing or the standard tuple syntax. 
+They can be used similarly to struct or other common record types, except that they are immutable. 
 
 ```
 import collections
 
-Person = collections.namedtuple('Person', 'name age gender')
+Person = collections.namedtuple('Person', 'name age gender') # field seperated by space
 bob = Person(name='Bob', age=30, gender='male')
-jane = Person(name='Jane', age=29, gender='female')
-
-for p in [ bob, jane ]:
-    print '%s is a %d year old %s' % p
+bob                                                       # Person(name='Bob', age=30, gender='male')
+print ('%s is a %d year old %s' % bob)                    # Fields by index
 ```
-```
-Fields by index:
-Bob is a 30 year old male
-Jane is a 29 year old female
-```
+In nature, it is a tupe with named field.
 ```
 pt1 = (1.0, 5.0)
 pt2 = (2.5, 1.5)
@@ -108,9 +113,10 @@ pt2 = (2.5, 1.5)
 from math import sqrt
 line_length = sqrt((pt1[0]-pt2[0])**2 + (pt1[1]-pt2[1])**2)
 ```
+We can reference the feild when we use the namedtuple
 ```
 from collections import namedtuple
-Point = namedtuple('Point', 'x y')
+Point = namedtuple('Point', 'x y')          # container
 pt1 = Point(1.0, 5.0)
 pt2 = Point(2.5, 1.5)
 
@@ -128,69 +134,24 @@ pt = Point("1", "2")
 
  namedtuple('Point', 'x y')                # nothing
 ```
+
+## Access Operations
 ```
-class whatsmypurpose(tuple):
-    'whatsmypurpose(x, y)'
-    __slots__ = ()
-    _fields = ('x', 'y')
-    def __new__(_cls, x, y):
-        'Create new instance of whatsmypurpose(x, y)'
-        return _tuple.__new__(_cls, (x, y))
-    @classmethod
-    def _make(cls, iterable, new=tuple.__new__, len=len):
-        'Make a new whatsmypurpose object from a sequence or iterable'
-        result = new(cls, iterable)
-        if len(result) != 2:
-            raise TypeError('Expected 2 arguments, got %d' % len(result))
-        return result
-    def _replace(_self, **kwds):
-        'Return a new whatsmypurpose object replacing specified fields with new values'
-        result = _self._make(map(kwds.pop, ('x', 'y'), _self))
-        if kwds:
-            raise ValueError('Got unexpected field names: %r' % list(kwds))
-        return result
-    def __repr__(self):
-        'Return a nicely formatted representation string'
-        return self.__class__.__name__ + '(x=%r, y=%r)' % self
-    def _asdict(self):
-        'Return a new OrderedDict which maps field names to their values.'
-        return OrderedDict(zip(self._fields, self))
-    def __getnewargs__(self):
-        'Return self as a plain tuple.  Used by copy and pickle.'
-        return tuple(self)
-    x = _property(_itemgetter(0), doc='Alias for field number 0')
-    y = _property(_itemgetter(1), doc='Alias for field number 1')
+index              # Access by keyname is also allowed as in dictionaries
+keyname            # This is yet another way to access the value by 
+                     giving namedtuple and key value as its argument
+getattr
 ```
-### Access Operations
-
-
-1. Access by index : The attribute values of namedtuple() are ordered and can be accessed using the index number unlike dictionaries which are not accessible by index.
-
-2. Access by keyname : Access by keyname is also allowed as in dictionaries.
-
-3. using getattr() :- This is yet another way to access the value by giving namedtuple and key value as its argument.
 ```
-# Python code to demonstrate namedtuple() and 
-# Access by name, index and getattr() 
-
-# importing "collections" for namedtuple() 
-import collections 
-
-# Declaring namedtuple() 
 Student = collections.namedtuple('Student',['name','age','DOB']) 
-
-# Adding values 
 S = Student('Nandini','19','2541997') 
 
-# Access using index 
 print ("The Student age using index is : ",end ="") 
 print (S[1]) 
 
-# Access using name 
 print ("The Student name using keyname is : ",end ="") 
 print (S.name) 
 
-# Access using getattr() 
 print ("The Student DOB using getattr() is : ",end ="") 
 print (getattr(S,'DOB')) 
 
@@ -202,75 +163,37 @@ The Student DOB using getattr() is : 2541997
 ```
 
 ### Conversion Operations
-1. \_make() :- This function is used to return a namedtuple() from the iterable passed as argument.
-
-2. \_asdict() :- This function returns the OrdereDict() as constructed from the mapped values of namedtuple().
-
-3. using “\*\*” (double star) operator :- This function is used to convert a dictionary into the namedtuple().
-
 ```
-# Python code to demonstrate namedtuple() and 
-# _make(), _asdict() and "**" operator 
-
-# importing "collections" for namedtuple() 
-import collections 
-
-# Declaring namedtuple() 
+_make()                    # return a namedtuple() from the iterable passed as argument.
+_asdict()                  # OrdereDict() as constructed from the mapped values of namedtuple().
+**                         # convert a dictionary into the namedtuple().
+```
+```
 Student = collections.namedtuple('Student',['name','age','DOB']) 
-
-# Adding values 
 S = Student('Nandini','19','2541997') 
 
-# initializing iterable 
 li = ['Manjeet', '19', '411997' ] 
-
-# initializing dict 
 di = { 'name' : "Nikhil", 'age' : 19 , 'DOB' : '1391997' } 
 
-# using _make() to return namedtuple() 
-print ("The namedtuple instance using iterable is : ") 
-print (Student._make(li)) 
-
-# using _asdict() to return an OrderedDict() 
-print ("The OrderedDict instance using namedtuple is : ") 
-print (S._asdict()) 
-
-# using ** operator to return namedtuple from dictionary 
-print ("The namedtuple instance from dict is : ") 
-print (Student(**di)) 
+Student._make(li)
+S._asdict() 
+Student(**di)
 ```
 ```
-The namedtuple instance using iterable is  : 
 Student(name='Manjeet', age='19', DOB='411997')
-The OrderedDict instance using namedtuple is  : 
 OrderedDict([('name', 'Nandini'), ('age', '19'), ('DOB', '2541997')])
-The namedtuple instance from dict is  : 
 Student(name='Nikhil', age=19, DOB='1391997')
 ```
 ### Additional Operations
-1. \_fields :- This function is used to return all the keynames of the namespace declared.
-
-2. \_replace() :- This function is used to change the values mapped with the passed keyname.
-
 ```
-# Python code to demonstrate namedtuple() and 
-# _fields and _replace() 
-
-# importing "collections" for namedtuple() 
-import collections 
-
-# Declaring namedtuple() 
+_fields               # return all the keynames of the namespace declared.
+_replace()            # change the values mapped with the passed keyname.
+```
+```
 Student = collections.namedtuple('Student',['name','age','DOB']) 
-
-# Adding values 
 S = Student('Nandini','19','2541997') 
 
-# using _fields to display all the keynames of namedtuple() 
-print ("All the fields of students are : ") 
 print (S._fields) 
-
-# using _replace() to change the attribute values of namedtuple 
-print ("The modified namedtuple is : ") 
 print(S._replace(name = 'Manjeet')) 
 
 ```
