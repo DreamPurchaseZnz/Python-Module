@@ -71,7 +71,7 @@ for k, v in s:
   
 sorted(d.items())
 ```
-## [namedtuple](https://www.reddit.com/r/Python/comments/38ee9d/intro_to_namedtuple/)
+## [Namedtuple](https://www.reddit.com/r/Python/comments/38ee9d/intro_to_namedtuple/)
 Returns a new tuple subclass named typename.
 The new subclass is used to create tuple-like objects 
 that have fields accessible by attribute lookup as well as being indexable and iterable
@@ -86,14 +86,7 @@ defaults=None,                # If verbose is True, the class definition is prin
                                 just before being built
 module=None)               
 ```
-## Methods 
-All the regular tuple methods are supported. Ex: min(), max(), len(), in, not in, concatenation (+), index, slice, etc
-And there are a few additional ones for namedtuple. Note: these all start with an underscore.
-```
-_replace
-_make
-_asdict.
-```
+### namedtuple Vs tuple
 Named tuple instances can be referenced using object-like variable dereferencing or the standard tuple syntax. 
 They can be used similarly to struct or other common record types, except that they are immutable. 
 
