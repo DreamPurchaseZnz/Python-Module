@@ -12,7 +12,7 @@ for i in range(10):
     try:
         print(x)
     except Exception as err:
-        print(err)
+        print(err)                # name 'x' is not defined
 ```
 
 ## Syntax Errors
