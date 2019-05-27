@@ -1,5 +1,19 @@
 # [Error and Exceptions](https://docs.python.org/3/tutorial/errors.html)
 There are two distinguishable kinds of errors: *syntax error* and *exceptions*
+```
+try                                                  # lets you test a block of code for errors.
+except                                               # lets you handle the error.
+finally                                              # lets you execute code, regardless of the result of 
+                                                             the try- and except blocks.
+```
+## Skip the bad case
+```
+for i in range(10):
+    try:
+        print(x)
+    except Exception as err:
+        print(err)
+```
 
 ## Syntax Errors
 Syntax Errors also known as parsing errors, are perhaps the most commom kind of complaint.
