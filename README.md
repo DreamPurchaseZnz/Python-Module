@@ -1,5 +1,27 @@
 # Python
 
+## List Elementwise add
+```
+[1, 2, 3]
+ +  +  +
+[4, 5, 6]
+|| || ||
+[5, 7, 9]
+```
+
+Use map with operator.add:
+```
+from operator import add
+list( map(add, list1, list2) )
+[5, 7, 9]
+```
+or zip with a list comprehension:
+```
+>>> [sum(x) for x in zip(list1, list2)]
+[5, 7, 9]
+```
+
+
 ## Iterable
 ```
 __iter__
