@@ -17,10 +17,16 @@ list( map(add, list1, list2) )
 ```
 or zip with a list comprehension:
 ```
->>> [sum(x) for x in zip(list1, list2)]
+[sum(x) for x in zip(list1, list2)]
 [5, 7, 9]
 ```
-
+use numpy
+```
+import numpy as np
+vector1 = np.array([1, 2, 3])
+vector2 = np.array([4, 5, 6])
+sum_vector = vector1 + vector2
+```
 
 ## Iterable
 ```
