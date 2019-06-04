@@ -1,5 +1,23 @@
 # Matplotlib
-## plt.tight_layout()
+## Make tick labels font size smaller
+```
+import matplotlib.pyplot as plt
+# We prepare the plot  
+fig = plt.figure(1)
+# We define a fake subplot that is in fact only the plot.  
+ax = fig.add_subplot(111)
+# We change the fontsize of minor ticks label 
+ax.tick_params(axis='both', which='major', labelsize=10)
+ax.tick_params(axis='both', which='minor', labelsize=8)
+```
+The above solutions were close however they were not working out for me. I found my solution from this matplotlib page.
+```
+ax.xaxis.set_tick_params(labelsize=20)
+
+```
+
+
+## Plt.tight_layout()
 plotting a dataset using matplotlib where I have an xlabel that is quite "tall" (it's a formula rendered in TeX that contains a fraction and is therefore has the height equivalent of a couple of lines of text).
 
 In any case, the bottom of the formula is always cut off when I draw the figures. Changing figure size doesn't seem to help this, and I haven't been able to figure out how to shift the x-axis "up" to make room for the xlabel. Something like that would be a reasonable temporary solution, but what would be nice would be to have a way to make matplotlib recognize automatically that the label is cut off and resize accordingly.
